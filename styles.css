@@ -14,11 +14,22 @@ header {
     text-align: center; /* Centers the title */
     padding: 50px 0; /* Adds space above and below the title */
     background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background */
+    border-radius: 10px; /* Rounds the corners of the header */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Adds a shadow effect */
 }
 
 h1 {
     font-size: 48px; /* Sets the title font size */
     margin: 0; /* Removes default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow to the text */
+    letter-spacing: 2px; /* Increases space between letters */
+    color: #FFD700; /* Changes the text color to gold */
+}
+
+h2 {
+    font-size: 28px; /* Sets the subtitle font size */
+    color: #FF4500; /* Sets the color for the subtitle */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adds shadow to the subtitle */
 }
 
 main {
@@ -30,4 +41,13 @@ footer {
     text-align: center; /* Centers the footer */
     padding: 20px 0; /* Adds space above and below the footer */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Optional: Add some decorative elements */
+.decorative-line {
+    width: 50%; /* Width of the line */
+    height: 5px; /* Height of the line */
+    background: #FFD700; /* Color of the line */
+    margin: 20px auto; /* Centers the line */
+    border-radius: 5px; /* Rounds the edges of the line */
 }
