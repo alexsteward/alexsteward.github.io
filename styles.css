@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('logo.png');
+    background-image: url('image.png'); /* Background dojo image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensures header takes full viewport height */
+    height: 20vh;
 }
 
 header h1 {
@@ -26,53 +26,62 @@ header h1 {
     text-transform: uppercase;
     letter-spacing: 8px;
     position: relative;
-    z-index: 2; /* Keeps the title on top of the background */
-    background-color: rgba(255, 255, 255, 0.6); /* Transparent white background */
+    z-index: 2;
+    text-shadow: 2px 2px 4px white; /* White outline for better visibility */
+    background-color: rgba(255, 255, 255, 0.4); /* Transparent background for text readability */
     padding: 20px;
 }
 
-header h1::after {
-    content: '';
-    display: block;
-    width: 200px;
-    height: 5px;
-    background-color: black;
-    margin: 20px auto 0;
-}
-
 main {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70vh; /* Takes up remaining screen */
 }
 
 .content {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    text-align: center;
-    z-index: 2;
+    width: 100%;
 }
 
 .column {
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
+    text-align: center;
+    width: 30%; /* Adjust the width for larger images */
 }
 
-.react-image img {
+.column h2 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.column h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: black;
+    margin: 5px auto 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
-.react-image:hover img {
-    transform: scale(1.1); /* Hover effect that zooms in */
-}
-
-.react-image img:hover {
+.image-container:hover img {
+    transform: scale(1.1); /* Hover zoom effect */
     animation: rotate 1.5s infinite;
 }
 
