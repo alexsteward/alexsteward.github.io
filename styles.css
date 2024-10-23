@@ -16,6 +16,7 @@ body {
 
 header {
     display: flex;
+    flex-direction: column; /* Stack title and EST. below */
     justify-content: center;
     align-items: center;
     height: 20vh;
@@ -49,6 +50,14 @@ header h1::after {
 
 header h1 strong {
     font-size: 1.2em; /* Adjust bullet point size */
+}
+
+header h2 {
+    font-size: 1.5em; /* Adjust size as needed */
+    color: white; /* Change to your desired color */
+    text-align: center; /* Center the text */
+    margin-top: 5px; /* Add margin for spacing */
+    text-decoration: underline; /* Underline for emphasis (optional) */
 }
 
 main {
@@ -147,8 +156,6 @@ main {
 .image-container:hover .category-button {
     opacity: 1;
 }
-
-
 
 
 
