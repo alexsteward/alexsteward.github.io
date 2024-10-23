@@ -1,72 +1,49 @@
-/* Styling for About Us Page */
+/* Styling for the About Us Page */
 .about {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center the content */
+    margin: 0;
     padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     color: white; /* Text color */
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px; /* Space below the header */
-}
-
-header h1 {
-    font-size: 36px; /* Larger header size */
-    margin: 10px 0; /* Space above and below */
-}
-
-header h2 {
-    font-size: 24px; /* Slightly smaller than the main header */
-    color: #61dafb; /* Emphasized color for EST. */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 800px; /* Max width for the content */
+    margin: 20px auto; /* Center the content */
+    padding: 20px; /* Padding around the content */
 }
 
 .founder {
-    display: flex;
-    flex-direction: row; /* Align founder info next to image */
-    align-items: center;
+    text-align: center; /* Center the text */
     margin-bottom: 20px; /* Space below the founder section */
-    width: 100%; /* Full width */
 }
 
 .founder-img {
-    width: 100px; /* Fixed width for the image */
-    height: 100px; /* Fixed height for the image */
-    margin-right: 10px; /* Space between image and text */
+    width: 32px; /* Set the width for the founder's image */
+    height: 32px; /* Set the height for the founder's image */
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 10px; /* Space below the image */
 }
 
-.founder-info {
-    flex: 1; /* Allow text to take available space */
+.discord-link {
+    text-align: center; /* Center the link */
+    margin-top: 20px; /* Space above the Discord link section */
 }
 
-.founder-name {
-    color: white; /* White text color for the founder's name */
-    text-shadow: 1px 1px 2px black; /* Black outline effect */
+.discord-button {
+    background-color: #61dafb; /* Discord button color */
+    color: black; /* Button text color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 25px; /* More rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    font-size: 18px; /* Increase font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
-.dojo-description {
-    text-align: center; /* Center the dojo description */
-    margin: 20px 0; /* Space above and below the description */
+.discord-button:hover {
+    background-color: #4dc6e4; /* Slightly darker on hover */
+    transform: scale(1.05); /* Slightly grow the button on hover */
 }
-
-.discord-section {
-    text-align: center; /* Center the discord section */
-    margin-top: 40px; /* Space above the discord section */
-}
-
-.discord-section input {
-    padding: 10px;
-    margin-right: 10px; /* Space between input and button */
-    width: 300px; /* Fixed width for input */
-}
-
-.discord-section button {
-    padding: 10px;
-    cursor: pointer; /* Pointer cursor for button */
-}
-
-
 
 
 
