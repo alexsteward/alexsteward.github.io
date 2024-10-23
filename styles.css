@@ -10,25 +10,26 @@ body {
 }
 
 header {
-    background-color: #1a1a1a;
-    padding: 50px;
+    background-color: #fff;
+    padding: 100px 0;
     text-align: center;
 }
 
 header h1 {
-    color: white;
-    font-size: 48px;
+    color: black;
+    font-size: 64px;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
     position: relative;
+    display: inline-block;
 }
 
 header h1::after {
     content: '';
     display: block;
-    width: 150px;
+    width: 200px;
     height: 5px;
-    background-color: white;
+    background-color: black;
     margin: 20px auto 0;
 }
 
@@ -38,15 +39,16 @@ main {
 
 .content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
 }
 
 .column {
     background-color: #333;
     color: white;
-    width: 250px;
-    padding: 30px;
+    width: 300px;
+    padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s;
 }
@@ -60,9 +62,10 @@ main {
     margin-bottom: 20px;
 }
 
-.column p {
-    font-size: 18px;
-    font-weight: bold;
+.column img {
+    width: 100%; /* Ensure images fill the column */
+    height: auto;
+    border-radius: 5px;
 }
 
 .about {
