@@ -10,41 +10,45 @@
 </head>
 <body>
     <header>
-        <h1>
-            <strong>&bull;</strong> About Us <strong>&bull;</strong>
-        </h1>
+        <h1>About Us</h1>
         <h2>EST. 2016</h2>
     </header>
-    <main class="about">
-        <section class="founder">
-            <h2>Our Founder</h2>
+    
+    <div class="about">
+        <div class="founder">
+            <img src="founder.png" alt="Founder Image" class="founder-img">
             <div class="founder-info">
-                <img src="founder.png" alt="Founder Rqsst's Minecraft Skin" class="founder-skin">
-                <div class="founder-description">
-                    <h3>Rqsst</h3>
-                    <p>Founded The Dojo in 2016, Rqsst has been a dedicated leader, teaching over 100 aspiring players the art of PvP. His commitment to the community and skill development was evident as he primarily utilized the Lunar PvP server to hone players' abilities.</p>
-                    <p>In late 2020, Rqsst resigned due to personal conflicts, handing over the reins of The Dojo to Rseu. Following this transition, Rseu shifted the dojo's focus to Minemen.club, where the community continues to thrive.</p>
-                </div>
+                <h3 class="founder-name">Our Founder: Founder</h3>
+                <p>
+                    Founder founded The Dojo in 2016 and dedicated himself to training over 100 players in PvP. 
+                    He mainly used the Lunar PvP server but resigned in late 2020 due to personal conflicts, 
+                    handing over the ownership to Rseu.
+                </p>
             </div>
-        </section>
-        <section class="dojo-description">
-            <h2>The Dojo</h2>
-            <p>Founded in 2016, The Dojo is a dedicated PvP community focused on developing players’ skills in Minecraft. Initially centered around the Lunar PvP server, the dojo has since transitioned to Minemen.club as its main platform. After a brief hiatus in 2022, The Dojo continues to embrace players who wish to master the art of PvP, utilizing Minecraft version 1.8.9 for optimal gameplay.</p>
-        </section>
-        <section class="discord">
-            <h2>Join Us on Discord!</h2>
-            <div class="discord-link">
-                <input type="text" value="https://discord.gg/aJf4aVT66N" readonly>
-                <button onclick="copyToClipboard()">Copy Link</button>
-            </div>
-        </section>
-    </main>
+        </div>
+        
+        <div class="dojo-description">
+            <h3>The Dojo</h3>
+            <p>
+                Founded in 2016, The Dojo focuses on PvP practice using Minecraft version 1.8.9. 
+                After a hiatus in 2022, we continue to foster a dedicated community of players 
+                seeking to improve their skills and enjoy competitive play.
+            </p>
+        </div>
+    </div>
+
+    <div class="discord-section">
+        <h3>Join Us on Discord!</h3>
+        <input type="text" value="https://discord.gg/your-link-here" id="discord-link" readonly>
+        <button onclick="copyLink()">Copy Link</button>
+    </div>
+
     <script>
-        function copyToClipboard() {
-            const copyText = document.querySelector('.discord-link input');
-            copyText.select();
-            document.execCommand("copy");
-            alert("Copied the link: " + copyText.value);
+        function copyLink() {
+            const link = document.getElementById('discord-link');
+            link.select();
+            document.execCommand('copy');
+            alert('Discord link copied to clipboard!');
         }
     </script>
 </body>
