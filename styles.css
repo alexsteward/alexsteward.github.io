@@ -1,48 +1,57 @@
-/* Styling for the About Us Page */
+/* About Us Section Styles */
 .about {
-    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
     padding: 20px;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: white; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    max-width: 800px; /* Max width for the content */
-    margin: 20px auto; /* Center the content */
-    padding: 20px; /* Padding around the content */
 }
 
+/* Founder Section Styles */
 .founder {
+    margin-bottom: 30px; /* Space below the founder section */
     text-align: center; /* Center the text */
-    margin-bottom: 20px; /* Space below the founder section */
 }
 
-.founder-img {
-    width: 32px; /* Set the width for the founder's image */
-    height: 32px; /* Set the height for the founder's image */
-    border-radius: 50%; /* Circular image */
+.founder-image {
+    width: 32px; /* Image size */
+    height: 32px; /* Image size */
     margin-bottom: 10px; /* Space below the image */
 }
 
+/* Founder Name Styles */
+.founder-name {
+    color: white; /* Text color */
+    text-shadow: 0px 0px 2px black; /* Black outline */
+    font-size: 20px; /* Size of founder name */
+    margin-bottom: 10px; /* Space below name */
+}
+
+/* Dojo Information Styles */
+.dojo-info {
+    margin-bottom: 30px; /* Space below the dojo section */
+    text-align: center; /* Center the text */
+    color: white; /* Text color */
+    text-shadow: 0px 0px 2px black; /* Black outline for text visibility */
+}
+
+/* Discord Button Styles */
 .discord-link {
-    text-align: center; /* Center the link */
-    margin-top: 20px; /* Space above the Discord link section */
+    margin-top: 20px; /* Space above the link */
 }
 
 .discord-button {
-    background-color: #61dafb; /* Discord button color */
-    color: black; /* Button text color */
-    padding: 10px 20px; /* Padding for the button */
-    border-radius: 25px; /* More rounded corners */
+    background-color: #4a90e2; /* Blue color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 20px; /* Rounded edges */
     text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-    font-size: 18px; /* Increase font size */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Transition effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
 }
 
 .discord-button:hover {
-    background-color: #4dc6e4; /* Slightly darker on hover */
-    transform: scale(1.05); /* Slightly grow the button on hover */
+    background-color: #357ABD; /* Darker blue on hover */
 }
 
 
