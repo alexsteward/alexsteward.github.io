@@ -1,118 +1,73 @@
-/* Styling for the About Page */
+/* Styling for About Us Page */
 .about {
-    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center the content */
     padding: 20px;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    color: white; /* Text color */
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Space below the header */
 }
 
 header h1 {
-    color: white; /* Text color */
-    font-size: 64px;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    text-shadow: 2px 2px 4px black; /* Black outline */
-    font-family: 'Lilita One', sans-serif; /* Font */
+    font-size: 36px; /* Larger header size */
+    margin: 10px 0; /* Space above and below */
 }
 
 header h2 {
-    color: #61dafb; /* Light blue color for emphasis */
-    font-size: 1.5em; /* Sub-title size for EST. 2016 */
+    font-size: 24px; /* Slightly smaller than the main header */
+    color: #61dafb; /* Emphasized color for EST. */
 }
 
 .founder {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.founder-info {
     display: flex;
+    flex-direction: row; /* Align founder info next to image */
     align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+    margin-bottom: 20px; /* Space below the founder section */
+    width: 100%; /* Full width */
 }
 
-.founder-skin {
-    width: 100px; /* Image size */
-    height: 100px; /* Image size */
+.founder-img {
+    width: 32px; /* Fixed width for the image */
+    height: 32px; /* Fixed height for the image */
     margin-right: 10px; /* Space between image and text */
 }
 
-.founder-description {
-    color: white; /* Text color for description */
+.founder-info {
+    flex: 1; /* Allow text to take available space */
 }
 
-.founder-description h3 {
-    font-size: 1.2em; /* Founder name size */
-    margin: 0;
-}
-
-.founder-description p {
-    font-size: 1em; /* Description text size */
-    max-width: 600px; /* Max width for the description */
-    margin: 5px auto; /* Center the text */
-    line-height: 1.5; /* Improve readability */
+.founder-name {
+    color: white; /* White text color for the founder's name */
+    text-shadow: 1px 1px 2px black; /* Black outline effect */
 }
 
 .dojo-description {
-    text-align: center;
-    margin: 20px auto;
+    text-align: center; /* Center the dojo description */
+    margin: 20px 0; /* Space above and below the description */
 }
 
-.dojo-description h2 {
-    color: white;
-    font-size: 2em; /* Larger font size for the dojo description */
+.discord-section {
+    text-align: center; /* Center the discord section */
+    margin-top: 40px; /* Space above the discord section */
 }
 
-.dojo-description p {
-    color: white;
-    font-size: 1em;
-    max-width: 800px; /* Max width for description */
-    margin: 10px auto; /* Center the text */
-    line-height: 1.5; /* Improve readability */
-}
-
-.discord {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.discord-link {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #61dafb; /* Border color */
-    border-radius: 5px;
+.discord-section input {
     padding: 10px;
-    margin-top: 10px;
+    margin-right: 10px; /* Space between input and button */
+    width: 300px; /* Fixed width for input */
 }
 
-.discord-link input {
-    border: none;
-    background: transparent;
-    color: white;
-    padding: 5px;
-    width: 300px; /* Input width */
-    margin-right: 10px;
+.discord-section button {
+    padding: 10px;
+    cursor: pointer; /* Pointer cursor for button */
 }
 
-.discord-link button {
-    background-color: #61dafb; /* Button color */
-    color: black; /* Button text color */
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-.discord-link button:hover {
-    background-color: #4ea3d1; /* Darker shade on hover */
-}
+
 
 
 
