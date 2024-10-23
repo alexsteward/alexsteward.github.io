@@ -27,6 +27,25 @@
                 </div>
             </div>
         </section>
+        <section class="dojo-description">
+            <h2>The Dojo</h2>
+            <p>Founded in 2016, The Dojo is a dedicated PvP community focused on developing players’ skills in Minecraft. Initially centered around the Lunar PvP server, the dojo has since transitioned to Minemen.club as its main platform. After a brief hiatus in 2022, The Dojo continues to embrace players who wish to master the art of PvP, utilizing Minecraft version 1.8.9 for optimal gameplay.</p>
+        </section>
+        <section class="discord">
+            <h2>Join Us on Discord!</h2>
+            <div class="discord-link">
+                <input type="text" value="https://discord.gg/aJf4aVT66N" readonly>
+                <button onclick="copyToClipboard()">Copy Link</button>
+            </div>
+        </section>
     </main>
+    <script>
+        function copyToClipboard() {
+            const copyText = document.querySelector('.discord-link input');
+            copyText.select();
+            document.execCommand("copy");
+            alert("Copied the link: " + copyText.value);
+        }
+    </script>
 </body>
 </html>
