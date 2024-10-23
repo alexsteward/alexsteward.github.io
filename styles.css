@@ -22,20 +22,29 @@ header {
 }
 
 header h1 {
-    color: black;
+    color: white; /* Text color */
     font-size: 64px;
     text-transform: uppercase;
     letter-spacing: 8px;
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 4px white; /* White outline for visibility */
+    text-shadow: 2px 2px 4px black; /* Black outline */
     padding: 20px;
-    font-family: 'Lilita One', sans-serif; /* Use Lilita One font */
-    text-decoration: underline; /* Add underline */
-    text-decoration-color: white; /* Set underline color to white */
-    text-decoration-thickness: 4px; /* Set thickness of underline */
+    font-family: 'Lilita One', sans-serif; /* Font */
 }
 
+/* Pseudo-element for the underline */
+header h1::after {
+    content: ''; /* Empty content */
+    display: block; /* Block level */
+    width: 100%; /* Full width */
+    height: 4px; /* Thickness of the underline */
+    background-color: white; /* Underline color */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to the left */
+    bottom: -8px; /* Adjust distance from text (increase value for more space) */
+    z-index: -1; /* Place it behind the text */
+}
 header h1 strong {
     font-size: 1.2em; /* Adjust bullet point size */
 }
@@ -69,7 +78,7 @@ main {
 
 .image-container {
     position: relative;
-    width: 100%; 
+    width: 90%; 
     height: 800px; /* Adjust height */
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
