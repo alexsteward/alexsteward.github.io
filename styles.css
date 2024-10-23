@@ -134,7 +134,7 @@ main {
 
 /* Middle image zooms in */
 .column.middle .image-container:hover img {
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 /* Right image tilts to the left */
