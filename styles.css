@@ -16,10 +16,11 @@ body {
 
 
 header {
-    background-color: #fff;
-    padding: 100px 0;
-    text-align: center;
+    text-align: center; /* Centers the title */
+    padding: 50px 0; /* Adds space above and below the title */
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background */
 }
+
 
 header h1 {
     color: black;
