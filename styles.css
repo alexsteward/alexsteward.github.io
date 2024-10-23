@@ -33,8 +33,9 @@ header h1 {
     font-family: 'Lilita One', sans-serif; /* Use Lilita One font */
 }
 
-header h1 strong {
-    font-size: 1.2em; /* Adjust bullet point size */
+header h1 .dojo-icon {
+    width: 30px; /* Adjust size of dojo icons */
+    margin: 0 10px; /* Space between icons and text */
 }
 
 main {
@@ -109,5 +110,3 @@ main {
 .image-container:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
 }
-
-
