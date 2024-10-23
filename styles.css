@@ -1,0 +1,33 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: url('https://source.unsplash.com/1600x900/?martial-arts') no-repeat center center fixed; /* Cool background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    color: white; /* Text color */
+}
+
+header {
+    text-align: center; /* Centers the title */
+    padding: 50px 0; /* Adds space above and below the title */
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background */
+}
+
+h1 {
+    font-size: 48px; /* Title font size */
+    margin: 0; /* Removes default margin */
+}
+
+main {
+    text-align: center; /* Centers the main content */
+    margin: 20px; /* Adds margin to the main section */
+}
+
+footer {
+    text-align: center; /* Centers the footer */
+    padding: 20px 0; /* Adds space above and below the footer */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
