@@ -69,6 +69,7 @@ main {
     margin-bottom: 10px;
     position: relative;
     text-shadow: 0px 0px 2px black; /* Black outline for text visibility */
+    font-family: 'Lilita One', sans-serif; /* Set font to Lilita One for headings */
 }
 
 .column h2::after {
