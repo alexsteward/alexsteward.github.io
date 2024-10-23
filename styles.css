@@ -39,6 +39,20 @@ h2 {
     margin-top: 20px; /* Adds margin above the subtitle */
 }
 
+hr {
+    border: none; /* Removes default border */
+    height: 2px; /* Sets the height of the line */
+    background-color: #FFD700; /* Sets the color of the line */
+    margin: 20px auto; /* Centers the line with margin above and below */
+    width: 80%; /* Sets the width of the line */
+}
+
+.react-logo {
+    width: 100px; /* Sets the width of the React logo */
+    margin: 20px auto; /* Centers the logo with margin above and below */
+    display: block; /* Ensures the logo is treated as a block element */
+}
+
 main {
     text-align: center; /* Centers the main content */
     margin: 40px 0; /* Adds vertical margin to the main section */
