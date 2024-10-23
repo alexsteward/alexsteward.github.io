@@ -1,8 +1,4 @@
 
-
-
-
-
 /* Styling for About Us page */
 .about {
     width: 80%;
@@ -177,17 +173,17 @@ main {
 
 /* Left image tilts to the right */
 .column.left .image-container:hover img {
-    transform: rotate(2deg);
+    transform: rotate(5deg);
 }
 
 /* Middle image zooms in */
 .column.middle .image-container:hover img {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 /* Right image tilts to the left */
 .column.right .image-container:hover img {
-    transform: rotate(-2deg);
+    transform: rotate(-5deg);
 }
 
 /* Show the button on hover for all images */
