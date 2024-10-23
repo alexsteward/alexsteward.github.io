@@ -42,7 +42,7 @@ header h1::after {
     background-color: white; /* Underline color */
     position: absolute; /* Position it absolutely */
     left: 0; /* Align to the left */
-    bottom: -8px; /* Adjust distance from text */
+    bottom: -2px; /* Adjusted distance from text (closer) */
     z-index: -1; /* Place it behind the text */
 }
 
@@ -123,25 +123,21 @@ main {
     transition: opacity 0.3s ease-in-out; /* Smooth transition */
 }
 
-.image-container:hover img {
-    transform: scale(1.1); /* Slight zoom on hover */
-}
-
 .image-container:hover .category-button {
     opacity: 1; /* Show button on hover */
 }
 
-/* Hover animations for the images */
-.left:hover img {
-    transform: rotateY(-5deg); /* Tilt to the right */
+/* Hover animations for images */
+.image-container.left:hover img {
+    transform: rotate(-15deg); /* Left tilts right */
 }
 
-.middle:hover img {
-    transform: scale(1.05); /* Zoom in */
+.image-container.middle:hover img {
+    transform: scale(1.1); /* Middle zooms in */
 }
 
-.right:hover img {
-    transform: rotateY(5deg); /* Tilt to the left */
+.image-container.right:hover img {
+    transform: rotate(15deg); /* Right tilts left */
 }
 
 /* Optional: Add further hover effects for the image container */
