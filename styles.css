@@ -6,21 +6,19 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: url('logo.png') no-repeat center center fixed; /* Local image */
+    background-image: url('logo.png');
     background-size: cover;
-    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
-
 
 header {
-    text-align: center; /* Centers the title */
-    padding: 50px 0; /* Adds space above and below the title */
-    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures header takes full viewport height */
 }
-
 
 header h1 {
     color: black;
@@ -28,7 +26,9 @@ header h1 {
     text-transform: uppercase;
     letter-spacing: 8px;
     position: relative;
-    display: inline-block;
+    z-index: 2; /* Keeps the title on top of the background */
+    background-color: rgba(255, 255, 255, 0.6); /* Transparent white background */
+    padding: 20px;
 }
 
 header h1::after {
@@ -41,7 +41,10 @@ header h1::after {
 }
 
 main {
-    padding: 50px 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
 }
 
 .content {
@@ -49,40 +52,35 @@ main {
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+    z-index: 2;
 }
 
 .column {
-    background-color: #333;
-    color: white;
     width: 300px;
     padding: 20px;
     border-radius: 10px;
-    transition: transform 0.3s;
 }
 
-.column:hover {
-    transform: scale(1.05);
-}
-
-.column h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.column img {
-    width: 100%; /* Ensure images fill the column */
+.react-image img {
+    width: 100%;
     height: auto;
     border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.about {
-    background-color: #1a1a1a;
+.react-image:hover img {
+    transform: scale(1.1); /* Hover effect that zooms in */
 }
 
-.get-started {
-    background-color: #4c4c4c;
+.react-image img:hover {
+    animation: rotate 1.5s infinite;
 }
 
-.roster {
-    background-color: #666;
+@keyframes rotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(360deg);
+    }
 }
