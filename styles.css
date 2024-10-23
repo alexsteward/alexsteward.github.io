@@ -38,8 +38,8 @@ header h2 {
 }
 
 .founder-skin {
-    width: 32px; /* Image size */
-    height: 32px; /* Image size */
+    width: 100px; /* Image size */
+    height: 100px; /* Image size */
     margin-right: 10px; /* Space between image and text */
 }
 
