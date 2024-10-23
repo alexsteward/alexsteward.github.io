@@ -84,7 +84,7 @@ main {
 
 /* Hover animations for columns */
 .column.left:hover {
-    transform: translateX(10px); /* Move right */
+    transform: translateX(10px) rotate(2deg); /* Move right and sway */
 }
 
 .column.middle:hover {
@@ -92,7 +92,7 @@ main {
 }
 
 .column.right:hover {
-    transform: translateX(-10px); /* Move left */
+    transform: translateX(-10px) rotate(-2deg); /* Move left and sway */
 }
 
 .image-container {
@@ -113,7 +113,6 @@ main {
 }
 
 .image-container:hover {
-    transform: translateX(5px) rotate(2deg); /* Sway effect on hover */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Adds stronger shadow on hover */
 }
 
