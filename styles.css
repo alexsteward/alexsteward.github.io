@@ -27,6 +27,7 @@ header h2 {
 
 .founder {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .founder-info {
@@ -56,6 +57,61 @@ header h2 {
     max-width: 600px; /* Max width for the description */
     margin: 5px auto; /* Center the text */
     line-height: 1.5; /* Improve readability */
+}
+
+.dojo-description {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.dojo-description h2 {
+    color: white;
+    font-size: 2em; /* Larger font size for the dojo description */
+}
+
+.dojo-description p {
+    color: white;
+    font-size: 1em;
+    max-width: 800px; /* Max width for description */
+    margin: 10px auto; /* Center the text */
+    line-height: 1.5; /* Improve readability */
+}
+
+.discord {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.discord-link {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #61dafb; /* Border color */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.discord-link input {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 5px;
+    width: 300px; /* Input width */
+    margin-right: 10px;
+}
+
+.discord-link button {
+    background-color: #61dafb; /* Button color */
+    color: black; /* Button text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.discord-link button:hover {
+    background-color: #4ea3d1; /* Darker shade on hover */
 }
 
 
