@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Fallback font */
     background-image: url('logo.png'); /* Background dojo image */
     background-size: cover;
     background-position: center;
@@ -21,20 +21,34 @@ header {
     position: relative;
 }
 
+.dojo-image {
+    width: 30px; /* Adjusted size to make it smaller */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Adjust spacing between images and title */
+    filter: drop-shadow(2px 2px 4px black); /* Drop shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
 header h1 {
-    color: black;
+    color: white; /* Changed to white */
     font-size: 64px;
     text-transform: uppercase;
     letter-spacing: 8px;
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 4px white; /* White outline for visibility */
+    text-shadow: 2px 2px 4px black; /* Black outline for visibility */
     padding: 20px;
-    font-family: 'Lilita One', sans-serif; /* Use Lilita One font */
+    font-family: 'Lilita One', sans-serif; /* Changed to Lilita One */
 }
 
-header h1 strong {
-    font-size: 1.2em; /* Adjust bullet point size */
+header h1::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background-color: white; /* Underline color set to white */
+    margin: 10px auto 0;
+    box-shadow: 0 0 0 1px black; /* Black outline for the underline */
 }
 
 main {
@@ -53,59 +67,71 @@ main {
 
 .column {
     text-align: center;
-    width: 30%; /* Adjust width */
+    width: 18%; /* Narrower width */
+    position: relative; /* For absolute positioning of the button */
 }
 
 .column h2 {
-    color: black;
+    color: white; /* Changed to white */
     font-size: 24px;
     margin-bottom: 10px;
     position: relative;
-    text-shadow: 0px 0px 2px white; /* White outline for text visibility */
+    text-shadow: 0px 0px 2px black; /* Black outline for text visibility */
+    font-family: 'Lilita One', sans-serif; /* Set font to Lilita One for headings */
+}
+
+.column h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: white; /* Underline color set to white */
+    margin: 5px auto 20px;
+    box-shadow: 0 0 0 1px black; /* Black outline for the underline */
+}
+
+.category-button {
+    display: none; /* Hidden by default */
+    background-color: black; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    font-family: 'Lilita One', sans-serif; /* Font family */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+    position: absolute; /* Positioning */
+    bottom: 20px; /* Positioned at the bottom of the column */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the button */
+}
+
+.column:hover .category-button {
+    display: block; /* Show button on hover */
 }
 
 .image-container {
     position: relative;
     width: 100%; 
-    height: 300px; /* Adjust height */
+    height: 800px; /* Tall height */
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
-    border-radius: 10px; /* Add border-radius */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Drop shadow for depth */
+    transition: box-shadow 0.3s ease-in-out; /* Smoother transitions */
 }
 
 .image-container img {
-    width: 100%; /* Full width of the container */
+    width: 100%; /* Full width of the narrower container */
     height: 100%; /* Full height */
     object-fit: cover; /* Ensures the image isn't distorted */
-    border-radius: 10px; /* Add border-radius */
-    transition: transform 0.3s ease-in-out; /* Smooth hover animation */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.category-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+.image-container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Adds stronger shadow on hover */
 }
 
 .image-container:hover img {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.05); /* Slight hover zoom */
 }
 
-.image-container:hover .category-button {
-    opacity: 1; /* Show button on hover */
-}
-
-/* Optional: Add further hover effects for the image container */
-.image-container:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
-}
