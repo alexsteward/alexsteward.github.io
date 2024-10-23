@@ -51,15 +51,6 @@ header h1 strong {
     font-size: 1.2em; /* Adjust bullet point size */
 }
 
-header h2 {
-    font-size: 1.5em; /* Adjust size as needed */
-    color: white; /* Change to your desired color */
-    text-align: center; /* Center the text */
-    margin-top: 5px; /* Add margin for spacing */
-    text-decoration: underline; /* Underline for emphasis (optional) */
-}
-
-
 main {
     display: flex;
     justify-content: space-evenly;
