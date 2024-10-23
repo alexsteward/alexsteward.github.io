@@ -55,7 +55,9 @@ header h2 {
     font-size: 1em; /* Description text size */
     max-width: 600px; /* Max width for the description */
     margin: 5px auto; /* Center the text */
+    line-height: 1.5; /* Improve readability */
 }
+
 
 
 
