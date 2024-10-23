@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Use a better font if available, e.g., 'Roboto' */
+    font-family: 'Arial', sans-serif; /* Fallback font */
     background-image: url('logo.png'); /* Background dojo image */
     background-size: cover;
     background-position: center;
@@ -30,7 +30,7 @@ header h1 {
     z-index: 2;
     text-shadow: 2px 2px 4px black; /* Black outline for visibility */
     padding: 20px;
-    font-family: 'Impact', sans-serif; /* Bold and blocky look */
+    font-family: 'Lilita One', sans-serif; /* Changed to Lilita One */
 }
 
 header h1::after {
@@ -38,8 +38,9 @@ header h1::after {
     display: block;
     width: 150px;
     height: 4px;
-    background-color: black;
+    background-color: white; /* Underline color set to white */
     margin: 10px auto 0;
+    box-shadow: 0 0 0 1px black; /* Black outline for the underline */
 }
 
 main {
@@ -59,6 +60,7 @@ main {
 .column {
     text-align: center;
     width: 18%; /* Narrower width */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
 
 .column h2 {
@@ -74,8 +76,22 @@ main {
     display: block;
     width: 100px;
     height: 4px;
-    background-color: black;
+    background-color: white; /* Underline color set to white */
     margin: 5px auto 20px;
+    box-shadow: 0 0 0 1px black; /* Black outline for the underline */
+}
+
+/* Hover animations for columns */
+.column.left:hover {
+    transform: translateX(10px); /* Move right */
+}
+
+.column.middle:hover {
+    transform: scale(1.1); /* Zoom in */
+}
+
+.column.right:hover {
+    transform: translateX(-10px); /* Move left */
 }
 
 .image-container {
