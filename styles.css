@@ -69,11 +69,21 @@ main {
 }
 
 .column h2 {
-    color: black;
+    color: white; /* Change text color to white */
     font-size: 24px;
     margin-bottom: 10px;
     position: relative;
-    text-shadow: 0px 0px 2px white; /* White outline for text visibility */
+    text-shadow: 1px 1px 2px black; /* Black outline for visibility */
+}
+
+/* Keeps the underline styling */
+.column h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: white; /* Underline color */
+    margin: 5px auto 20px;
 }
 
 .image-container {
