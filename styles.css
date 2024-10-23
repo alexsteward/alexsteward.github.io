@@ -22,13 +22,13 @@ header {
 }
 
 header h1 {
-    color: black;
+    color: white;
     font-size: 64px;
     text-transform: uppercase;
     letter-spacing: 8px;
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 4px white; /* White outline for visibility */
+    text-shadow: 2px 2px 4px black; /* White outline for visibility */
     padding: 20px;
     font-family: 'Lilita One', sans-serif; /* Use Lilita One font */
 }
