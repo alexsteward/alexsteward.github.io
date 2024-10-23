@@ -1,21 +1,60 @@
+/* Styling for the About Page */
 .about {
-    margin: 20px; /* Add some margin around the content */
-    padding: 20px; /* Add padding inside the content */
-    background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.about h2 {
-    color: #333; /* Dark color for the section heading */
-    text-align: center; /* Center the heading */
-    margin-bottom: 10px; /* Space below the heading */
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.about p {
-    color: #555; /* Medium gray color for text */
-    line-height: 1.6; /* Increase line height for readability */
-    margin-bottom: 15px; /* Space between paragraphs */
+header h1 {
+    color: white; /* Text color */
+    font-size: 64px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 2px 2px 4px black; /* Black outline */
+    font-family: 'Lilita One', sans-serif; /* Font */
+}
+
+header h2 {
+    color: #61dafb; /* Light blue color for emphasis */
+    font-size: 1.5em; /* Sub-title size for EST. 2016 */
+}
+
+.founder {
+    text-align: center;
+}
+
+.founder-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.founder-skin {
+    width: 32px; /* Image size */
+    height: 32px; /* Image size */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.founder-description {
+    color: white; /* Text color for description */
+}
+
+.founder-description h3 {
+    font-size: 1.2em; /* Founder name size */
+    margin: 0;
+}
+
+.founder-description p {
+    font-size: 1em; /* Description text size */
+    max-width: 600px; /* Max width for the description */
+    margin: 5px auto; /* Center the text */
 }
 
 
