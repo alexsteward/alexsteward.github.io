@@ -22,9 +22,9 @@ header {
 }
 
 .dojo-image {
-    width: 30px; /* Adjust size as needed */
+    width: 30px; /* Adjusted size to make it smaller */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 10px; /* Spacing between images and title */
+    margin: 0 10px; /* Adjust spacing between images and title */
     filter: drop-shadow(2px 2px 4px black); /* Drop shadow for depth */
     transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
@@ -51,11 +51,6 @@ header h1::after {
     box-shadow: 0 0 0 1px black; /* Black outline for the underline */
 }
 
-/* Add hover effect for dojo images */
-.dojo-image:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-}
-
 main {
     display: flex;
     justify-content: space-evenly;
@@ -73,7 +68,7 @@ main {
 .column {
     text-align: center;
     width: 18%; /* Narrower width */
-    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    position: relative; /* For absolute positioning of the button */
 }
 
 .column h2 {
@@ -95,17 +90,24 @@ main {
     box-shadow: 0 0 0 1px black; /* Black outline for the underline */
 }
 
-/* Hover animations for columns */
-.column.left:hover {
-    transform: translateX(10px) rotate(2deg); /* Move right and sway */
+.category-button {
+    display: none; /* Hidden by default */
+    background-color: black; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    font-family: 'Lilita One', sans-serif; /* Font family */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+    position: absolute; /* Positioning */
+    bottom: 20px; /* Positioned at the bottom of the column */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the button */
 }
 
-.column.middle:hover {
-    transform: scale(1.1); /* Zoom in */
-}
-
-.column.right:hover {
-    transform: translateX(-10px) rotate(-2deg); /* Move left and sway */
+.column:hover .category-button {
+    display: block; /* Show button on hover */
 }
 
 .image-container {
