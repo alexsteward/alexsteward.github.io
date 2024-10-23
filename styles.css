@@ -1,13 +1,13 @@
 /* styles.css */
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: url('https://source.unsplash.com/1600x900/?martial-arts') no-repeat center center fixed; /* Cool background image */
+    font-family: Arial, sans-serif; /* Sets the font for the entire page */
+    line-height: 1.6; /* Increases the line height for better readability */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    background: url('https://source.unsplash.com/1600x900/?martial-arts') no-repeat center center fixed; /* Sets a background image */
     background-size: cover; /* Ensures the image covers the entire background */
-    color: white; /* Text color */
+    color: white; /* Sets the text color to white */
 }
 
 header {
@@ -17,7 +17,7 @@ header {
 }
 
 h1 {
-    font-size: 48px; /* Title font size */
+    font-size: 48px; /* Sets the title font size */
     margin: 0; /* Removes default margin */
 }
 
