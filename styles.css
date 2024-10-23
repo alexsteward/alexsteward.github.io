@@ -93,7 +93,7 @@ main {
 
 .image-container {
     position: relative;
-    width: 80%; 
+    width: 85%; 
     height: 800px; /* Adjust height */
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
