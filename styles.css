@@ -138,17 +138,17 @@ main {
 
 /* Left image tilts to the right */
 .column.left .image-container:hover img {
-    transform: rotate(5deg);
+    transform: scale(1.15);
 }
 
 /* Middle image zooms in */
 .column.middle .image-container:hover img {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 /* Right image tilts to the left */
 .column.right .image-container:hover img {
-    transform: rotate(-5deg);
+    transform: scale(1.15);
 }
 
 /* Show the button on hover for all images */
