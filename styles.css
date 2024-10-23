@@ -21,6 +21,14 @@ header {
     position: relative;
 }
 
+.dojo-image {
+    width: 50px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 20px; /* Spacing between images and title */
+    filter: drop-shadow(2px 2px 4px black); /* Drop shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
 header h1 {
     color: white; /* Changed to white */
     font-size: 64px;
@@ -41,6 +49,11 @@ header h1::after {
     background-color: white; /* Underline color set to white */
     margin: 10px auto 0;
     box-shadow: 0 0 0 1px black; /* Black outline for the underline */
+}
+
+/* Add hover effect for dojo images */
+.dojo-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
 main {
@@ -101,7 +114,7 @@ main {
     height: 800px; /* Tall height */
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Drop shadow for depth */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smoother transitions */
+    transition: box-shadow 0.3s ease-in-out; /* Smoother transitions */
 }
 
 .image-container img {
