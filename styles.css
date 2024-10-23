@@ -22,15 +22,18 @@ header {
 }
 
 header h1 {
-    color: white;
+    color: black;
     font-size: 64px;
     text-transform: uppercase;
     letter-spacing: 8px;
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 4px black; /* White outline for visibility */
+    text-shadow: 2px 2px 4px white; /* White outline for visibility */
     padding: 20px;
     font-family: 'Lilita One', sans-serif; /* Use Lilita One font */
+    text-decoration: underline; /* Add underline */
+    text-decoration-color: white; /* Set underline color to white */
+    text-decoration-thickness: 4px; /* Set thickness of underline */
 }
 
 header h1 strong {
