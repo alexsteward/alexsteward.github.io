@@ -175,44 +175,101 @@ main {
 
 /* Styling for About Us page */
 .about {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
-    font-family: Arial, sans-serif; /* Ensure font consistency */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.about h2 {
-    font-size: 36px; /* Title size */
-    color: white;
-    text-shadow: 2px 2px 4px black; /* White text with black outline */
-    margin-bottom: 20px; /* Space between title and content */
-    position: relative;
+/* Body styles */
+body {
+    font-family: 'Lilita One', cursive;
+    background-color: #f0f0f0; /* Light background for better contrast */
+    color: #333; /* Dark text color for readability */
 }
 
-.about p {
-    font-size: 18px; /* Text size */
-    color: black; /* Text color */
-    line-height: 1.6; /* Line height for better readability */
-    margin-bottom: 20px; /* Space between paragraphs */
+/* Header styles */
+header {
+    background-color: #282c34; /* Dark header */
+    color: white; /* White text */
+    padding: 20px; /* Padding around the header */
+    text-align: center; /* Centered text */
 }
 
-/* Adjusting for mobile responsiveness */
+header h1 {
+    font-size: 2.5em; /* Main title size */
+    margin-bottom: 10px; /* Space below title */
+}
+
+header h2 {
+    font-size: 1.5em; /* Sub-title size for EST. 2016 */
+    color: #61dafb; /* Light blue color for emphasis */
+}
+
+/* Main content styles */
+main {
+    padding: 20px; /* Padding for the main section */
+}
+
+.content {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-around; /* Evenly space out the columns */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Column styles */
+.column {
+    background-color: white; /* White background for columns */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    margin: 10px; /* Margin around each column */
+    padding: 15px; /* Padding inside columns */
+    flex: 1 1 30%; /* Flex properties for responsiveness */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.column h2 {
+    font-size: 1.8em; /* Subheading size */
+    margin-bottom: 10px; /* Space below subheading */
+}
+
+/* Image container styles */
+.image-container {
+    text-align: center; /* Center the content in the image container */
+    margin-top: 10px; /* Space above image */
+}
+
+.image-container img {
+    max-width: 100%; /* Responsive images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Slightly rounded images */
+}
+
+/* Button styles */
+.category-button {
+    background-color: #61dafb; /* Button color */
+    border: none; /* No border */
+    color: white; /* White text on button */
+    padding: 10px 20px; /* Padding inside buttons */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Button text size */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.category-button:hover {
+    background-color: #4fa3c7; /* Darker blue on hover */
+}
+
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
-    .about {
-        width: 95%;
-        padding: 20px;
+    .content {
+        flex-direction: column; /* Stack columns on small screens */
+        align-items: center; /* Center columns */
     }
 
-    .about h2 {
-        font-size: 28px;
+    .column {
+        flex: 1 1 90%; /* Take up more width on small screens */
     }
-
-    .about p {
-        font-size: 16px;
-    }
+}
 
 
