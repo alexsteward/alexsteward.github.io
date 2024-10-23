@@ -1,48 +1,5 @@
-
-/* Styling for About Us page */
-.about {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
-    font-family: Arial, sans-serif; /* Ensure font consistency */
-}
-
-.about h2 {
-    font-size: 36px; /* Title size */
-    color: white;
-    text-shadow: 2px 2px 4px black; /* White text with black outline */
-    margin-bottom: 20px; /* Space between title and content */
-    position: relative;
-}
-
-.about p {
-    font-size: 18px; /* Text size */
-    color: black; /* Text color */
-    line-height: 1.6; /* Line height for better readability */
-    margin-bottom: 20px; /* Space between paragraphs */
-}
-
-/* Adjusting for mobile responsiveness */
-@media (max-width: 768px) {
-    .about {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .about h2 {
-        font-size: 28px;
-    }
-
-    .about p {
-        font-size: 16px;
-    }
-
-
-* {
+/* Styling for the Main Page */
+.main-page {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -190,3 +147,72 @@ main {
 .image-container:hover .category-button {
     opacity: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styling for About Us page */
+.about {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    font-family: Arial, sans-serif; /* Ensure font consistency */
+}
+
+.about h2 {
+    font-size: 36px; /* Title size */
+    color: white;
+    text-shadow: 2px 2px 4px black; /* White text with black outline */
+    margin-bottom: 20px; /* Space between title and content */
+    position: relative;
+}
+
+.about p {
+    font-size: 18px; /* Text size */
+    color: black; /* Text color */
+    line-height: 1.6; /* Line height for better readability */
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+/* Adjusting for mobile responsiveness */
+@media (max-width: 768px) {
+    .about {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .about h2 {
+        font-size: 28px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+
