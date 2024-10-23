@@ -1,3 +1,49 @@
+.about {
+    margin: 20px; /* Add some margin around the content */
+    padding: 20px; /* Add padding inside the content */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.about h2 {
+    color: #333; /* Dark color for the section heading */
+    text-align: center; /* Center the heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.about p {
+    color: #555; /* Medium gray color for text */
+    line-height: 1.6; /* Increase line height for readability */
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Styling for the Main Page */
 .main-page {
     margin: 0;
