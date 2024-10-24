@@ -30,18 +30,13 @@ header h1 {
     margin-bottom: 50px;
 }
 
-/* Section styling */
-section {
-    width: 80%;
-    margin-bottom: 50px;
-}
-
-.why-join, .how-to-join {
+/* Centering the 'Why Join The Dojo?' section text */
+.why-join {
     background-color: rgba(128, 128, 128, 0.5);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    text-align: center; /* Center text */
 }
 
 .why-join h2, .how-to-join h2 {
@@ -50,10 +45,11 @@ section {
     text-shadow: 2px 2px 4px black;
 }
 
-.why-join p, .how-to-join p {
+.why-join p {
     font-size: 1.1rem;
     color: white;
     line-height: 1.6;
+    text-align: center; /* Center text */
 }
 
 /* Feature List */
@@ -89,10 +85,24 @@ section {
     color: #ffce00;
 }
 
-/* How to Join List */
+/* How to Join Section Styling */
+.how-to-join {
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center text */
+}
+
+/* Adding light black outline to steps */
 .steps-list {
     list-style: none;
     padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light black outline */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background for better contrast */
 }
 
 .steps-list li {
@@ -101,6 +111,8 @@ section {
     text-align: left;
     display: flex;
     align-items: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 .step-number {
