@@ -36,7 +36,7 @@ header h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center; /* Center text */
+    text-align: center;
 }
 
 .why-join h2, .how-to-join h2 {
@@ -49,17 +49,18 @@ header h1 {
     font-size: 1.1rem;
     color: white;
     line-height: 1.6;
-    text-align: center; /* Center text */
+    text-align: center;
 }
 
 /* Feature List */
-.feature-list {
+.features-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
-.feature {
+.feature-box {
     background-color: rgba(30, 30, 30, 0.9);
     padding: 20px;
     border-radius: 8px;
@@ -67,22 +68,24 @@ header h1 {
     width: 30%;
     margin: 10px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature h3 {
+.feature-box h2 {
     font-size: 1.5rem;
     color: white;
     margin-top: 10px;
 }
 
-.feature p {
+.feature-box p {
     color: #dcdcdc;
     font-size: 1rem;
 }
 
-.feature i {
-    font-size: 2.5rem;
-    color: #ffce00;
+/* Hover effect for feature boxes */
+.feature-box:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 }
 
 /* How to Join Section Styling */
@@ -91,7 +94,7 @@ header h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center; /* Center text */
+    text-align: center;
 }
 
 /* Adding light black outline to steps */
@@ -102,7 +105,7 @@ header h1 {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent background for better contrast */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .steps-list li {
@@ -172,7 +175,7 @@ footer.footer {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .feature {
+    .feature-box {
         width: 45%;
     }
 }
@@ -182,7 +185,7 @@ footer.footer {
         font-size: 3rem;
     }
 
-    .feature {
+    .feature-box {
         width: 100%;
         margin-bottom: 20px;
     }
