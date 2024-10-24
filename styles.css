@@ -1,4 +1,29 @@
-/* Styles for the join-now page */
+/* Navigation Buttons Styling */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.nav-button {
+    background-color: #5865F2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin: 0 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #4752C4;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Body Styling for Join Now Page */
 body.join-now {
     font-family: 'Lilita One', sans-serif;
     background: url('logo.png') no-repeat center center fixed;
@@ -184,71 +209,6 @@ footer.footer {
     header h1 {
         font-size: 3rem;
     }
-/* Navigation Buttons Styling */
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.nav-button {
-    background-color: #5865F2;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    margin: 0 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-button:hover {
-    background-color: #4752C4;
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-/* Body Styling for Join Now Page */
-body.join-now {
-    font-family: 'Lilita One', sans-serif;
-    background: url('logo.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-header {
-    text-align: center;
-    margin-top: 50px;
-}
-
-header h1 {
-    font-size: 4rem;
-    color: white;
-    text-shadow: 4px 4px 8px black;
-}
-
-.sub-header {
-    font-size: 1.5rem;
-    color: white;
-    text-shadow: 2px 2px 4px black;
-    margin-bottom: 50px;
-}
-
-/* Centering the 'Why Join The Dojo?' section text */
-.why-join {
-    background-color: rgba(128, 128, 128, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
 
     .feature-box {
         width: 100%;
