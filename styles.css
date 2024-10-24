@@ -45,8 +45,8 @@ header h1 {
 }
 
 .founder-image {
-    width: 32px; /* Image size */
-    height: 32px; /* Image size */
+    width: 200px; /* Image size */
+    height: 200px; /* Image size */
     margin-bottom: 5px; /* Space below the image */
 }
 
