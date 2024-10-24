@@ -226,80 +226,133 @@ footer.footer {
 
 
 
-/* About Us Section Styles */
-.about {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center horizontally */
-    padding: 20px; /* General padding */
+body.about {
+    font-family: 'Lilita One', cursive;
+    background: url('dojo-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-/* Founder Section Styles */
-/* Founder Section Styles */
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dojo-header {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    margin-bottom: 30px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
 .founder {
-    margin-bottom: 30px; /* Space below the founder section */
-    text-align: center; /* Center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.founder-info-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
 }
 
 .founder-image {
-    width: 200px; /* Image size */
-    height: 200px; /* Image size */
-    margin-bottom: 5px; /* Space below the image */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
 }
 
-/* Founder Name Styles */
-.founder-name {
-    color: white; /* Text color */
-    text-shadow: 0px 0px 2px black; /* Black outline */
-    font-size: 20px; /* Increased size of founder name for emphasis */
-    font-weight: bold; /* Bold font for prominence */
-    margin-bottom: 5px; /* Space below name */
+.founder-text h2 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
 }
 
-/* Founder Description Styles */
-.founder-description {
-    color: white; /* Text color */
-    text-align: center; /* Center text */
-    text-shadow: 0px 0px 2px black; /* Black outline for text visibility */
-    line-height: 1.5; /* Improve readability */
-    max-width: 600px; /* Limit the width for better formatting */
-    margin: 0 auto; /* Center the paragraph */
+.founder-text p {
+    font-size: 1.2rem;
+    color: lightgray;
 }
 
-/* Dojo Information Styles */
 .dojo-info {
-    margin-bottom: 30px; /* Space below the dojo section */
-    text-align: center; /* Center the text */
-    color: white; /* Text color */
-    text-shadow: 0px 0px 2px black; /* Black outline for text visibility */
-    line-height: 1.5; /* Improve readability with increased line height */
-    max-width: 600px; /* Limit width for better formatting */
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-/* Discord Button Styles */
+.dojo-info-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.dojo-info-box h2 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.dojo-info-box p {
+    font-size: 1.2rem;
+    color: lightgray;
+}
+
+.mission-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mission-header {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    margin-bottom: 20px;
+}
+
+.mission-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: lightgray;
+}
+
 .discord-link {
-    margin-top: 10px; /* Space above the link */
-}
-
-.discord-title {
-    color: white; /* Text color */
-    text-shadow: 0px 0px 2px black; /* Black outline */
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .discord-button {
-    background-color: #4a90e2; /* Blue color */
-    color: white; /* Text color */
-    padding: 8px 16px; /* Reduced padding */
-    border-radius: 20px; /* Rounded edges */
-    text-decoration: none; /* Remove underline */
-    font-size: 14px; /* Font size */
-    font-weight: bold; /* Bold font for emphasis */
-    transition: background-color 0.3s ease; /* Transition effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    background-color: #7289da;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px black;
+    transition: background-color 0.3s ease;
 }
 
 .discord-button:hover {
-    background-color: #357ABD; /* Darker blue on hover */
+    background-color: #5b6eae;
 }
 
 
