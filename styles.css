@@ -1,34 +1,207 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('logo.png'); /* Background dojo image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin: 0; /* Remove default margin */
+/* Join Now Section */
+.join-now {
+    padding: 60px 20px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
 }
 
-/* Header Styles */
-header {
+/* Join Info Section */
+.join-now .join-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.join-now .join-info h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    text-shadow: 2px 2px 6px black;
+}
+
+.join-now .join-info p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+/* Feature List (Why Join Features) */
+.join-now .feature-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.join-now .feature {
+    width: 30%;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.join-now .feature:hover {
+    transform: translateY(-10px);
+    background-color: #333333;
+}
+
+.join-now .feature i {
+    font-size: 48px;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.join-now .feature h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.join-now .feature p {
+    font-size: 16px;
+    color: #bbbbbb;
+}
+
+/* How to Join Section */
+.join-now .how-to-join {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.join-now .how-to-join h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    text-shadow: 2px 2px 6px black;
+}
+
+.join-now .how-to-join p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.join-now .steps-list {
+    list-style: none;
+    padding: 0;
+    color: #ddd;
+    font-size: 18px;
+    text-align: left;
+}
+
+.join-now .steps-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.join-now .step-number {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
-    position: relative;
+    border-radius: 50%;
+    margin-right: 15px;
 }
 
-header h1 {
-    color: white; /* Text color */
-    font-size: 32px;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    position: relative;
-    z-index: 2;
-    text-shadow: 2px 2px 4px black; /* Black outline */
-    padding: 20px;
-    font-family: 'Lilita One', sans-serif; /* Font */
+/* Discord Join Section */
+.join-now .discord-join {
+    text-align: center;
 }
+
+.join-now .discord-join h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    text-shadow: 2px 2px 6px black;
+}
+
+.join-now .discord-join p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.join-now .discord-button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.join-now .discord-button:hover {
+    background-color: #357abd;
+}
+
+/* Footer Section */
+.join-now .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #888888;
+    font-size: 14px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .join-now .feature-list {
+        flex-direction: column;
+    }
+
+    .join-now .feature {
+        width: 100%;
+    }
+
+    .join-now .step-number {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* About Us Section Styles */
 .about {
