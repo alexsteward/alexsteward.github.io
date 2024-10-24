@@ -39,14 +39,15 @@ header h1 {
 }
 
 /* Founder Section Styles */
+/* Founder Section Styles */
 .founder {
     margin-bottom: 30px; /* Space below the founder section */
     text-align: center; /* Center the text */
 }
 
 .founder-image {
-    width: 200px; /* Image size */
-    height: 200px; /* Image size */
+    width: 32px; /* Image size */
+    height: 32px; /* Image size */
     margin-bottom: 5px; /* Space below the image */
 }
 
@@ -57,6 +58,16 @@ header h1 {
     font-size: 20px; /* Increased size of founder name for emphasis */
     font-weight: bold; /* Bold font for prominence */
     margin-bottom: 5px; /* Space below name */
+}
+
+/* Founder Description Styles */
+.founder-description {
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    text-shadow: 0px 0px 2px black; /* Black outline for text visibility */
+    line-height: 1.5; /* Improve readability */
+    max-width: 600px; /* Limit the width for better formatting */
+    margin: 0 auto; /* Center the paragraph */
 }
 
 /* Dojo Information Styles */
