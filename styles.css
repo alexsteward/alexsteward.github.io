@@ -5,7 +5,7 @@ body.join-now {
     background-size: cover;
     color: white;
     margin: 0;
-    padding-top: 80px; /* Add padding to push content below the address bar */
+    padding-top: 120px; /* Increased padding to avoid hiding content */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +16,12 @@ body.join-now {
 .nav-buttons {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
     position: fixed; /* Keeps navigation at the top */
-    top: 20px; /* Adjusts to stay visible */
+    top: 0; /* Ensures visibility */
     width: 100%;
-    z-index: 1;
+    z-index: 2; /* Keeps navigation above other content */
+    background-color: rgba(0, 0, 0, 0.7); /* Slight background for visibility */
+    padding: 10px 0;
 }
 
 .nav-button {
@@ -43,14 +44,14 @@ body.join-now {
 
 header {
     text-align: center;
-    margin-top: 80px; /* Ensures header text appears fully visible */
+    margin-top: 40px; /* Adjusted for better visibility */
 }
 
 header h1 {
     font-size: 4rem;
     color: white;
     text-shadow: 4px 4px 8px black;
-    margin-top: 20px; /* Add a slight margin to avoid overlap */
+    margin-top: 40px; /* Ensure header isn't cut off */
 }
 
 .sub-header {
