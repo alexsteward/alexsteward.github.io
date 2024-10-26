@@ -1,8 +1,26 @@
+/* Adjust top padding on the join-now page to ensure content is visible */
+body.join-now {
+    font-family: 'Lilita One', sans-serif;
+    background: url('logo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding-top: 80px; /* Add padding to push content below the address bar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Navigation Buttons Styling */
 .nav-buttons {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    position: fixed; /* Keeps navigation at the top */
+    top: 20px; /* Adjusts to stay visible */
+    width: 100%;
+    z-index: 1;
 }
 
 .nav-button {
@@ -23,29 +41,16 @@
     cursor: pointer;
 }
 
-/* Body Styling for Join Now Page */
-body.join-now {
-    font-family: 'Lilita One', sans-serif;
-    background: url('logo.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 header {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 80px; /* Ensures header text appears fully visible */
 }
 
 header h1 {
     font-size: 4rem;
     color: white;
     text-shadow: 4px 4px 8px black;
+    margin-top: 20px; /* Add a slight margin to avoid overlap */
 }
 
 .sub-header {
