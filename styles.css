@@ -512,25 +512,29 @@ header {
 
 
 
-/* Styling for the Main Page */
+/* Main Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .main-page {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('logo.png'); /* Background dojo image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
+/* Header Styling */
 header {
     display: flex;
-    flex-direction: column; /* Stack title and EST. below */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 20vh;
@@ -538,46 +542,43 @@ header {
 }
 
 header h1 {
-    color: white; /* Text color */
+    color: white;
     font-size: 64px;
     text-transform: uppercase;
     letter-spacing: 8px;
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 4px black; /* Black outline */
+    text-shadow: 2px 2px 4px black;
     padding: 20px;
-    font-family: 'Lilita One', sans-serif; /* Font */
+    font-family: 'Lilita One', sans-serif;
 }
 
-/* Pseudo-element for the underline */
 header h1::after {
-    content: ''; /* Empty content */
-    display: block; /* Block level */
-    width: 100%; /* Full width */
-    height: 4px; /* Thickness of the underline */
-    background-color: white; /* Underline color */
-    position: absolute; /* Position it absolutely */
-    left: 0; /* Align to the left */
-    bottom: -2px; /* Adjusted distance from text (closer) */
-    z-index: -1; /* Place it behind the text */
-}
-
-header h1 strong {
-    font-size: 1.2em; /* Adjust bullet point size */
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    z-index: -1;
 }
 
 header h2 {
-    font-size: 1.5em; /* Adjust size as needed */
-    color: white; /* Change to your desired color */
-    text-align: center; /* Center the text */
-    margin-top: 5px; /* Add margin for spacing */
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
 }
 
+/* Main Content Styling */
 main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 70vh; /* Takes up remaining screen */
+    height: 70vh;
+    padding: 0 5%;
 }
 
 .content {
@@ -587,48 +588,54 @@ main {
     width: 100%;
 }
 
+/* Column Styling */
 .column {
-    text-align: center; /* Center the text */
-    width: 18%; /* Narrower width */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
+    text-align: center;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .column h2 {
-    color: white; /* White text color */
-    font-size: 24px; /* Font size */
-    margin-bottom: 10px; /* Space between title and image */
-    position: relative; /* Position relative for underline effect */
-    text-shadow: 0px 0px 2px black; /* Black outline for text visibility */
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+    text-shadow: 0px 0px 2px black;
 }
 
-/* Keeps the underline styling */
 .column h2::after {
     content: '';
     display: block;
     width: 100px;
     height: 4px;
-    background-color: white; /* Underline color */
+    background-color: white;
     margin: 5px auto 20px;
 }
 
+/* Image Container Styling */
 .image-container {
     position: relative;
-    width: 85%; 
-    height: 800px; /* Adjust height */
+    width: 85%;
+    height: 800px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
-    border-radius: 10px; /* Add border-radius */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .image-container img {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Ensures the image isn't distorted */
-    border-radius: 10px; /* Add border-radius */
-    transition: transform 0.3s ease-in-out; /* Smooth hover animation */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Images */
+.image-container:hover img {
+    transform: scale(1.15);
 }
 
 .category-button {
@@ -642,33 +649,71 @@ main {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.image-container:hover img {
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Left image tilts to the right */
-.column.left .image-container:hover img {
-    transform: scale(1.15);
-}
-
-/* Middle image zooms in */
-.column.middle .image-container:hover img {
-    transform: scale(1.15);
-}
-
-/* Right image tilts to the left */
-.column.right .image-container:hover img {
-    transform: scale(1.15);
-}
-
-/* Show the button on hover for all images */
 .image-container:hover .category-button {
     opacity: 1;
 }
+
+/* Responsive Design Adjustments */
+@media (max-width: 1200px) {
+    .column {
+        width: 28%;
+    }
+
+    .column h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 48px;
+    }
+
+    main {
+        flex-direction: column;
+        height: auto;
+        padding: 0 2%;
+    }
+
+    .content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .column {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .image-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .column h2 {
+        font-size: 18px;
+    }
+
+    .image-container {
+        height: 250px;
+    }
+
+    .category-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
 
 
 
