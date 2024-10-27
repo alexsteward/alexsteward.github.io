@@ -1,11 +1,11 @@
-/* Adjust top padding on the join-now page to ensure content is visible */
+/* Base styles for join-now page */
 body.join-now {
     font-family: 'Lilita One', sans-serif;
     background: url('logo.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     margin: 0;
-    padding-top: 120px; /* Increased padding to avoid hiding content */
+    padding-top: 120px; /* Padding to avoid hiding content */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,10 +17,10 @@ body.join-now {
     display: flex;
     justify-content: center;
     position: fixed; /* Keeps navigation at the top */
-    top: 0; /* Ensures visibility */
+    top: 0;
     width: 100%;
-    z-index: 2; /* Keeps navigation above other content */
-    background-color: rgba(0, 0, 0, 0.7); /* Slight background for visibility */
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 0;
 }
 
@@ -44,14 +44,13 @@ body.join-now {
 
 header {
     text-align: center;
-    margin-top: 40px; /* Adjusted for better visibility */
+    margin-top: 40px;
 }
 
 header h1 {
     font-size: 4rem;
     color: white;
     text-shadow: 4px 4px 8px black;
-    margin-top: 40px; /* Ensure header isn't cut off */
 }
 
 .sub-header {
@@ -61,7 +60,7 @@ header h1 {
     margin-bottom: 50px;
 }
 
-/* Centering the 'Why Join The Dojo?' section text */
+/* Why Join Section Styling */
 .why-join {
     background-color: rgba(128, 128, 128, 0.5);
     padding: 20px;
@@ -80,10 +79,9 @@ header h1 {
     font-size: 1.1rem;
     color: white;
     line-height: 1.6;
-    text-align: center;
 }
 
-/* Feature List */
+/* Feature List Styling */
 .features-section {
     display: flex;
     justify-content: space-around;
@@ -115,11 +113,11 @@ header h1 {
 
 /* Hover effect for feature boxes */
 .feature-box:hover {
-    transform: scale(1.05); /* Slightly enlarges the box */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* How to Join Section Styling */
+/* How to Join Section */
 .how-to-join {
     background-color: rgba(128, 128, 128, 0.5);
     padding: 20px;
@@ -128,11 +126,10 @@ header h1 {
     text-align: center;
 }
 
-/* Adding light black outline to steps */
 .steps-list {
     list-style: none;
     padding: 0;
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Light black outline */
+    border: 1px solid rgba(0, 0, 0, 0.1);
     display: inline-block;
     padding: 10px 20px;
     border-radius: 8px;
@@ -142,7 +139,6 @@ header h1 {
 .steps-list li {
     font-size: 1.2rem;
     margin: 15px 0;
-    text-align: left;
     display: flex;
     align-items: center;
     color: white;
@@ -163,7 +159,7 @@ header h1 {
     font-size: 1.2rem;
 }
 
-/* Discord Button */
+/* Discord Join Section */
 .discord-join {
     text-align: center;
     margin-top: 30px;
@@ -196,7 +192,7 @@ header h1 {
     cursor: pointer;
 }
 
-/* Footer */
+/* Footer Styling */
 footer.footer {
     text-align: center;
     color: #dcdcdc;
@@ -205,12 +201,15 @@ footer.footer {
 }
 
 /* Responsive Design */
+
+/* Large tablets and smaller desktops (max-width 1200px) */
 @media (max-width: 1200px) {
     .feature-box {
         width: 45%;
     }
 }
 
+/* Tablets in portrait mode (max-width 768px) */
 @media (max-width: 768px) {
     header h1 {
         font-size: 3rem;
@@ -225,6 +224,33 @@ footer.footer {
         width: 95%;
     }
 }
+
+/* Mobile phones (max-width 576px) */
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .feature-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .why-join, .how-to-join {
+        width: 100%;
+    }
+
+    .discord-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
 
 
 
