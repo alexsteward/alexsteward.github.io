@@ -103,13 +103,6 @@ body.roster {
 
 
 
-
-
-
-
-
-
-
 /* Base styles for join-now page */
 body.join-now {
     font-family: 'Lilita One', sans-serif;
@@ -117,7 +110,7 @@ body.join-now {
     background-size: cover;
     color: white;
     margin: 0;
-    padding-top: 120px; /* Padding to avoid hiding content */
+    padding-top: 100px; /* Reduced padding to move content higher */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,7 +162,7 @@ header h1 {
     font-size: 1.5rem;
     color: white;
     text-shadow: 2px 2px 4px black;
-    margin-bottom: 50px;
+    margin-bottom: 30px; /* Adjusted margin */
 }
 
 /* Why Join Section Styling */
@@ -197,12 +190,13 @@ header h1 {
 /* Feature List Styling */
 .features-section {
     display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for a 3x3 layout */
     gap: 20px; /* Space between boxes */
     padding: 20px;
     max-width: 1200px; /* Optional: Limit max width */
 }
 
+/* Adjusted feature box styling */
 .feature-box {
     background-color: rgba(30, 30, 30, 0.9);
     padding: 20px;
@@ -370,6 +364,7 @@ footer.footer {
         font-size: 1rem;
     }
 }
+
 
 
 
