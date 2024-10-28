@@ -102,7 +102,6 @@ body.roster {
 
 
 
-
 /* Base styles for join-now page */
 body.join-now {
     font-family: 'Lilita One', sans-serif;
@@ -187,17 +186,30 @@ header h1 {
     line-height: 1.6;
 }
 
-/* Feature List Styling */
+/* Features Section Styling */
 .features-section {
-    display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for a 3x3 layout */
-    gap: 20px; /* Space between boxes */
-    padding: 20px;
-    max-width: 1200px; /* Optional: Limit max width */
-    margin-bottom: 40px; /* Spacing below the feature section */
+    text-align: center;
+    margin-top: 20px; /* Space above the features section */
 }
 
-/* Adjusted feature box styling */
+/* Features and Benefits Title */
+.features-title {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    margin-bottom: 20px; /* Space below the title */
+}
+
+/* Feature List Styling */
+.feature-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between boxes */
+    max-width: 1200px; /* Optional: Limit max width */
+}
+
+/* Feature Box Styling */
 .feature-box {
     background-color: rgba(30, 30, 30, 0.9);
     padding: 20px;
@@ -205,6 +217,9 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 30%; /* Take up to 30% of the row, 3 boxes per row */
+    max-width: calc(33.33% - 20px); /* Limit max width to create 3 in a row */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .feature-box h2 {
@@ -311,12 +326,8 @@ footer.footer {
 
 /* Large tablets and smaller desktops (max-width 1200px) */
 @media (max-width: 1200px) {
-    .features-section {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium-sized screens */
-    }
-
     .feature-box {
-        width: auto; /* Reset width for responsiveness */
+        max-width: calc(50% - 20px); /* 2 boxes per row on medium screens */
     }
 }
 
@@ -326,12 +337,8 @@ footer.footer {
         font-size: 3rem;
     }
 
-    .features-section {
-        grid-template-columns: 1fr; /* 1 column on smaller devices */
-    }
-
     .feature-box {
-        width: auto; /* Reset width for responsiveness */
+        max-width: 100%; /* 1 box per row on smaller devices */
         margin-bottom: 20px;
     }
 
@@ -351,11 +358,6 @@ footer.footer {
         padding-top: 10px;
     }
 
-    .feature-box {
-        width: auto; /* Reset width for responsiveness */
-        margin-bottom: 20px;
-    }
-
     .why-join, .how-to-join {
         width: 100%;
     }
@@ -365,6 +367,7 @@ footer.footer {
         font-size: 1rem;
     }
 }
+
 
 
 
