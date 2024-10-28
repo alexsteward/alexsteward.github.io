@@ -196,10 +196,11 @@ header h1 {
 
 /* Feature List Styling */
 .features-section {
-    display: flex;
-    justify-content: center; /* Center the feature boxes */
-    flex-wrap: wrap;
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between boxes */
     padding: 20px;
+    max-width: 1200px; /* Optional: Limit max width */
 }
 
 .feature-box {
@@ -207,8 +208,6 @@ header h1 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    width: 300px; /* Set a fixed width for better control */
-    margin: 10px; /* Margin between boxes */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -317,8 +316,12 @@ footer.footer {
 
 /* Large tablets and smaller desktops (max-width 1200px) */
 @media (max-width: 1200px) {
+    .features-section {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium-sized screens */
+    }
+
     .feature-box {
-        width: 45%; /* Adjust for medium-sized screens */
+        width: auto; /* Reset width for responsiveness */
     }
 }
 
@@ -328,8 +331,12 @@ footer.footer {
         font-size: 3rem;
     }
 
+    .features-section {
+        grid-template-columns: 1fr; /* 1 column on smaller devices */
+    }
+
     .feature-box {
-        width: 100%; /* Full width on smaller devices */
+        width: auto; /* Reset width for responsiveness */
         margin-bottom: 20px;
     }
 
@@ -350,7 +357,7 @@ footer.footer {
     }
 
     .feature-box {
-        width: 100%; /* Full width on mobile */
+        width: auto; /* Reset width for responsiveness */
         margin-bottom: 20px;
     }
 
@@ -363,6 +370,7 @@ footer.footer {
         font-size: 1rem;
     }
 }
+
 
 
 
