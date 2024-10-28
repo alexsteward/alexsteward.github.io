@@ -110,11 +110,10 @@ body.join-now {
     background-size: cover;
     color: white;
     margin: 0;
-    padding-top: 100px; /* Reduced padding to move content higher */
+    padding: 20px; /* Remove excess padding */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 /* Navigation Buttons Styling */
@@ -162,7 +161,7 @@ header h1 {
     font-size: 1.5rem;
     color: white;
     text-shadow: 2px 2px 4px black;
-    margin-bottom: 30px; /* Adjusted margin */
+    margin-bottom: 20px; /* Reduced margin */
 }
 
 /* Why Join Section Styling */
@@ -172,6 +171,7 @@ header h1 {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
+    margin-bottom: 20px; /* Added margin to separate it from features */
 }
 
 .why-join h2,
@@ -194,6 +194,7 @@ header h1 {
     gap: 20px; /* Space between boxes */
     padding: 20px;
     max-width: 1200px; /* Optional: Limit max width */
+    margin-bottom: 40px; /* Spacing below the feature section */
 }
 
 /* Adjusted feature box styling */
