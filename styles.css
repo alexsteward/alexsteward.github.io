@@ -222,6 +222,13 @@ header h1 {
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* Add hover effects */
+.feature-box:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+}
+
+
 .feature-box h2 {
     font-size: 1.5rem;
     color: white;
@@ -231,12 +238,6 @@ header h1 {
 .feature-box p {
     color: #dcdcdc;
     font-size: 1rem;
-}
-
-/* Hover effect for feature boxes */
-.feature-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
 }
 
 /* How to Join Section */
