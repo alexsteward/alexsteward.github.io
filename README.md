@@ -14,6 +14,10 @@ This project is an exploration of web development, where I aim to learn and impl
 - Current player roster
 - Links to our Discord server
 
+## Future Ideas
+
+- Add events category
+  
 ## Technologies Used
 
 - **HTML**: For structuring the content
