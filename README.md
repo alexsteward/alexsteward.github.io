@@ -11,6 +11,7 @@ This project is an exploration of web development, where I aim to learn and impl
 - Information about the community and its goals
 - List of features and benefits of joining
 - Instructions on how to join
+- Current player roster
 - Links to our Discord server
 
 ## Technologies Used
