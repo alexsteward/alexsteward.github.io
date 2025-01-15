@@ -11,6 +11,7 @@ header {
     color: #fff;
     padding: 60px 0;
 }
+
 .service-card {
     background-color: #192335; 
     border: 1px solid #444;
@@ -28,6 +29,7 @@ header {
 
 .service-icon {
     color: #4B5869;
+}
 
 .feature-box {
     background-color: #192335; 
@@ -50,6 +52,18 @@ header {
     color: #fff; 
 }
 
+/* Remove linear gradient */
+.feature-box:nth-child(2) {
+    background-color: #192335; 
+}
+
+.feature-box:nth-child(3) {
+    background-color: #192335; 
+}
+
+.feature-box:nth-child(4) {
+    background-color: #192335; 
+}
 
 form {
     background-color: #192335; 
@@ -69,18 +83,6 @@ footer {
     background-color: #192335; 
     color: #fff;
     padding: 20px 0;
-}
-
-.feature-box:nth-child(2) {
-    background: linear-gradient(135deg, #192335, #4B5869); 
-}
-
-.feature-box:nth-child(3) {
-    background: linear-gradient(135deg, #192335, #4B5869); 
-}
-
-.feature-box:nth-child(4) {
-    background: linear-gradient(135deg, #192335, #4B5869); 
 }
 
 @media (max-width: 768px) {
