@@ -1,109 +1,84 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
     background-color: #007bff;
-    color: white;
-    padding: 80px 0;
-    text-align: center;
-    position: relative;
-}
-
-header h1 {
-    font-size: 3.5rem;
-}
-
-header p {
-    font-size: 1.5rem;
-}
-
-#services {
+    color: #fff;
     padding: 60px 0;
 }
 
 .service-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 20px;
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.service-icon img {
-    width: 60px;
-    margin-bottom: 15px;
-}
-
-#features {
-    background-color: #ffffff;
-    padding: 60px 0;
-}
-
-.feature-box {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: white;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.feature-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-}
-
-.feature-icon i {
+.service-icon {
     color: #007bff;
 }
 
-#contact {
-    padding: 60px 0;
+.feature-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.feature-box:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.feature-icon {
+    color: #007bff;
+    margin-bottom: 10px;
 }
 
 form {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-form:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+form .btn-primary {
+    background-color: #007bff;
+    border: none;
 }
 
 footer {
-    background-color: #343a40;
-    color: white;
+    background-color: #333;
+    color: #fff;
     padding: 20px 0;
 }
 
 @media (max-width: 768px) {
     header {
-        padding: 60px 20px;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    #services, #features, #contact {
         padding: 40px 20px;
     }
 
-    .service-card, .feature-box, form {
+    .service-card {
         padding: 20px;
     }
+
+    .feature-box {
+        padding: 20px;
+    }
+
+    .form-control, .btn {
+        width: 100%;
+    }
 }
+
