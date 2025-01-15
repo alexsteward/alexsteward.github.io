@@ -1,7 +1,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
-    color: #fff; 
+    color: #fff;  
+    margin: 0;
     padding: 0;
 }
 
@@ -12,7 +13,7 @@ header {
 }
 
 .service-card {
-    background-color: #192335; 
+    background-color: #192335;  
     border: 1px solid #444;
     border-radius: 8px;
     padding: 20px;
@@ -31,7 +32,7 @@ header {
 }
 
 .feature-box {
-    background-color: #192335;  
+    background-color: #192335;
     border-radius: 8px;
     padding: 20px;
     color: #fff;  
@@ -47,6 +48,10 @@ header {
     margin-bottom: 10px;
 }
 
+.feature-box p {
+    color: #fff;
+}
+
 form {
     background-color: #192335;  
     padding: 30px;
@@ -57,7 +62,7 @@ form {
 form .btn-primary {
     background-color: #4B5869;
     border: none;
-    color: #fff; 
+    color: #fff;  
 }
 
 footer {
