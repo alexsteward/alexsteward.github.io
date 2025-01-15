@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
-    color: #fff;  
+    color: #fff;
     margin: 0;
     padding: 0;
 }
@@ -13,12 +13,12 @@ header {
 }
 
 .service-card {
-    background-color: #192335;  
+    background-color: #192335;
     border: 1px solid #444;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    color: #fff;  
+    color: #fff;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -28,14 +28,14 @@ header {
 }
 
 .service-icon {
-    color: #4B5869; 
+    color: #4B5869;
 }
 
 .feature-box {
     background-color: #192335;
     border-radius: 8px;
     padding: 20px;
-    color: #fff;  
+    color: #fff;
     transition: box-shadow 0.3s;
 }
 
@@ -44,7 +44,7 @@ header {
 }
 
 .feature-icon {
-    color: #4B5869;  
+    color: #4B5869;
     margin-bottom: 10px;
 }
 
@@ -53,16 +53,17 @@ header {
 }
 
 form {
-    background-color: #192335;  
+    background-color: #192335;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: #fff;
 }
 
 form .btn-primary {
     background-color: #4B5869;
     border: none;
-    color: #fff;  
+    color: #fff;
 }
 
 footer {
