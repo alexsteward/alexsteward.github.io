@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFixTech - Tech Repair & Sales</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #0056b3;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #dcdcdc;
+        }
+
+        section {
+            padding: 50px 0;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .services, .products, .contact {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .services h2, .products h2, .contact h2 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .service-item, .product-item {
+            margin-bottom: 15px;
+        }
+
+        .service-item h3, .product-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-item p, .product-item p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>iFixTech</h1>
+        <p>Your Reliable Tech Repair & Sales Partner</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="services">
+        <div class="services">
+            <h2>Our Services</h2>
+            <div class="service-item">
+                <h3>Device Repair</h3>
+                <p>We repair all types of devices, from smartphones to laptops, with fast turnaround times.</p>
+            </div>
+            <div class="service-item">
+                <h3>Software Troubleshooting</h3>
+                <p>Need help fixing software issues or setting up new software? We’ve got you covered.</p>
+            </div>
+            <div class="service-item">
+                <h3>Data Recovery</h3>
+                <p>Accidentally deleted files? Let us help you recover your important data safely.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="products">
+            <h2>Our Products</h2>
+            <div class="product-item">
+                <h3>Tech Accessories</h3>
+                <p>High-quality accessories for smartphones, laptops, and other devices available at affordable prices.</p>
+            </div>
+            <div class="product-item">
+                <h3>Refurbished Devices</h3>
+                <p>Shop for refurbished devices that are tested and verified, backed by our warranty.</p>
+            </div>
+            <div class="product-item">
+                <h3>Repair Kits</h3>
+                <p>Looking to repair your device yourself? Get our DIY repair kits for all skill levels.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+            <p>Email: support@ifixtech.tech</p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Tech Street, Suite 456, Tech City, TX, 78901</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 iFixTech. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
