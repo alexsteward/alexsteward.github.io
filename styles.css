@@ -1,148 +1,109 @@
-* {
-    box-sizing: border-box;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 0 20px;
-}
-
 header {
-    background-color: #ffffff;
-    color: #006400;
-    padding: 40px 0;
+    background-color: #007bff;
+    color: white;
+    padding: 80px 0;
     text-align: center;
-    border-bottom: 2px solid #00bfff;
+    position: relative;
 }
 
 header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
 }
 
 header p {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-.header-buttons {
-    margin-top: 20px;
+#services {
+    padding: 60px 0;
 }
 
-.btn-primary {
-    background-color: #2e8b57;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.btn-secondary {
-    background-color: #00bfff;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-nav {
-    background-color: #2e8b57;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    color: #dcdcdc;
-}
-
-section {
-    padding: 50px 0;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.services, .products, .contact {
+.service-card {
     background-color: white;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.services h2, .products h2, .contact h2 {
-    color: #006400;
-    margin-bottom: 20px;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
-.service-item, .product-item {
+.service-icon img {
+    width: 60px;
     margin-bottom: 15px;
 }
 
-.service-item h3, .product-item h3 {
-    color: #333;
-    margin-bottom: 10px;
+#features {
+    background-color: #ffffff;
+    padding: 60px 0;
 }
 
-.service-item p, .product-item p {
-    color: #555;
+.feature-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.contact p {
-    margin-bottom: 10px;
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.feature-icon i {
+    color: #007bff;
+}
+
+#contact {
+    padding: 60px 0;
+}
+
+form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
 footer {
-    background-color: #333;
+    background-color: #343a40;
     color: white;
-    text-align: center;
     padding: 20px 0;
-    margin-top: 50px;
 }
 
-.learn-more {
-    display: inline-block;
-    color: #2e8b57;
-    text-decoration: none;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.learn-more:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        padding: 60px 20px;
+    }
+
     header h1 {
-        font-size: 28px;
+        font-size: 2.5rem;
     }
-    nav ul {
-        flex-direction: column;
+
+    #services, #features, #contact {
+        padding: 40px 20px;
     }
-    nav ul li {
-        margin: 10px 0;
+
+    .service-card, .feature-box, form {
+        padding: 20px;
     }
 }
-
