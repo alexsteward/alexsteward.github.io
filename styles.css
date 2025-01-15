@@ -7,11 +7,10 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #192335, #4B5869); 
+    background-color: #192335; 
     color: #fff;
     padding: 60px 0;
 }
-
 .service-card {
     background-color: #192335; 
     border: 1px solid #444;
