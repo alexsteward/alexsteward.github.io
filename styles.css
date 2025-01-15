@@ -1,19 +1,19 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
-    color: #fff;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: linear-gradient(135deg, #192335, #4B5869);
+    background: linear-gradient(135deg, #192335, #4B5869); 
     color: #fff;
     padding: 60px 0;
 }
 
 .service-card {
-    background-color: #192335;
+    background-color: #192335; 
     border: 1px solid #444;
     border-radius: 8px;
     padding: 20px;
@@ -29,10 +29,9 @@ header {
 
 .service-icon {
     color: #4B5869;
-}
 
 .feature-box {
-    background-color: #192335;
+    background: linear-gradient(135deg, #192335, #4B5869);
     border-radius: 8px;
     padding: 20px;
     color: #fff;
@@ -44,7 +43,7 @@ header {
 }
 
 .feature-icon {
-    color: #4B5869;
+    color: #4B5869; 
     margin-bottom: 10px;
 }
 
@@ -53,7 +52,7 @@ header {
 }
 
 form {
-    background-color: #192335;
+    background-color: #192335; 
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -61,15 +60,27 @@ form {
 }
 
 form .btn-primary {
-    background-color: #4B5869;
+    background-color: #4B5869; 
     border: none;
     color: #fff;
 }
 
 footer {
-    background-color: #192335;
+    background-color: #192335; 
     color: #fff;
     padding: 20px 0;
+}
+
+.feature-box:nth-child(2) {
+    background: linear-gradient(135deg, #192335, #4B5869); 
+}
+
+.feature-box:nth-child(3) {
+    background: linear-gradient(135deg, #192335, #4B5869); 
+}
+
+.feature-box:nth-child(4) {
+    background: linear-gradient(135deg, #192335, #4B5869); 
 }
 
 @media (max-width: 768px) {
@@ -89,3 +100,4 @@ footer {
         width: 100%;
     }
 }
+
