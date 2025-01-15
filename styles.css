@@ -31,7 +31,7 @@ header {
     color: #4B5869;
 
 .feature-box {
-    background: linear-gradient(135deg, #192335, #4B5869);
+    background-color: #192335; 
     border-radius: 8px;
     padding: 20px;
     color: #fff;
@@ -48,8 +48,9 @@ header {
 }
 
 .feature-box p {
-    color: #fff;
+    color: #fff; 
 }
+
 
 form {
     background-color: #192335; 
