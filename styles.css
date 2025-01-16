@@ -115,44 +115,6 @@ footer {
     .form-control, .btn {
         width: 100%;
     }
-
-   .testimonial-box {
-    background-color: #192335;
-    color: #fff;
-    border: 1px solid #444;
-    border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.testimonial-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-box p {
-    color: #fff;
-}
-
-.testimonial-box h6 {
-    color: #4B5869;
-    margin-top: 10px;
-}
-
-.section-heading {
-    background-color: #4B5869;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    display: inline-block;
-}
-
-@media (max-width: 768px) {
-    .testimonial-box {
-        padding: 15px;
-    }
 }
  
 
