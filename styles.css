@@ -27,9 +27,10 @@ header {
     border-radius: 8px;
     text-align: center;
     font-size: 1.8rem;
-    width: 100%; 
     margin: 0 auto 30px; 
+    max-width: 200px; 
 }
+
 .service-card {
     background-color: #192335; 
     border: 1px solid #444;
