@@ -103,7 +103,7 @@ header {
 
 .testimonials {
     position: absolute;
-    left: 2-0px;
+    left: 20px;
     top: 400px;  
     max-width: 300px;
     z-index: 999;
