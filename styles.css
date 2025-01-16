@@ -13,6 +13,7 @@ body {
     background-color: transparent !important; 
 }
 
+
 header {
     background-color: #192335; 
     color: #fff;
@@ -26,10 +27,9 @@ header {
     border-radius: 8px;
     text-align: center;
     font-size: 1.8rem;
-    margin: 0 auto 30px;
-    display: inline-block; 
+    width: 100%; 
+    margin: 0 auto 30px; 
 }
-
 .service-card {
     background-color: #192335; 
     border: 1px solid #444;
@@ -79,30 +79,6 @@ header {
     background-color: #192335; 
 }
 
-.testimonial-box {
-    background-color: #192335;
-    color: #fff;
-    border: 1px solid #444;
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 40px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.testimonial-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.testimonial-box p {
-    color: #fff;
-}
-
-.testimonial-box h6 {
-    color: #4B5869;
-    margin-top: 10px;
-}
-
 form {
     background-color: #192335; 
     padding: 30px;
@@ -140,5 +116,5 @@ footer {
         width: 100%;
     }
 }
-
+ 
 
