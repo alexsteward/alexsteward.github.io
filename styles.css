@@ -12,6 +12,18 @@ header {
     padding: 60px 0;
 }
 
+.section-heading {
+    background-color: #4B5869; /* Use your specified background color */
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+
 .service-card {
     background-color: #192335; 
     border: 1px solid #444;
