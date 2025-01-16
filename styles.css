@@ -103,8 +103,8 @@ header {
 
 .testimonials {
     position: absolute;
-    top: 400px; /* Adjust top positioning as needed */
-    left: 20px; /* Align to the left */
+    left: 2-0px;
+    top: 400px;  
     max-width: 300px;
     z-index: 999;
 }
@@ -117,6 +117,7 @@ header {
         margin: 0 auto;
         max-width: 100%;
     }
+
 form {
     background-color: #192335; 
     padding: 30px;
