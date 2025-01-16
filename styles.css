@@ -80,6 +80,43 @@ header {
     background-color: #192335; 
 }
 
+.testimonial {
+    background-color: #f8f9fa; 
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.testimonials {
+    position: absolute;
+    top: 400px; /* Adjust top positioning as needed */
+    left: 20px; /* Align to the left */
+    max-width: 300px;
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .testimonials {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0 auto;
+        max-width: 100%;
+    }
 form {
     background-color: #192335; 
     padding: 30px;
