@@ -31,12 +31,13 @@ header {
 }
 
 .service-card {
-    background-color: #192335; 
+    background-color: #192335;
     border: 1px solid #444;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
     color: #fff;
+    position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -53,8 +54,23 @@ header {
 }
 
 .hover-button a {
+    background-color: #4B5869; 
+    color: #fff;
     text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
+
+.hover-button a:hover {
+    background-color: #3a4750; 
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+
+
 .service-icon {
     color: #4B5869;
 }
