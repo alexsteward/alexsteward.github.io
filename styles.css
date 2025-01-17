@@ -80,14 +80,26 @@ header {
     background-color: #192335; 
 }
 
-.testimonial {
-    background-color: #f8f9fa; 
-    color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+.testimonial-container {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+    position: relative; 
 }
+
+.testimonial-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    max-width: 200px; 
+}
+
+.testimonials {
+    position: static; 
+    max-width: 300px;
+    z-index: 1;
+}
+
 
 .testimonial p {
     font-size: 1rem;
@@ -108,7 +120,6 @@ header {
     z-index: 999;
     left: 20px;
 }
-
 @media (max-width: 768px) {
     .testimonials {
         position: relative;
