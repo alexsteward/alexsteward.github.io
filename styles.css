@@ -130,6 +130,42 @@ footer {
         padding: 40px 20px;
     }
 
+    #reviews {
+    background-color: #f8f9fa;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.review-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-card p {
+    font-style: italic;
+    color: #555;
+}
+
+.review-card h6 {
+    margin-top: 1rem;
+    color: #000;
+    font-weight: bold;
+}
+    
     .service-card {
         padding: 20px;
     }
