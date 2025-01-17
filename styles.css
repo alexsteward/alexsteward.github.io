@@ -13,7 +13,6 @@ body {
     background-color: transparent !important; 
 }
 
-
 header {
     background-color: #192335; 
     color: #fff;
@@ -82,24 +81,26 @@ header {
 
 .testimonial-container {
     display: flex;
-    align-items: flex-start; 
-    gap: 20px; 
-    position: relative; 
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
 }
 
 .testimonial-heading {
     font-size: 1.8rem;
     font-weight: bold;
     color: #fff;
-    max-width: 200px; 
+    max-width: 200px;
 }
 
-.testimonials {
-    position: static; 
-    max-width: 300px;
-    z-index: 1;
+.testimonial {
+    background-color: #f8f9fa; 
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
-
 
 .testimonial p {
     font-size: 1rem;
@@ -114,20 +115,22 @@ header {
 }
 
 .testimonials {
-    position: absolute;
-    top: 400px;  
+    position: static;
     max-width: 300px;
-    z-index: 999;
-    left: 20px;
+    z-index: 1;
 }
+
 @media (max-width: 768px) {
-    .testimonials {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 0 auto; 
-        max-width: 100%;
+    .testimonial-container {
+        flex-direction: column;
+        gap: 10px;
     }
+
+    .testimonials {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
 
 form {
     background-color: #192335; 
@@ -166,5 +169,4 @@ footer {
         width: 100%;
     }
 }
- 
 
