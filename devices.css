@@ -52,7 +52,7 @@ header p {
 }
 
 .device-card img {
-    width: 50%;
+    max-width: 25%;
     height: auto;
     margin-bottom: 10px;
 }
@@ -103,3 +103,4 @@ footer {
         padding: 15px;
     }
 }
+
