@@ -1,21 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let currentIndex = 0;
-    const images = document.querySelectorAll('.carousel-image');
-    const totalImages = images.length;
+document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".device-card .carousel");
 
-    document.querySelectorAll('.prev').forEach(button => {
-        button.addEventListener('click', () => {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-            images[currentIndex].classList.add('active');
-        });
-    });
+    carousels.forEach((carousel) => {
+        const images = carousel.querySelectorAll(".carousel-image");
+        const prevButton = carousel.closest(".device-card").querySelector(".prev");
+        const nextButton = carousel.closest(".device-card").querySelector(".next");
 
-    document.querySelectorAll('.next').forEach(button => {
-        button.addEventListener('click', () => {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % totalImages;
-            images[currentIndex].classList.add('active');
+        let currentIndex = 0;
+
+        const updateCarousel = () => {
+            images.forEach((img, index) => {
+                img.classList.toggle("active", index === currentIndex);
+            });
+        };
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; 
+            updateCarousel();
         });
+
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateCarousel();
+        });
+
+        updateCarousel();
     });
 });
