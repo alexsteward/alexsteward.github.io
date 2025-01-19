@@ -44,6 +44,10 @@ header p {
     color: #fff;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .device-card:hover {
@@ -55,6 +59,7 @@ header p {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .device-card h5 {
@@ -67,6 +72,42 @@ header p {
     margin-bottom: 15px;
 }
 
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.carousel-image {
+    display: none;
+}
+
+.carousel-image.active {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.carousel-controls button {
+    background-color: #4B5869;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.carousel-controls button:hover {
+    background-color: #3a4750;
+}
+
 .btn {
     background-color: #4B5869;
     color: #fff;
@@ -74,6 +115,7 @@ header p {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 .btn:hover {
@@ -103,4 +145,3 @@ footer {
         padding: 15px;
     }
 }
-
