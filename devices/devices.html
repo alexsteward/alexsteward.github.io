@@ -4,27 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refurbished Devices - iFixTech</title>
-    <link rel="stylesheet" href="devices.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
     <header class="bg-dark text-white text-center py-5">
         <div class="container">
             <h1 class="display-4 fw-bold">Refurbished Devices</h1>
-            <p class="lead">High-quality refurbished computers, TVs, phones, and more!</p>
+            <p class="lead">High-quality tech at affordable prices</p>
         </div>
     </header>
 
     <section id="devices" class="py-5">
         <div class="container">
-            <div class="section-heading">Our Refurbished Computers</div>
+            <div class="section-heading">Our Devices</div>
             <div class="row gy-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="device-card text-center border rounded p-4 shadow">
-                        <img src="computer-placeholder.jpg" alt="Refurbished Computer" class="device-image">
-                        <h5 class="mb-3">Dell Optiplex 9020</h5>
-                        <p>Refurbished Dell Optiplex 9020 desktop with Core i5, 8GB RAM, and 256GB SSD.</p>
-                        <div class="price">$450</div>
-                        <a href="#" class="btn">Buy Now</a>
+                <div class="col-md-6">
+                    <div class="device-card">
+                        <div class="carousel">
+                            <img src="computer1.jpg" alt="Refurbished Laptop" class="carousel-image active">
+                            <img src="computer2.jpg" alt="Refurbished Laptop" class="carousel-image">
+                        </div>
+                        <h5>Refurbished Laptop - Dell</h5>
+                        <div class="price">$299.99</div>
+                        <div class="carousel-controls">
+                            <button class="prev">&#10094;</button>
+                            <button class="next">&#10095;</button>
+                        </div>
+                        <a href="/devices/sales.html" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="device-card">
+                        <div class="carousel">
+                            <img src="images/phone1.jpg" alt="Refurbished Phone" class="carousel-image active">
+                            <img src="images/phone2.jpg" alt="Refurbished Phone" class="carousel-image">
+                        </div>
+                        <h5>Refurbished Phone - Samsung</h5>
+                        <div class="price">$199.99</div>
+                        <div class="carousel-controls">
+                            <button class="prev">&#10094;</button>
+                            <button class="next">&#10095;</button>
+                        </div>
+                        <a href="/devices/sales.html" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="device-card">
+                        <div class="carousel">
+                            <img src="images/tv1.jpg" alt="Refurbished TV" class="carousel-image active">
+                            <img src="images/tv2.jpg" alt="Refurbished TV" class="carousel-image">
+                        </div>
+                        <h5>Refurbished Smart TV - LG</h5>
+                        <div class="price">$499.99</div>
+                        <div class="carousel-controls">
+                            <button class="prev">&#10094;</button>
+                            <button class="next">&#10095;</button>
+                        </div>
+                        <a href="/devices/sales.html" class="btn">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -32,11 +69,9 @@
     </section>
 
     <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            &copy; 2025 iFixTech. All rights reserved.
-        </div>
+        <p>&copy; 2025 iFixTech. All rights reserved.</p>
     </footer>
 
+    <script src="../devices.js"></script>
 </body>
 </html>
-
