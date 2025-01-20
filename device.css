@@ -87,12 +87,14 @@ header p {
 
 .carousel-image {
     display: none;
-    width: 100%;
+    width: 80%;
     height: auto;
+    margin: 0 auto;
 }
 
 .carousel-image.active {
     display: block;
+    margin: 0 auto;
 }
 
 .carousel-arrows {
