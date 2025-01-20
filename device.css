@@ -82,11 +82,14 @@ header p {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 400px; 
-    height: auto;
+    max-width: 100%;
+    height: 300px; 
     overflow: hidden;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .carousel-image {
     display: block; 
