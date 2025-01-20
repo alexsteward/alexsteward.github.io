@@ -55,7 +55,7 @@ header p {
     justify-content: center;
 }
 
-.device-card p {
+.device-details p {
     display: flex;
     flex-direction: column;
     align-items: center;
