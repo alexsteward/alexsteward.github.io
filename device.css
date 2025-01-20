@@ -92,6 +92,15 @@ header p {
     margin-bottom: 15px;
 }
 
+.modern-bold {
+    margin-top: 0;
+}
+
+.modern-feature {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 .carousel {
     position: relative;
     width: 100%;
