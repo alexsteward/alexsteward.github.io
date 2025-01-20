@@ -61,7 +61,8 @@ header p {
 }
 
 .device-card img {
-    width: 100%;
+    width: auto; 
+    max-width: 80%;
     height: auto;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -86,9 +87,9 @@ header p {
 }
 
 .carousel-image {
-    display: none;
-    width: 80%;
-    height: auto;
+    width: auto; 
+    max-width: 80%; 
+    height: auto; 
     margin: 0 auto;
 }
 
