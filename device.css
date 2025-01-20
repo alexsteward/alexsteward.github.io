@@ -94,7 +94,7 @@ header p {
     margin: 0 auto; 
     width: 80%; 
     height: auto; 
-
+}
 .carousel-image.active {
     display: block;
 }
