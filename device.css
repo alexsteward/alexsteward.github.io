@@ -82,20 +82,20 @@ header p {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 100%;
+    max-width: 400px; 
+    height: auto;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .carousel-image {
-    width: auto; 
-    max-width: 80%; 
-    height: auto; 
-    margin: 0 auto;
+    display: none;
+    width: 100%;
+    height: auto;
 }
 
 .carousel-image.active {
     display: block;
-    margin: 0 auto;
 }
 
 .carousel-arrows {
@@ -104,7 +104,7 @@ header p {
     transform: translateY(-50%);
     z-index: 10;
     cursor: pointer;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 2rem;
     border-radius: 50%;
@@ -118,6 +118,7 @@ header p {
 .carousel-arrows.right {
     right: 10px;
 }
+
 
 .carousel-controls {
     display: flex;
