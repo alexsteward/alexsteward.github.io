@@ -13,9 +13,9 @@ header {
     background-color: #192335;
     color: #fff;
     padding: 60px 0;
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -40,24 +40,19 @@ header p {
     max-width: 800px;
 }
 
-.device-title {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
 .device-card {
-    background-color: #fff;
+    background-color: #192335;
+    border: 1px solid #444;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.2s;
-    border: 1px solid #e0e0e0;
+    justify-content: center;
 }
 
 .device-card:hover {
@@ -66,7 +61,7 @@ header p {
 }
 
 .device-card img {
-    width: auto; 
+    width: auto;
     max-width: 80%;
     height: auto;
     margin-bottom: 10px;
@@ -87,19 +82,19 @@ header p {
     position: relative;
     width: 100%;
     max-width: 400px;
-    height: 400px; 
+    height: 400px;
     overflow: hidden;
     margin: 0 auto;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-image {
-    position: absolute; 
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     width: 80%;
     height: auto;
     display: none;
@@ -172,18 +167,6 @@ header p {
     transition: background-color 0.3s;
     margin-top: 10px;
 }
-.device-details {
-    text-align: center;
-    margin-bottom: 10px; 
-}
-
-.device-details strong {
-    display: block;
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
 
 .btn:hover {
     background-color: #3a4750;
