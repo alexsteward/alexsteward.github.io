@@ -89,10 +89,10 @@ header p {
 }
 
 .carousel-image {
-    display: none;
-    width: 100%;
-    height: auto;
-}
+    display: block; 
+    margin: 0 auto; 
+    width: 80%; 
+    height: auto; 
 
 .carousel-image.active {
     display: block;
