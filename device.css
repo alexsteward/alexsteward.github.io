@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 header {
     background-color: #192335;
     color: #fff;
@@ -18,7 +19,6 @@ header {
     align-items: center;
     text-align: center;
 }
-
 
 header h1 {
     font-size: 2.5rem;
@@ -57,7 +57,7 @@ header p {
 
 .device-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .device-card img {
@@ -66,7 +66,6 @@ header p {
     height: auto;
     margin-bottom: 10px;
     border-radius: 5px;
-    position: relative;
 }
 
 .device-card h5 {
@@ -82,21 +81,28 @@ header p {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 400px; 
-    height: auto;
+    max-width: 400px;
+    height: 300px; 
     overflow: hidden;
-    margin: 0 auto; 
+    margin: 0 auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
-
 
 .carousel-image {
-    display: block; 
-    margin: 0 auto; 
-    width: 80%; 
-    height: auto; 
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 80%;
+    height: auto;
+    display: none;
 }
+
 .carousel-image.active {
     display: block;
+    z-index: 1;
 }
 
 .carousel-arrows {
@@ -105,16 +111,16 @@ header p {
     transform: translateY(-50%);
     z-index: 10;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
     border-radius: 50%;
     padding: 12px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-arrows.left {
@@ -126,10 +132,10 @@ header p {
 }
 
 .carousel-arrows:hover {
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
-    transform: translateY(-50%) scale(1.1); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-controls {
@@ -151,7 +157,6 @@ header p {
 .carousel-controls button:hover {
     background-color: #3a4750;
 }
-
 
 .btn {
     background-color: #4B5869;
@@ -190,3 +195,4 @@ footer {
         padding: 15px;
     }
 }
+
