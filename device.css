@@ -80,18 +80,19 @@ header p {
 
 .carousel {
     position: relative;
-    overflow: hidden;
+    width: 100%;
     max-width: 100%;
+    overflow: hidden;
 }
 
 .carousel-image {
     display: none;
+    width: 100%;
+    height: auto;
 }
 
 .carousel-image.active {
     display: block;
-    width: 100%;
-    height: auto;
 }
 
 .carousel-arrows {
@@ -134,6 +135,7 @@ header p {
 .carousel-controls button:hover {
     background-color: #3a4750;
 }
+
 
 .btn {
     background-color: #4B5869;
