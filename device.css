@@ -40,6 +40,14 @@ header p {
     max-width: 800px;
 }
 
+.device-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold; 
+}
+
 .device-card {
     background-color: #192335;
     border: 1px solid #444;
