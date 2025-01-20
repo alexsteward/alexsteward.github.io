@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carousels.forEach((carousel) => {
         const images = carousel.querySelectorAll(".carousel-image");
-        const prevButton = carousel.closest(".device-card").querySelector(".prev");
-        const nextButton = carousel.closest(".device-card").querySelector(".next");
+        const prevButton = carousel.querySelector(".left");
+        const nextButton = carousel.querySelector(".right");
 
         let currentIndex = 0;
 
