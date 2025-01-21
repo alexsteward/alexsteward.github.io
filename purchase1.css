@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase</title>
+    <link rel="stylesheet" href="purchase1.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <p>Product: <strong>Lenovo ThinkCentre M Series</strong></p>
+        <p>Price: <strong>$499.99</strong></p>
+        
+        <form id="checkout-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+    <script src="purchase2.js"></script>
+</body>
+</html>
