@@ -7,19 +7,24 @@
     --darker-bg: #0D151F;
     --medium-bg: #192335;
     --light-bg: #2A3440;
+    /* Text colors */
     --text-color: #FFFFFF;
     --text-muted: rgba(255, 255, 255, 0.7);
     --text-light: rgba(255, 255, 255, 0.5);
+    /* Light section text colors - ADDED */
+    --light-section-text: #333333;
+    --light-section-muted: rgba(51, 51, 51, 0.8);
+    
     --border-radius: 12px;
     --transition: all 0.3s ease;
     --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     --hover-transform: translateY(-10px);
     
-    /* New spacing variables */
-    --section-spacing: 150px; /* Increased from 100px */
-    --content-spacing: 5rem; /* For consistent margin/padding within sections */
-    --element-spacing: 2rem; /* For spacing between similar elements */
-    --text-spacing: 1.5rem; /* For spacing between text blocks */
+    /* Spacing variables */
+    --section-spacing: 150px;
+    --content-spacing: 5rem;
+    --element-spacing: 2rem;
+    --text-spacing: 1.5rem;
 }
 
 /* Base Styles */
@@ -30,18 +35,18 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    line-height: 1.7; /* Increased line height for better readability */
+    line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    margin-bottom: 1.5rem; /* Added space after headings */
-    color: var(--text-color); /* Ensuring headers have the right color */
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 p {
-    margin-bottom: 1.5rem; /* Added space after paragraphs */
-    color: var(--text-color); /* Ensuring paragraphs have the right color */
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 a {
@@ -54,6 +59,49 @@ a:hover {
     color: var(--primary-dark);
 }
 
+/* Light background sections text color overrides */
+.bg-light {
+    background-color: #f8f9fa !important; /* Bootstrap light bg color */
+}
+
+.bg-light h1, 
+.bg-light h2, 
+.bg-light h3, 
+.bg-light h4, 
+.bg-light h5, 
+.bg-light h6 {
+    color: var(--light-section-text);
+}
+
+.bg-light p {
+    color: var(--light-section-muted);
+}
+
+.bg-light .section-title {
+    color: var(--light-section-text);
+}
+
+.bg-light .section-subtitle {
+    color: var(--light-section-muted);
+}
+
+.bg-light .feature-box h4 {
+    color: var(--light-section-text);
+}
+
+.bg-light .feature-box p {
+    color: var(--light-section-muted);
+}
+
+.bg-light .contact-card h5 {
+    color: var(--light-section-text);
+}
+
+.bg-light .contact-card p {
+    color: var(--light-section-muted);
+}
+
+/* Buttons */
 .btn {
     transition: var(--transition);
 }
@@ -61,12 +109,12 @@ a:hover {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     border: none;
-    padding: 14px 30px; /* Increased button padding */
+    padding: 14px 30px;
     border-radius: 50px;
     font-weight: 600;
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(95, 123, 255, 0.4);
-    color: var(--text-color); /* Ensuring button text is visible */
+    color: var(--text-color);
 }
 
 .btn-primary:hover {
@@ -80,7 +128,7 @@ a:hover {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     color: var(--text-color);
-    padding: 14px 30px; /* Increased button padding */
+    padding: 14px 30px;
 }
 
 .btn-outline-light:hover {
@@ -90,71 +138,71 @@ a:hover {
     transform: translateY(-3px);
 }
 
-/* Increased section padding */
+/* Sections */
 .section-padding {
     padding: var(--section-spacing) 0;
 }
 
-/* Improved Navbar Spacing */
+/* Navbar */
 .navbar {
-    padding: 1.5rem 0; /* Increased navbar padding */
-    background-color: var(--darker-bg); /* Adding background color to navbar */
+    padding: 1.5rem 0;
+    background-color: var(--darker-bg);
 }
 
 .navbar-brand {
-    font-size: 1.75rem; /* Larger brand name */
+    font-size: 1.75rem;
     font-weight: 700;
-    color: var(--text-color); /* Ensuring brand text is visible */
+    color: var(--text-color);
 }
 
 .nav-item {
-    margin: 0 0.75rem; /* Added space between nav items */
+    margin: 0 0.75rem;
 }
 
 .nav-link {
-    padding: 0.75rem 1rem !important; /* Increased padding around nav links */
-    color: var(--text-color) !important; /* Force nav links to be visible */
+    padding: 0.75rem 1rem !important;
+    color: var(--text-color) !important;
 }
 
-/* Hero Section Improvements */
+/* Hero Section */
 .hero-section {
-    padding: 220px 0 170px; /* Increased hero padding */
+    padding: 220px 0 170px;
     position: relative;
     overflow: hidden;
 }
 
 .hero-title {
     margin-bottom: 1.5rem;
-    font-size: 3.75rem; /* Larger hero title */
+    font-size: 3.75rem;
     line-height: 1.2;
-    color: var(--text-color); /* Ensuring hero title is visible */
+    color: var(--text-color);
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-bottom: 2.5rem; /* More space below subtitle */
+    margin-bottom: 2.5rem;
     opacity: 0.9;
-    color: var(--text-muted); /* Using muted text color for subtitle */
+    color: var(--text-muted);
 }
 
 .hero-stats {
-    margin-top: 3rem; /* More space above stats */
+    margin-top: 3rem;
 }
 
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: var(--text-color); /* Ensuring stat numbers are visible */
+    color: var(--text-color);
 }
 
 .stat-text {
     font-size: 1rem;
     opacity: 0.8;
-    color: var(--text-muted); /* Using muted text color for stat text */
+    color: var(--text-muted);
 }
 
-/* Section Headers with More Space */
+/* Section Headers */
 .section-badge {
     display: inline-block;
     background: rgba(95, 123, 255, 0.1);
@@ -163,20 +211,20 @@ a:hover {
     padding: 10px 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    margin-bottom: 1.5rem; /* More space below badge */
+    margin-bottom: 1.5rem;
 }
 
 .section-title {
     font-size: 2.75rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color); /* Ensuring section titles are visible */
+    color: var(--text-color);
 }
 
 .section-divider {
     width: 80px;
     height: 4px;
     background: var(--primary-color);
-    margin: 0 auto 2rem; /* More space below divider */
+    margin: 0 auto 2rem;
 }
 
 .section-subtitle {
@@ -184,20 +232,20 @@ a:hover {
     opacity: 0.8;
     max-width: 600px;
     margin: 0 auto 1rem;
-    color: var(--text-muted); /* Using muted text color for section subtitle */
+    color: var(--text-muted);
 }
 
-/* Service Cards with Better Spacing */
+/* Service Cards */
 .service-card {
     background: var(--medium-bg);
     border-radius: var(--border-radius);
-    padding: 3rem 2rem; /* Increased padding inside cards */
+    padding: 3rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
     height: 100%;
     transition: var(--transition);
-    margin-bottom: 2rem; /* Added space between rows */
+    margin-bottom: 2rem;
 }
 
 .service-card:hover {
@@ -207,25 +255,25 @@ a:hover {
 .service-icon {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 2rem; /* More space below icon */
+    margin-bottom: 2rem;
 }
 
 .service-card h3 {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    color: var(--text-color); /* Ensuring service card titles are visible */
+    color: var(--text-color);
 }
 
 .service-card p {
     opacity: 0.8;
     margin-bottom: 2rem;
-    color: var(--text-muted); /* Using muted text color for service card text */
+    color: var(--text-muted);
 }
 
-/* Feature Boxes with Better Spacing */
+/* Feature Boxes */
 .feature-box {
     text-align: center;
-    padding: 3rem 2rem; /* Increased padding */
+    padding: 3rem 2rem;
     border-radius: var(--border-radius);
     background: var(--dark-bg);
     height: 100%;
@@ -233,26 +281,32 @@ a:hover {
     margin-bottom: 2rem;
 }
 
+/* Change light background feature boxes to darker color */
+.bg-light .feature-box {
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
 .feature-icon {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 2rem; /* More space below icon */
+    margin-bottom: 2rem;
 }
 
 .feature-box h4 {
     margin-bottom: 1.5rem;
-    color: var(--text-color); /* Ensuring feature box titles are visible */
+    color: var(--text-color);
 }
 
 .feature-box p {
-    color: var(--text-muted); /* Using muted text color for feature box text */
+    color: var(--text-muted);
 }
 
-/* Reviews Section Spacing */
+/* Reviews Section */
 .review-card {
     background: var(--medium-bg);
     border-radius: var(--border-radius);
-    padding: 3rem 2rem; /* Increased padding */
+    padding: 3rem 2rem;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -262,17 +316,17 @@ a:hover {
 .review-stars {
     color: #FFD700;
     font-size: 1.2rem;
-    margin-bottom: 1.5rem; /* More space below stars */
+    margin-bottom: 1.5rem;
 }
 
 .review-text {
-    color: var(--text-color); /* Ensuring review text is visible */
+    color: var(--text-color);
 }
 
 .review-author {
     display: flex;
     align-items: center;
-    margin-top: 2rem; /* More space above author */
+    margin-top: 2rem;
 }
 
 .author-initial {
@@ -289,22 +343,22 @@ a:hover {
 }
 
 .author-name {
-    color: var(--text-color); /* Ensuring author name is visible */
+    color: var(--text-color);
 }
 
 .author-title {
-    color: var(--text-muted); /* Using muted text for author title */
+    color: var(--text-muted);
 }
 
-/* Contact Form Improvements */
+/* Contact Form */
 .contact-info {
-    margin-bottom: 3rem; /* Space below contact info on mobile */
+    margin-bottom: 3rem;
 }
 
 .contact-card {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 2.5rem; /* More space between contact cards */
+    margin-bottom: 2.5rem;
 }
 
 .contact-icon {
@@ -321,23 +375,34 @@ a:hover {
 }
 
 .contact-card-content h5 {
-    color: var(--text-color); /* Ensuring contact card title is visible */
+    color: var(--text-color);
 }
 
 .contact-card-content p {
-    color: var(--text-muted); /* Using muted text for contact information */
+    color: var(--text-muted);
 }
 
 .form-floating {
-    margin-bottom: 1.5rem; /* More space between form fields */
+    margin-bottom: 1.5rem;
 }
 
 .form-control {
-    padding: 1.5rem 1rem 0.5rem; /* More padding in form fields */
+    padding: 1.5rem 1rem 0.5rem;
     height: auto;
-    background-color: var(--light-bg); /* Background for form fields */
+    background-color: var(--light-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-color); /* Text color for inputs */
+    color: var(--text-color);
+}
+
+/* Light background form controls */
+.bg-light .form-control {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--light-section-text);
+}
+
+.bg-light .form-floating label {
+    color: rgba(51, 51, 51, 0.6);
 }
 
 .form-control:focus {
@@ -346,29 +411,35 @@ a:hover {
     color: var(--text-color);
 }
 
-.form-floating label {
-    color: var(--text-light); /* Label color */
+.bg-light .form-control:focus {
+    background-color: white;
+    border-color: var(--primary-color);
+    color: var(--light-section-text);
 }
 
-/* Footer Improvements */
+.form-floating label {
+    color: var(--text-light);
+}
+
+/* Footer */
 .footer {
     background: var(--darker-bg);
     position: relative;
 }
 
 .footer-top {
-    padding: 5rem 0 3rem; /* More padding in footer */
+    padding: 5rem 0 3rem;
 }
 
 .footer-widget {
-    margin-bottom: 3rem; /* More space between widgets */
+    margin-bottom: 3rem;
 }
 
 .widget-title {
     font-size: 1.5rem;
-    margin-bottom: 2rem; /* More space below widget titles */
+    margin-bottom: 2rem;
     position: relative;
-    color: var(--text-color); /* Ensuring widget titles are visible */
+    color: var(--text-color);
 }
 
 .footer-links {
@@ -378,11 +449,11 @@ a:hover {
 }
 
 .footer-links li {
-    margin-bottom: 1.2rem; /* More space between footer links */
+    margin-bottom: 1.2rem;
 }
 
 .footer-links a {
-    color: var(--text-muted); /* Using muted text for footer links */
+    color: var(--text-muted);
 }
 
 .footer-links a:hover {
@@ -390,7 +461,7 @@ a:hover {
 }
 
 .footer-text {
-    color: var(--text-muted); /* Using muted text for footer text */
+    color: var(--text-muted);
 }
 
 .footer-bottom {
@@ -399,20 +470,38 @@ a:hover {
 }
 
 .copyright {
-    color: var(--text-muted); /* Using muted text for copyright */
+    color: var(--text-muted);
 }
 
-/* Improved responsive container widths for more whitespace */
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+/* Responsive container widths */
 @media (min-width: 1400px) {
     .container {
-        max-width: 1280px; /* Slightly narrower for more whitespace */
+        max-width: 1280px;
     }
 }
 
-/* Increased spacing for mobile */
+/* Mobile spacing */
 @media (max-width: 767px) {
     .section-padding {
-        padding: 80px 0; /* Less extreme on mobile but still spacious */
+        padding: 80px 0;
     }
     
     .hero-section {
@@ -428,7 +517,7 @@ a:hover {
     }
 }
 
-/* Animation Keyframes */
+/* Animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -438,4 +527,205 @@ a:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* Navbar scrolled state */
+.navbar-scrolled {
+    background-color: var(--darker-bg);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+/* Social icons */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Newsletter form in footer */
+.footer-newsletter .form-control {
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 30px 0 0 30px;
+}
+
+.footer-newsletter .btn {
+    border-radius: 0 30px 30px 0;
+    height: 50px;
+}
+
+/* Geometric shapes for CTA */
+.geometric-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.2;
+}
+
+.shape-1 {
+    top: -50px;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: morph 8s linear infinite alternate;
+}
+
+.shape-2 {
+    bottom: -100px;
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: morph 6s linear infinite alternate;
+}
+
+.shape-3 {
+    top: 30%;
+    left: 60%;
+    width: 150px;
+    height: 150px;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: morph 10s linear infinite alternate;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+    }
+    100% {
+        border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%;
+    }
+}
+
+/* Hover button in service card */
+.hover-button {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.service-card:hover .hover-button {
+    bottom: 0;
+    opacity: 1;
+}
+
+.hover-button a {
+    color: white;
+    font-weight: 600;
+}
+
+/* Pulse animation for SVG elements */
+.pulse-circle {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+}
+
+/* Hero shape divider */
+.hero-shape-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.hero-shape-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+}
+
+.hero-shape-divider .shape-fill {
+    fill: var(--dark-bg);
+}
+
+/* Tech illustration */
+.tech-illustration {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-svg {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
 }
