@@ -4,78 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refurbished Devices - iFixTech</title>
-    <link rel="stylesheet" href="device.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 
-    <header class="bg-dark text-white text-center py-5"> 
-    <div class="container">
-        <h1 class="display-4 fw-bold">Refurbished Devices</h1>
-        <div class="d-flex justify-content-center mt-4">
-            <a href="index" class="btn btn-light btn-lg me-3">Home</a>
-            <a href="repairs" class="btn btn-light btn-lg me-3">Services</a>
-            <a href="devices" class="btn btn-light btn-lg me-3">Devices</a>
-            <a href="#accessories" class="btn btn-light btn-lg">Accessories</a>
+    <header class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Refurbished Devices</h1>
+            <div class="d-flex justify-content-center mt-4">
+                <a href="index" class="btn btn-light btn-lg me-3">Home</a>
+                <a href="repairs" class="btn btn-light btn-lg me-3">Services</a>
+                <a href="devices" class="btn btn-light btn-lg me-3">Devices</a>
+                <a href="#accessories" class="btn btn-light btn-lg">Accessories</a>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
     
-  <section id="devices" class="py-5">
-    <div class="container">
-        <div class="section-heading">Our Devices</div>
-        <div class="row gy-4">
-            <div class="col-md-4">
-                <div class="device-card">
-                    <div class="carousel">
-                        <img src="/images/computer1.jpg" alt="Refurbished Laptop" class="carousel-image active">
-                        <img src="/images/computer2.jpg" alt="Refurbished Laptop" class="carousel-image">
-                        <div class="carousel-arrows left">&#10094;</div>
-                        <div class="carousel-arrows right">&#10095;</div>
-                    </div>
-                    <h5 class="device-title">Refurbished Lenovo ThinkCentre M Series</h5>
-                    
-                    <p class="device-details">
-                        <strong class="modern-bold">Key Features:</strong>
-                        <div class="modern-feature">
-                             ⚡ High performance<br>
-                             🏖️ Lightweight<br>
-                             🔋 Long battery life
+    <section id="devices" class="py-5">
+        <div class="container">
+            <div class="section-heading">Our Devices</div>
+            <div class="row gy-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card text-center border rounded p-4 shadow">
+                        <div class="carousel">
+                            <img src="/images/computer1.jpg" alt="Refurbished Laptop" class="carousel-image active">
+                            <img src="/images/computer2.jpg" alt="Refurbished Laptop" class="carousel-image">
+                            <div class="carousel-arrows left">&#10094;</div>
+                            <div class="carousel-arrows right">&#10095;</div>
                         </div>
+                        <h5 class="mb-3">Refurbished Lenovo ThinkCentre M Series</h5>
                         
-                        <strong class="modern-bold" style="margin-top: 20px;">Specifications:</strong>
-                        <div class="modern-specs">
-                            <div class="specs-item">
-                                OS: Windows 10 Pro<br>
-                                RAM: 8GB<br>
-                                Processor: Intel Core i5-2400 @ 3.10GHz<br>
-                                Storage: 500GB HDD
-                            </div>
-                        </div>
-                    </p>
-                    
-                    <p class="device-bio modern-bio">
-                        Elevate your productivity with the Refurbished Lenovo ThinkCentre M Series.<br>
-                        Designed to balance performance and efficiency, this PC is perfect for professionals, light gaming, and everyday tasks.<br>
-                        Its sleek, compact design makes it a great addition to any workspace.
-                    </p>
-                    
-                    <div class="price modern-price">$74.99</div>
-                    <a href="https://buy.stripe.com/5kAbKaaV87w9fTy8wx" class="btn modern-btn">Buy Now</a>
+                        <p>
+                            <strong>Key Features:</strong><br>
+                            ⚡ High performance<br>
+                            🏖️ Lightweight<br>
+                            🔋 Long battery life
+                        </p>
+                        
+                        <p>
+                            <strong>Specifications:</strong><br>
+                            OS: Windows 10 Pro<br>
+                            RAM: 8GB<br>
+                            Processor: Intel Core i5-2400 @ 3.10GHz<br>
+                            Storage: 500GB HDD
+                        </p>
+                        
+                        <p>
+                            Elevate your productivity with the Refurbished Lenovo ThinkCentre M Series.
+                            Designed to balance performance and efficiency, this PC is perfect for professionals, light gaming, and everyday tasks.
+                        </p>
+                        
+                        <div class="price text-warning fs-4 mb-2">$74.99</div>
+                        <a href="https://buy.stripe.com/5kAbKaaV87w9fTy8wx" class="btn btn-primary">Buy Now</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-
-
-
-    <footer class="bg-dark text-white text-center py-4">
-        <p>&copy; 2025 iFixTech. All rights reserved.</p>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2025 iFixTech. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <script src="javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="device.js"></script>
 </body>
 </html>
