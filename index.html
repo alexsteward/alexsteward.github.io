@@ -5,64 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iFixTech - Professional Tech Repairs and Sales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-
-    <header class="bg-dark text-white text-center py-5"> 
-    <div class="container">
-        <h1 class="display-4 fw-bold">Welcome to iFixTech!</h1>
-        <p class="lead">Your trusted partner for professional tech repairs and sales</p>
-        <div class="d-flex justify-content-center mt-4">
-            <a href="index" class="btn btn-light btn-lg me-3">Home</a>
-            <a href="repairs" class="btn btn-light btn-lg me-3">Services</a>
-            <a href="devices" class="btn btn-light btn-lg me-3">Devices</a>
-            <a href="#accessories" class="btn btn-light btn-lg">Accessories</a>
-        </div>
-    </div>
-</header>
-
-    <section id="services" class="py-5">
+    <!-- Modern Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <div class="section-heading">Our Exclusive Services</div>
-            <div class="row gy-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card text-center border rounded p-4 shadow">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-wrench fa-4x text-primary"></i>
+            <a class="navbar-brand" href="#"><i class="fas fa-microchip me-2"></i>iFixTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Why Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill nav-btn" href="#contact">Get a Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-lg-start text-center">
+                    <h1 class="display-4 fw-bold hero-title">Next-Gen <span class="text-accent">Tech</span> Repairs</h1>
+                    <p class="lead hero-subtitle">Professional repair services for your valuable devices</p>
+                    <div class="d-flex justify-content-lg-start justify-content-center mt-4 gap-3">
+                        <a href="#services" class="btn btn-primary btn-lg rounded-pill">Our Services</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill">Contact Us</a>
+                    </div>
+                    <div class="hero-stats mt-4 d-flex justify-content-lg-start justify-content-center">
+                        <div class="me-4">
+                            <div class="stat-number">10k+</div>
+                            <div class="stat-text">Repairs</div>
                         </div>
-                        <h5 class="mb-3">Expert Tech Repairs</h5>
+                        <div class="me-4">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-text">Success Rate</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">24h</div>
+                            <div class="stat-text">Turnaround</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="hero-image">
+                        <img src="/api/placeholder/600/500" alt="Tech repair visualization" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <span class="section-badge">Our Services</span>
+                    <h2 class="section-title">Tech Solutions For Every Need</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Professional repair and sales services for all your tech devices</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3>Expert Tech Repairs</h3>
                         <p>Fast and reliable repair services for all your tech devices, including phones, tablets, and laptops.</p>
                         <div class="hover-button">
-                            <a href="repairs" class="btn btn-primary mt-3">Click here!</a>
+                            <a href="repairs">Learn More</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card text-center border rounded p-4 shadow">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-laptop-code fa-4x text-primary"></i>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h5 class="mb-3">Sales & Refurbishments</h5>
+                        <h3>Sales & Refurbishments</h3>
                         <p>Top deals on high-quality refurbished gadgets, computers, and accessories at unbeatable prices.</p>
                         <div class="hover-button">
-                            <a href="devices" class="btn btn-primary mt-3">Click here!</a>
+                            <a href="devices">Learn More</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card text-center border rounded p-4 shadow">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-headphones-alt fa-4x text-primary"></i>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headphones"></i>
                         </div>
-                        <h5 class="mb-3">Quality Accessories</h5>
+                        <h3>Quality Accessories</h3>
                         <p>Wide range of premium accessories including headphones, chargers, cases, and more.</p>
                         <div class="hover-button">
-                            <a href="accessories.html" class="btn btn-primary mt-3">Click here!</a>
+                            <a href="accessories.html">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -70,96 +136,151 @@
         </div>
     </section>
 
-    <section id="features" class="py-5 bg-light">
+    <!-- Features Section -->
+    <section id="features" class="section-padding bg-light">
         <div class="container">
-            <div class="section-heading">Why Choose iFixTech?</div>
-            <div class="row gy-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-box rounded p-4 shadow"> 
-                        <div class="feature-icon mb-3">
-                            <i class="fas fa-clock fa-3x text-primary"></i>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <span class="section-badge">Why Choose Us</span>
+                    <h2 class="section-title">The iFixTech Advantage</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">What makes our tech repair service stand out from the rest</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
                         </div>
-                        <h4 class="mb-3">Fast & Reliable</h4>
-                        <p>Quick and efficient repair services with guaranteed on-time delivery, ensuring minimal disruption to your daily life.</p>
+                        <h4>Fast & Reliable</h4>
+                        <p>Quick and efficient repair services with guaranteed on-time delivery.</p>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-box rounded p-4 shadow"> 
-                        <div class="feature-icon mb-3">
-                            <i class="fas fa-dollar-sign fa-3x text-primary"></i>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
                         </div>
-                        <h4 class="mb-3">Affordable</h4>
-                        <p>Cost-effective repair options without sacrificing quality. Providing budget-friendly solutions that fit your needs.</p>
+                        <h4>Affordable</h4>
+                        <p>Cost-effective repair options without sacrificing quality.</p>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-box rounded p-4 shadow"> 
-                        <div class="feature-icon mb-3">
-                            <i class="fas fa-tools fa-3x text-primary"></i>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
                         </div>
-                        <h4 class="mb-3">Expert Technicians</h4>
-                        <p>Experienced and knowledgeable technicians who specialize in electronic repairs, using their skills to provide precise and lasting fixes.</p>
+                        <h4>Expert Technicians</h4>
+                        <p>Experienced specialists with extensive knowledge in electronics.</p>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-box rounded p-4 shadow"> 
-                        <div class="feature-icon mb-3">
-                            <i class="fas fa-thumbs-up fa-3x text-primary"></i>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-thumbs-up"></i>
                         </div>
-                        <h4 class="mb-3">Customer Satisfaction</h4>
-                        <p>Your satisfaction is our top priority. We strive to exceed your expectations by delivering exceptional service every time.</p>
+                        <h4>100% Satisfaction</h4>
+                        <p>Your satisfaction is our top priority with every service.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="reviews" class="py-5 bg-light">
-    <div class="container">
-        <h3 class="section-heading text-center mb-4">Reviews</h3>
-        <div class="row gy-4">
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="review-card p-4 shadow-sm rounded bg-white">
-                    <p class="text-muted mb-3">"Amazing service! My phone looks brand new after the repair."</p>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9734;</span>
-                    </div>
-                    <h6 class="fw-bold mt-2">- Sarah J.</h6>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-lg-start text-center">
+                    <h2>Bring Your Device Back to Life</h2>
+                    <p>Schedule a repair or consultation today and get your device fixed by experts</p>
                 </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="review-card p-4 shadow-sm rounded bg-white">
-                    <p class="text-muted mb-3">"Quick and professional! Highly recommend iFixTech."</p>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9734;</span>
-                    </div>
-                    <h6 class="fw-bold mt-2">- Mark R.</h6>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="review-card p-4 shadow-sm rounded bg-white">
-                    <p class="text-muted mb-3">"Great prices and even better service. They fixed my laptop in no time!"</p>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                    </div>
-                    <h6 class="fw-bold mt-2">- Emily T.</h6>
+                <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+                    <a href="#contact" class="btn btn-light btn-lg rounded-pill">Get Started</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <span class="section-badge">Testimonials</span>
+                    <h2 class="section-title">What Our Clients Say</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Don't just take our word for it - hear from our satisfied customers</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Amazing service! My phone looks brand new after the repair. The team was professional and completed the work faster than expected."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">
+                                <img src="/api/placeholder/50/50" alt="Sarah J." class="rounded-circle">
+                            </div>
+                            <div class="author-info">
+                                <h6>Sarah Johnson</h6>
+                                <span>iPhone Repair</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Quick and professional! Highly recommend iFixTech. They diagnosed my laptop issue in minutes and had it fixed the same day. Great value for money."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">
+                                <img src="/api/placeholder/50/50" alt="Mark R." class="rounded-circle">
+                            </div>
+                            <div class="author-info">
+                                <h6>Mark Rodriguez</h6>
+                                <span>Laptop Repair</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Great prices and even better service. They fixed my tablet in no time! Their customer service is exceptional and the quality of work is outstanding."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">
+                                <img src="/api/placeholder/50/50" alt="Emily T." class="rounded-circle">
+                            </div>
+                            <div class="author-info">
+                                <h6>Emily Thompson</h6>
+                                <span>Tablet Repair</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <section id="contact" class="py-5">
