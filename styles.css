@@ -1,154 +1,441 @@
-/* Modern Tech Website CSS - Fixed Color Contrast for Specific Sections */
-
-/* All the previous CSS remains the same */
-
-/* Why Choose Us Section Specific Fixes */
-.why-choose-section {
-    background-color: var(--dark-bg);
+/* Modern Tech Website CSS - Improved Spacing */
+:root {
+    --primary-color: #5F7BFF;
+    --primary-dark: #4659D2;
+    --secondary-color: #FF6B8B;
+    --dark-bg: #131C2A;
+    --darker-bg: #0D151F;
+    --medium-bg: #192335;
+    --light-bg: #2A3440;
+    --text-color: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --text-light: rgba(255, 255, 255, 0.5);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --hover-transform: translateY(-10px);
+    
+    /* New spacing variables */
+    --section-spacing: 150px; /* Increased from 100px */
+    --content-spacing: 5rem; /* For consistent margin/padding within sections */
+    --element-spacing: 2rem; /* For spacing between similar elements */
+    --text-spacing: 1.5rem; /* For spacing between text blocks */
 }
 
-.why-choose-content h2,
-.why-choose-content h3,
-.why-choose-content p {
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.7; /* Increased line height for better readability */
 }
 
-.why-choose-point {
-    background-color: var(--medium-bg);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    margin-bottom: 1.5rem;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1.5rem; /* Added space after headings */
+    color: var(--text-color); /* Ensuring headers have the right color */
 }
 
-.why-choose-point h4 {
-    color: var(--text-color);
+p {
+    margin-bottom: 1.5rem; /* Added space after paragraphs */
+    color: var(--text-color); /* Ensuring paragraphs have the right color */
 }
 
-.why-choose-point p {
-    color: var(--text-muted);
-}
-
-.why-choose-icon {
+a {
     color: var(--primary-color);
-    font-size: 2rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+.btn {
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border: none;
+    padding: 14px 30px; /* Increased button padding */
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(95, 123, 255, 0.4);
+    color: var(--text-color); /* Ensuring button text is visible */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(95, 123, 255, 0.5);
+}
+
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    color: var(--text-color);
+    padding: 14px 30px; /* Increased button padding */
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-color);
+    transform: translateY(-3px);
+}
+
+/* Increased section padding */
+.section-padding {
+    padding: var(--section-spacing) 0;
+}
+
+/* Improved Navbar Spacing */
+.navbar {
+    padding: 1.5rem 0; /* Increased navbar padding */
+    background-color: var(--darker-bg); /* Adding background color to navbar */
+}
+
+.navbar-brand {
+    font-size: 1.75rem; /* Larger brand name */
+    font-weight: 700;
+    color: var(--text-color); /* Ensuring brand text is visible */
+}
+
+.nav-item {
+    margin: 0 0.75rem; /* Added space between nav items */
+}
+
+.nav-link {
+    padding: 0.75rem 1rem !important; /* Increased padding around nav links */
+    color: var(--text-color) !important; /* Force nav links to be visible */
+}
+
+/* Hero Section Improvements */
+.hero-section {
+    padding: 220px 0 170px; /* Increased hero padding */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title {
     margin-bottom: 1.5rem;
+    font-size: 3.75rem; /* Larger hero title */
+    line-height: 1.2;
+    color: var(--text-color); /* Ensuring hero title is visible */
 }
 
-.feature-list li {
-    color: var(--text-color);
-    margin-bottom: 1rem;
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem; /* More space below subtitle */
+    opacity: 0.9;
+    color: var(--text-muted); /* Using muted text color for subtitle */
 }
 
-/* Contact Us Section Specific Fixes */
-.contact-section {
-    background-color: var(--dark-bg);
+.hero-stats {
+    margin-top: 3rem; /* More space above stats */
 }
 
-.contact-title,
-.contact-description {
-    color: var(--text-color);
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-color); /* Ensuring stat numbers are visible */
 }
 
-.contact-form {
-    background-color: var(--medium-bg);
+.stat-text {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: var(--text-muted); /* Using muted text color for stat text */
+}
+
+/* Section Headers with More Space */
+.section-badge {
+    display: inline-block;
+    background: rgba(95, 123, 255, 0.1);
+    color: var(--primary-color);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem; /* More space below badge */
+}
+
+.section-title {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color); /* Ensuring section titles are visible */
+}
+
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0 auto 2rem; /* More space below divider */
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    color: var(--text-muted); /* Using muted text color for section subtitle */
+}
+
+/* Service Cards with Better Spacing */
+.service-card {
+    background: var(--medium-bg);
     border-radius: var(--border-radius);
-    padding: 2.5rem;
+    padding: 3rem 2rem; /* Increased padding inside cards */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transition: var(--transition);
+    margin-bottom: 2rem; /* Added space between rows */
 }
 
-.contact-form-title {
-    color: var(--text-color);
+.service-card:hover {
+    transform: var(--hover-transform);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem; /* More space below icon */
+}
+
+.service-card h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color); /* Ensuring service card titles are visible */
+}
+
+.service-card p {
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    color: var(--text-muted); /* Using muted text color for service card text */
+}
+
+/* Feature Boxes with Better Spacing */
+.feature-box {
+    text-align: center;
+    padding: 3rem 2rem; /* Increased padding */
+    border-radius: var(--border-radius);
+    background: var(--dark-bg);
+    height: 100%;
+    transition: var(--transition);
     margin-bottom: 2rem;
 }
 
-.contact-form .form-label {
-    color: var(--text-muted);
-}
-
-.contact-form .form-control {
-    background-color: var(--light-bg) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-color) !important;
-}
-
-.contact-form .form-control:focus {
-    border-color: var(--primary-color);
-}
-
-.contact-form textarea.form-control {
-    min-height: 150px;
-}
-
-.contact-info-box {
-    background-color: var(--medium-bg);
-    border-radius: var(--border-radius);
-    padding: 2.5rem;
-    height: 100%;
-}
-
-.contact-info-title {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
-.contact-detail {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-}
-
-.contact-detail-icon {
+.feature-icon {
+    font-size: 2.5rem;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    margin-bottom: 2rem; /* More space below icon */
+}
+
+.feature-box h4 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color); /* Ensuring feature box titles are visible */
+}
+
+.feature-box p {
+    color: var(--text-muted); /* Using muted text color for feature box text */
+}
+
+/* Reviews Section Spacing */
+.review-card {
+    background: var(--medium-bg);
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem; /* Increased padding */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.review-stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem; /* More space below stars */
+}
+
+.review-text {
+    color: var(--text-color); /* Ensuring review text is visible */
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem; /* More space above author */
+}
+
+.author-initial {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
     margin-right: 1rem;
 }
 
-.contact-detail-text {
-    color: var(--text-muted);
+.author-name {
+    color: var(--text-color); /* Ensuring author name is visible */
 }
 
-.contact-detail-text strong {
+.author-title {
+    color: var(--text-muted); /* Using muted text for author title */
+}
+
+/* Contact Form Improvements */
+.contact-info {
+    margin-bottom: 3rem; /* Space below contact info on mobile */
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2.5rem; /* More space between contact cards */
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 1.5rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(95, 123, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card-content h5 {
+    color: var(--text-color); /* Ensuring contact card title is visible */
+}
+
+.contact-card-content p {
+    color: var(--text-muted); /* Using muted text for contact information */
+}
+
+.form-floating {
+    margin-bottom: 1.5rem; /* More space between form fields */
+}
+
+.form-control {
+    padding: 1.5rem 1rem 0.5rem; /* More padding in form fields */
+    height: auto;
+    background-color: var(--light-bg); /* Background for form fields */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color); /* Text color for inputs */
+}
+
+.form-control:focus {
+    background-color: var(--medium-bg);
+    border-color: var(--primary-color);
     color: var(--text-color);
-    display: block;
-    margin-bottom: 0.25rem;
 }
 
-/* Add this to the end of your CSS file to override any conflicting styles */
-.text-dark, 
-.text-black {
-    color: var(--text-color) !important;
+.form-floating label {
+    color: var(--text-light); /* Label color */
 }
 
-.bg-light, 
-.bg-white {
-    background-color: var(--medium-bg) !important;
+/* Footer Improvements */
+.footer {
+    background: var(--darker-bg);
+    position: relative;
 }
 
-/* Force color for specific elements that might be getting overridden */
-#why-choose-us h2,
-#why-choose-us h3,
-#why-choose-us p,
-#why-choose-us li,
-#contact-us h2,
-#contact-us h3,
-#contact-us p,
-#contact-us label {
-    color: var(--text-color) !important;
+.footer-top {
+    padding: 5rem 0 3rem; /* More padding in footer */
 }
 
-/* Additional overrides for any nested elements */
-#why-choose-us *,
-#contact-us * {
-    color: var(--text-color);
+.footer-widget {
+    margin-bottom: 3rem; /* More space between widgets */
 }
 
-#why-choose-us .text-muted,
-#contact-us .text-muted {
-    color: var(--text-muted) !important;
+.widget-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem; /* More space below widget titles */
+    position: relative;
+    color: var(--text-color); /* Ensuring widget titles are visible */
 }
 
-/* Fix for dropdown menus in these sections */
-#why-choose-us .dropdown-item:hover,
-#contact-us .dropdown-item:hover {
-    background-color: var(--light-bg) !important;
-    color: var(--text-color) !important;
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1.2rem; /* More space between footer links */
+}
+
+.footer-links a {
+    color: var(--text-muted); /* Using muted text for footer links */
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-text {
+    color: var(--text-muted); /* Using muted text for footer text */
+}
+
+.footer-bottom {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    color: var(--text-muted); /* Using muted text for copyright */
+}
+
+/* Improved responsive container widths for more whitespace */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1280px; /* Slightly narrower for more whitespace */
+    }
+}
+
+/* Increased spacing for mobile */
+@media (max-width: 767px) {
+    .section-padding {
+        padding: 80px 0; /* Less extreme on mobile but still spacious */
+    }
+    
+    .hero-section {
+        padding: 150px 0 100px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
