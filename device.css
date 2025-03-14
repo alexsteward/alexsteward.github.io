@@ -1,113 +1,11 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #3A4750;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    background-color: #192335;
-    color: #fff;
-    padding: 60px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-.section-heading {
-    background-color: #4B5869;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.8rem;
-    margin: 0 auto 30px;
-    max-width: 800px;
-}
-
-.device-card {
-    background-color: #192335;
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.device-card p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    margin-top: 10px;
-    padding: 0 10px; 
-}
-
-.device-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.device-card img {
-    width: auto;
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.device-card h5 {
-    font-size: 1.6rem;  
-    font-weight: bold;  
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.price {
-    color: #FFD700;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.modern-bold {
-    margin-top: 0;
-}
-
-.modern-feature {
-    margin-top: 0;
-    padding-top: 0;
-}
-
+/* Carousel styles for devices page */
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 400px;
-    height: 400px;
+    max-width: 300px;
+    height: 300px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,9 +34,9 @@ header p {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     border-radius: 50%;
-    padding: 12px;
+    padding: 8px 12px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -159,67 +57,5 @@ header p {
     color: black;
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-controls {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.carousel-controls button {
-    background-color: #4B5869;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.carousel-controls button:hover {
-    background-color: #3a4750;
-}
-
-.btn {
-    background-color: #4B5869;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background-color: #3a4750;
-}
-
-footer {
-    background-color: #192335;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 40px 20px;
-    }
-
-    .section-heading {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 1.5rem;
-    }
-
-    .device-card {
-        padding: 15px;
-    }
-
-    .device-card h5 {
-        font-size: 1.5rem; 
-    }
 }
 
