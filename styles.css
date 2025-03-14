@@ -36,10 +36,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     margin-bottom: 1.5rem; /* Added space after headings */
+    color: var(--text-color); /* Ensuring headers have the right color */
 }
 
 p {
     margin-bottom: 1.5rem; /* Added space after paragraphs */
+    color: var(--text-color); /* Ensuring paragraphs have the right color */
 }
 
 a {
@@ -64,6 +66,7 @@ a:hover {
     font-weight: 600;
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(95, 123, 255, 0.4);
+    color: var(--text-color); /* Ensuring button text is visible */
 }
 
 .btn-primary:hover {
@@ -95,11 +98,13 @@ a:hover {
 /* Improved Navbar Spacing */
 .navbar {
     padding: 1.5rem 0; /* Increased navbar padding */
+    background-color: var(--darker-bg); /* Adding background color to navbar */
 }
 
 .navbar-brand {
     font-size: 1.75rem; /* Larger brand name */
     font-weight: 700;
+    color: var(--text-color); /* Ensuring brand text is visible */
 }
 
 .nav-item {
@@ -108,6 +113,7 @@ a:hover {
 
 .nav-link {
     padding: 0.75rem 1rem !important; /* Increased padding around nav links */
+    color: var(--text-color) !important; /* Force nav links to be visible */
 }
 
 /* Hero Section Improvements */
@@ -121,12 +127,14 @@ a:hover {
     margin-bottom: 1.5rem;
     font-size: 3.75rem; /* Larger hero title */
     line-height: 1.2;
+    color: var(--text-color); /* Ensuring hero title is visible */
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2.5rem; /* More space below subtitle */
     opacity: 0.9;
+    color: var(--text-muted); /* Using muted text color for subtitle */
 }
 
 .hero-stats {
@@ -137,11 +145,13 @@ a:hover {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: var(--text-color); /* Ensuring stat numbers are visible */
 }
 
 .stat-text {
     font-size: 1rem;
     opacity: 0.8;
+    color: var(--text-muted); /* Using muted text color for stat text */
 }
 
 /* Section Headers with More Space */
@@ -159,6 +169,7 @@ a:hover {
 .section-title {
     font-size: 2.75rem;
     margin-bottom: 1.5rem;
+    color: var(--text-color); /* Ensuring section titles are visible */
 }
 
 .section-divider {
@@ -173,6 +184,7 @@ a:hover {
     opacity: 0.8;
     max-width: 600px;
     margin: 0 auto 1rem;
+    color: var(--text-muted); /* Using muted text color for section subtitle */
 }
 
 /* Service Cards with Better Spacing */
@@ -201,11 +213,13 @@ a:hover {
 .service-card h3 {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
+    color: var(--text-color); /* Ensuring service card titles are visible */
 }
 
 .service-card p {
     opacity: 0.8;
     margin-bottom: 2rem;
+    color: var(--text-muted); /* Using muted text color for service card text */
 }
 
 /* Feature Boxes with Better Spacing */
@@ -227,6 +241,11 @@ a:hover {
 
 .feature-box h4 {
     margin-bottom: 1.5rem;
+    color: var(--text-color); /* Ensuring feature box titles are visible */
+}
+
+.feature-box p {
+    color: var(--text-muted); /* Using muted text color for feature box text */
 }
 
 /* Reviews Section Spacing */
@@ -246,6 +265,10 @@ a:hover {
     margin-bottom: 1.5rem; /* More space below stars */
 }
 
+.review-text {
+    color: var(--text-color); /* Ensuring review text is visible */
+}
+
 .review-author {
     display: flex;
     align-items: center;
@@ -263,6 +286,14 @@ a:hover {
     justify-content: center;
     font-weight: 600;
     margin-right: 1rem;
+}
+
+.author-name {
+    color: var(--text-color); /* Ensuring author name is visible */
+}
+
+.author-title {
+    color: var(--text-muted); /* Using muted text for author title */
 }
 
 /* Contact Form Improvements */
@@ -289,6 +320,14 @@ a:hover {
     justify-content: center;
 }
 
+.contact-card-content h5 {
+    color: var(--text-color); /* Ensuring contact card title is visible */
+}
+
+.contact-card-content p {
+    color: var(--text-muted); /* Using muted text for contact information */
+}
+
 .form-floating {
     margin-bottom: 1.5rem; /* More space between form fields */
 }
@@ -296,6 +335,19 @@ a:hover {
 .form-control {
     padding: 1.5rem 1rem 0.5rem; /* More padding in form fields */
     height: auto;
+    background-color: var(--light-bg); /* Background for form fields */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color); /* Text color for inputs */
+}
+
+.form-control:focus {
+    background-color: var(--medium-bg);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.form-floating label {
+    color: var(--text-light); /* Label color */
 }
 
 /* Footer Improvements */
@@ -316,6 +368,7 @@ a:hover {
     font-size: 1.5rem;
     margin-bottom: 2rem; /* More space below widget titles */
     position: relative;
+    color: var(--text-color); /* Ensuring widget titles are visible */
 }
 
 .footer-links {
@@ -328,9 +381,25 @@ a:hover {
     margin-bottom: 1.2rem; /* More space between footer links */
 }
 
+.footer-links a {
+    color: var(--text-muted); /* Using muted text for footer links */
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-text {
+    color: var(--text-muted); /* Using muted text for footer text */
+}
+
 .footer-bottom {
     padding: 2rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    color: var(--text-muted); /* Using muted text for copyright */
 }
 
 /* Improved responsive container widths for more whitespace */
