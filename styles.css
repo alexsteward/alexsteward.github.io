@@ -326,6 +326,25 @@ a:hover {
     background: linear-gradient(to bottom, white, #f8f9fa);
 }
 
+/* Fix for CTA Button */
+.cta-section {
+    position: relative;
+    z-index: 1;
+}
+
+.geometric-bg {
+    pointer-events: none; /* This ensures clicks pass through the background shapes */
+}
+
+.cta-button {
+    position: relative;
+    z-index: 5; /* Higher z-index to ensure clickability */
+}
+
+.shape {
+    pointer-events: none; /* Ensures shapes don't block clicks */
+}
+
 
 
 /* Reviews Section */
