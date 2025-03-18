@@ -424,7 +424,7 @@ nav {
   font-size: 1rem;
   transition: var(--transition);
   position: relative; /* Add this */
-  z-index: 2; /* Add this for extra insurance */
+  z-index: 200; /* Add this for extra insurance */
 }
 
 .services .form-control {
