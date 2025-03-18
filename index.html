@@ -1,24 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Page Metadata - Helps search engines understand your page -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page Title - Shows in browser tab -->
   <title>iFixTech - Expert Tech Solutions</title>
+  
+  <!-- Description Tag - Used by search engines for better indexing -->
+  <meta name="description" content="Expert tech repair services in Hastings, MI. We fix smartphones, tablets, computers and provide professional IT support services.">
+  
+  <!-- Keywords - Help with SEO (less important now, but still used) -->
+  <meta name="keywords" content="tech repair, phone repair, computer repair, IT support, Hastings, MI">
+  
+  <!-- Author Information -->
+  <meta name="author" content="iFixTech">
+  
+  <!-- Open Graph Tags - Used when sharing links on social media -->
+  <meta property="og:title" content="iFixTech - Expert Tech Solutions">
+  <meta property="og:description" content="Your trusted technology repair experts in Hastings, MI">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ifixtechofficial.com">
+  <meta property="og:image" content="images/logo.png">
+  
+  <!-- Favicon - Small icon shown in browser tab -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  
+  <!-- CSS Stylesheets - Controls how the page looks -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome - For icons used throughout the site -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Animation Libraries - For visual effects -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
+  
+  <!-- Preload Critical Fonts - Improves page load performance -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- JavaScript Libraries - For animations and interactivity -->
+  <!-- GSAP - Advanced animation library -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Three.js - For 3D effects -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- AOS - Animate on Scroll library -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Vanilla Tilt - For card tilt effects -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <!-- Waypoints - For triggering animations based on scroll position -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+  <!-- CountUp - For animated number counting -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
+  
+  <!-- Structured Data - Helps search engines understand your content better -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "iFixTech",
+      "description": "Expert tech repair and IT support services",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hastings",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "telephone": "(269) 223-0875",
+      "email": "ifixtechofficial@gmail.com",
+      "url": "https://ifixtechofficial.com",
+      "openingHours": "Mo-Su 00:00-23:59"
+    }
+  </script>
 </head>
+
 <body>
-  <!-- Preloader -->
-  <div class="preloader">
+  <!-- Preloader - Shows while the page is loading -->
+  <div class="preloader" aria-hidden="true">
     <div class="loading-animation">
       <div class="circle"></div>
       <div class="circle"></div>
@@ -30,28 +88,34 @@
     </div>
   </div>
 
-  <!-- Cursor Follower -->
-  <div class="cursor-follower"></div>
-  <div class="cursor-dot"></div>
+  <!-- Custom Cursor - Follows mouse movement -->
+  <div class="cursor-follower" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
 
-  <!-- Header -->
-  <header class="glass-nav">
+  <!-- Header Section - Contains navigation menu -->
+  <header class="glass-nav" id="main-header">
     <div class="container">
-      <nav>
+      <!-- Navigation Bar -->
+      <nav aria-label="Main navigation">
+        <!-- Logo Area - Brand Identity -->
         <div class="logo" data-tilt data-tilt-max="15">
           <div class="logo-icon">
-            <i class="fas fa-microchip"></i>
+            <i class="fas fa-microchip" aria-hidden="true"></i>
           </div>
           <span class="logo-text">iFixTech</span>
         </div>
-        <div class="nav-toggle" id="navToggle">
+        
+        <!-- Mobile Menu Toggle Button - Only visible on small screens -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
           <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
           </div>
-        </div>
-        <ul class="nav-links">
+        </button>
+        
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
@@ -62,277 +126,350 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="particle-container">
-      <canvas id="particle-canvas"></canvas>
-    </div>
-    
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="gradient-text animate__animated animate__fadeInUp">Expert Tech Solutions for Every Problem</h1>
-        <p class="animate__animated animate__fadeInUp animate__delay-1s">Whether it's a broken device, software issues, or IT infrastructure needs, our team of certified technicians is ready to help you get back on track quickly and efficiently.</p>
-        <a href="#contact" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">
-          <span>Get Help Now</span>
-          <svg class="button-arrow" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="scroll-indicator">
-      <div class="mouse">
-        <div class="wheel"></div>
-      </div>
-      <div class="arrows">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <div class="hero-shape"></div>
-  </section>
-    
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-heading" data-scroll>
-        <span class="badge">What We Do</span>
-        <h2 class="reveal-text">Our Services</h2>
-        <p class="reveal-text">We offer comprehensive tech repair and support services for all your needs</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card" data-tilt data-tilt-max="10">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Device Repair</h3>
-          <p>We fix smartphones, tablets, laptops, and desktop computers with fast turnaround times and quality parts.</p>
-          <a href="#contact" class="btn-link">
-            <span>Learn More</span>
-            <svg class="btn-arrow" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-          <div class="card-overlay"></div>
-        </div>
-        <div class="service-card" data-tilt data-tilt-max="10">
-          <div class="service-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3>IT Support</h3>
-          <p>Professional IT support for businesses and individuals, including networking, security, and cloud services.</p>
-          <a href="#contact" class="btn-link">
-            <span>Learn More</span>
-            <svg class="btn-arrow" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-          <div class="card-overlay"></div>
-        </div>
-        <div class="service-card" data-tilt data-tilt-max="10">
-          <div class="service-icon">
-            <i class="fas fa-database"></i>
-          </div>
-          <h3>Data Recovery</h3>
-          <p>Specialized data recovery services to retrieve lost or corrupted files from any storage device.</p>
-          <a href="#contact" class="btn-link">
-            <span>Learn More</span>
-            <svg class="btn-arrow" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-          <div class="card-overlay"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  
-  <!-- About Section - Enhanced -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-intro">
-        <span class="badge">About Us</span>
-        <h2>Your Tech Problems, Our Expertise</h2>
+  <!-- Main Content Area -->
+  <main>
+    <!-- Hero Section - First visible section with main call-to-action -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <!-- Background Particles Animation -->
+      <div class="particle-container" aria-hidden="true">
+        <canvas id="particle-canvas"></canvas>
       </div>
       
-      <div class="about-content">
-        <div class="about-image-wrapper">
-          <div class="about-image">
-            <img src="images/logo.png" alt="iFixTech Logo" class="logo-image">
-            <div class="tech-bubble" data-device="laptop"><i class="fas fa-laptop"></i></div>
-            <div class="tech-bubble" data-device="mobile"><i class="fas fa-mobile-alt"></i></div>
-            <div class="tech-bubble" data-device="desktop"><i class="fas fa-desktop"></i></div>
-            <div class="tech-bubble" data-device="server"><i class="fas fa-server"></i></div>
-            <div class="expertise-badge">
-              <span>Expert Service</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="about-text">
-          <p>At iFixTech, we understand the frustration of technology issues. Our certified technicians bring years of experience and problem-solving expertise to every job, ensuring your devices and systems work flawlessly.</p>
-          <p>Based in Hastings, MI, we provide personalized tech support and repair services for all your devices. No tech problem is too big or small for our dedicated team.</p>
-          
-          <div class="features-grid">
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-certificate"></i>
-              </div>
-              <h4>Certified Expertise</h4>
-              <p>Our technicians are certified and continuously trained on the latest technologies.</p>
-            </div>
-            
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <h4>Fast Turnaround</h4>
-              <p>We value your time and work efficiently to get your technology back up and running.</p>
-            </div>
-            
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-thumbs-up"></i>
-              </div>
-              <h4>Quality Service</h4>
-              <p>We use only high-quality parts and follow industry best practices.</p>
-            </div>
-            
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-dollar-sign"></i>
-              </div>
-              <h4>Affordable Rates</h4>
-              <p>Professional tech support at competitive and transparent pricing.</p>
-            </div>
-          </div>
-          
-          <a href="#contact" class="cta-button">
-            Get Expert Help Today
-            <svg viewBox="0 0 24 24" class="arrow-icon">
+      <div class="container">
+        <!-- Hero Content - Main message and call-to-action -->
+        <div class="hero-content">
+          <h1 id="hero-heading" class="gradient-text animate__animated animate__fadeInUp">Expert Tech Solutions for Every Problem</h1>
+          <p class="animate__animated animate__fadeInUp animate__delay-1s">Whether it's a broken device, software issues, or IT infrastructure needs, our team of certified technicians is ready to help you get back on track quickly and efficiently.</p>
+          <a href="#contact" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">
+            <span>Get Help Now</span>
+            <svg class="button-arrow" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
         </div>
       </div>
-    </div>
-    
-    <div class="tech-background">
-      <div class="circuit-pattern"></div>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-heading light" data-scroll>
-        <span class="badge">Contact Us</span>
-        <h2 class="reveal-text">Get In Touch</h2>
-        <p class="reveal-text">Have a tech problem? Send us a message and we'll get back to you as soon as possible.</p>
+
+      <!-- Scroll Indicator - Visual cue to scroll down -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div class="arrows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <div class="contact-wrapper">
-        <div class="contact-info" data-scroll>
-          <h3 class="reveal-text">Contact Information</h3>
-          <p class="reveal-text">Our team of expert technicians is ready to help solve your tech issues. Reach out to us for a consultation.</p>
-          <ul class="contact-info-list">
-            <li class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <span>No Public Office; Call for Appointment<br>Hastings, MI</span>
-            </li>
-            <li class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <span>ifixtechofficial@gmail.com</span>
-            </li>
-            <li class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <span>(269) 223-0875</span>
-            </li>
-            <li class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <span>Monday - Friday: All day <br>Saturday: All day<br>Sunday: All day</span>
-            </li>
-          </ul>
-          <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61572289192480" class="social-icon" data-tilt data-tilt-max="25" target="_blank">
-              <i class="fab fa-facebook-f"></i>
+
+      <!-- Decorative Shape Element -->
+      <div class="hero-shape" aria-hidden="true"></div>
+    </section>
+      
+    <!-- Services Section - Shows what the company offers -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-heading" data-aos="fade-up">
+          <span class="badge">What We Do</span>
+          <h2 id="services-heading" class="reveal-text">Our Services</h2>
+          <p class="reveal-text">We offer comprehensive tech repair and support services for all your needs</p>
+        </div>
+        
+        <!-- Services Grid - Cards showing each service -->
+        <div class="services-grid">
+          <!-- Service Card 1 - Device Repair -->
+          <div class="service-card" data-tilt data-tilt-max="10" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+            </div>
+            <h3>Device Repair</h3>
+            <p>We fix smartphones, tablets, laptops, and desktop computers with fast turnaround times and quality parts.</p>
+            <a href="#contact" class="btn-link">
+              <span>Learn More</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
             </a>
-            <a href="https://www.instagram.com/ifixtechofficial/" class="social-icon" data-tilt data-tilt-max="25" target="_blank">
-              <i class="fab fa-instagram"></i>
+            <div class="card-overlay" aria-hidden="true"></div>
+          </div>
+          
+          <!-- Service Card 2 - IT Support -->
+          <div class="service-card" data-tilt data-tilt-max="10" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+              <i class="fas fa-server" aria-hidden="true"></i>
+            </div>
+            <h3>IT Support</h3>
+            <p>Professional IT support for businesses and individuals, including networking, security, and cloud services.</p>
+            <a href="#contact" class="btn-link">
+              <span>Learn More</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            <div class="card-overlay" aria-hidden="true"></div>
+          </div>
+          
+          <!-- Service Card 3 - Data Recovery -->
+          <div class="service-card" data-tilt data-tilt-max="10" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+              <i class="fas fa-database" aria-hidden="true"></i>
+            </div>
+            <h3>Data Recovery</h3>
+            <p>Specialized data recovery services to retrieve lost or corrupted files from any storage device.</p>
+            <a href="#contact" class="btn-link">
+              <span>Learn More</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            <div class="card-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section - Company information -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <!-- Section Introduction -->
+        <div class="section-intro" data-aos="fade-up">
+          <span class="badge">About Us</span>
+          <h2 id="about-heading">Your Tech Problems, Our Expertise</h2>
+        </div>
+        
+        <!-- About Content Area -->
+        <div class="about-content">
+          <!-- Visual Elements - Company Image and Floating Icons -->
+          <div class="about-image-wrapper" data-aos="fade-right" data-aos-delay="100">
+            <div class="about-image">
+              <!-- Company Logo -->
+              <img src="images/logo.png" alt="iFixTech Logo" class="logo-image" width="300" height="300">
+              <!-- Animated Tech Bubbles -->
+              <div class="tech-bubble" data-device="laptop" aria-hidden="true">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <div class="tech-bubble" data-device="mobile" aria-hidden="true">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="tech-bubble" data-device="desktop" aria-hidden="true">
+                <i class="fas fa-desktop"></i>
+              </div>
+              <div class="tech-bubble" data-device="server" aria-hidden="true">
+                <i class="fas fa-server"></i>
+              </div>
+              <!-- Expert Badge -->
+              <div class="expertise-badge" aria-hidden="true">
+                <span>Expert Service</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- About Text and Features -->
+          <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+            <!-- Company Description -->
+            <p>At iFixTech, we understand the frustration of technology issues. Our certified technicians bring years of experience and problem-solving expertise to every job, ensuring your devices and systems work flawlessly.</p>
+            <p>Based in Hastings, MI, we provide personalized tech support and repair services for all your devices. No tech problem is too big or small for our dedicated team.</p>
+            
+            <!-- Features Grid - Company Highlights -->
+            <div class="features-grid">
+              <!-- Feature 1 - Certified Expertise -->
+              <div class="feature" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                  <i class="fas fa-certificate" aria-hidden="true"></i>
+                </div>
+                <h4>Certified Expertise</h4>
+                <p>Our technicians are certified and continuously trained on the latest technologies.</p>
+              </div>
+              
+              <!-- Feature 2 - Fast Turnaround -->
+              <div class="feature" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                  <i class="fas fa-bolt" aria-hidden="true"></i>
+                </div>
+                <h4>Fast Turnaround</h4>
+                <p>We value your time and work efficiently to get your technology back up and running.</p>
+              </div>
+              
+              <!-- Feature 3 - Quality Service -->
+              <div class="feature" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                  <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+                </div>
+                <h4>Quality Service</h4>
+                <p>We use only high-quality parts and follow industry best practices.</p>
+              </div>
+              
+              <!-- Feature 4 - Affordable Rates -->
+              <div class="feature" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon">
+                  <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                </div>
+                <h4>Affordable Rates</h4>
+                <p>Professional tech support at competitive and transparent pricing.</p>
+              </div>
+            </div>
+            
+            <!-- Call to Action Button -->
+            <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="500">
+              Get Expert Help Today
+              <svg viewBox="0 0 24 24" class="arrow-icon" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
             </a>
           </div>
         </div>
-        <div class="contact-form glass-card" data-scroll>
-          <form action="https://formspree.io/f/xnnnrgrb" method="POST">
-            <div class="form-group">
-              <input type="text" id="name" name="name" class="form-control" required>
-              <label for="name" class="form-label">Your Name</label>
-              <div class="line"></div>
+      </div>
+      
+      <!-- Background Circuit Pattern -->
+      <div class="tech-background" aria-hidden="true">
+        <div class="circuit-pattern"></div>
+      </div>
+    </section>
+    
+    <!-- Contact Section - Get in touch form -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-heading light" data-aos="fade-up">
+          <span class="badge">Contact Us</span>
+          <h2 id="contact-heading" class="reveal-text">Get In Touch</h2>
+          <p class="reveal-text">Have a tech problem? Send us a message and we'll get back to you as soon as possible.</p>
+        </div>
+        
+        <!-- Contact Content Wrapper -->
+        <div class="contact-wrapper">
+          <!-- Contact Information -->
+          <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+            <h3 class="reveal-text">Contact Information</h3>
+            <p class="reveal-text">Our team of expert technicians is ready to help solve your tech issues. Reach out to us for a consultation.</p>
+            
+            <!-- Contact Details List -->
+            <ul class="contact-info-list">
+              <!-- Location -->
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                </div>
+                <span>No Public Office; Call for Appointment<br>Hastings, MI</span>
+              </li>
+              
+              <!-- Email -->
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                </div>
+                <span>ifixtechofficial@gmail.com</span>
+              </li>
+              
+              <!-- Phone -->
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                </div>
+                <span>(269) 223-0875</span>
+              </li>
+              
+              <!-- Hours -->
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                </div>
+                <span>Monday - Friday: All day <br>Saturday: All day<br>Sunday: All day</span>
+              </li>
+            </ul>
+            
+            <!-- Social Media Links -->
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=61572289192480" class="social-icon" data-tilt data-tilt-max="25" target="_blank" rel="noopener" aria-label="Facebook Page">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/ifixtechofficial/" class="social-icon" data-tilt data-tilt-max="25" target="_blank" rel="noopener" aria-label="Instagram Profile">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
             </div>
-            <div class="form-group">
-              <input type="email" id="email" name="_replyto" class="form-control" required>
-              <label for="email" class="form-label">Email Address</label>
-              <div class="line"></div>
-            </div>
-            <div class="form-group">
-              <input type="tel" id="phone" name="phone" class="form-control">
-              <label for="phone" class="form-label">Phone Number</label>
-              <div class="line"></div>
-            </div>
-            <div class="form-group">
-              <select id="service" name="service" class="form-control">
-                <option value="" selected disabled hidden></option>
-                <option value="device-repair">Device Repair</option>
-                <option value="it-support">IT Support</option>
-                <option value="data-recovery">Data Recovery</option>
-                <option value="other">Other</option>
-              </select>
-              <label for="service" class="form-label">Service Needed</label>
-              <div class="line"></div>
-            </div>
-            <div class="form-group">
-              <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
-              <label for="message" class="form-label">Your Message</label>
-              <div class="line"></div>
-            </div>
-            <button type="submit" class="submit-btn">
-              <span>Send Message</span>
-              <svg class="button-arrow" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-              <div class="button-animation">
-                <span></span>
+          </div>
+          
+          <!-- Contact Form -->
+          <div class="contact-form glass-card" data-aos="fade-left" data-aos-delay="200">
+            <form action="https://formspree.io/f/xnnnrgrb" method="POST" id="contact-form">
+              <!-- Name Field -->
+              <div class="form-group">
+                <input type="text" id="name" name="name" class="form-control" required>
+                <label for="name" class="form-label">Your Name</label>
+                <div class="line" aria-hidden="true"></div>
               </div>
-            </button>
-          </form>
+              
+              <!-- Email Field -->
+              <div class="form-group">
+                <input type="email" id="email" name="_replyto" class="form-control" required>
+                <label for="email" class="form-label">Email Address</label>
+                <div class="line" aria-hidden="true"></div>
+              </div>
+              
+              <!-- Phone Field -->
+              <div class="form-group">
+                <input type="tel" id="phone" name="phone" class="form-control">
+                <label for="phone" class="form-label">Phone Number</label>
+                <div class="line" aria-hidden="true"></div>
+              </div>
+              
+              <!-- Service Selection Field -->
+              <div class="form-group">
+                <select id="service" name="service" class="form-control" aria-label="Service Needed">
+                  <option value="" selected disabled hidden></option>
+                  <option value="device-repair">Device Repair</option>
+                  <option value="it-support">IT Support</option>
+                  <option value="data-recovery">Data Recovery</option>
+                  <option value="other">Other</option>
+                </select>
+                <label for="service" class="form-label">Service Needed</label>
+                <div class="line" aria-hidden="true"></div>
+              </div>
+              
+              <!-- Message Field -->
+              <div class="form-group">
+                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                <label for="message" class="form-label">Your Message</label>
+                <div class="line" aria-hidden="true"></div>
+              </div>
+              
+              <!-- Submit Button -->
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <svg class="button-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+                <div class="button-animation" aria-hidden="true">
+                  <span></span>
+                </div>
+              </button>
+              
+              <!-- Form success/error messages placeholder -->
+              <div id="form-messages" class="form-messages" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="globe-container"></div>
-  </section>
+      
+      <!-- Globe Background Animation Container -->
+      <div id="globe-container" aria-hidden="true"></div>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Footer - Site bottom area with links and copyright -->
+  <footer id="main-footer">
     <div class="container">
+      <!-- Footer Content -->
       <div class="footer-content">
+        <!-- Footer Logo -->
         <div class="footer-logo">
           <div class="logo-icon">
-            <i class="fas fa-microchip"></i>
+            <i class="fas fa-microchip" aria-hidden="true"></i>
           </div>
           <span class="logo-text">iFixTech</span>
         </div>
+        
+        <!-- Footer Navigation Links -->
         <ul class="footer-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
@@ -342,14 +479,54 @@
           <li><a href="#">Terms of Service</a></li>
         </ul>
       </div>
+      
+      <!-- Copyright Information -->
       <div class="copyright">
         <p>&copy; 2025 iFixTech. All rights reserved.</p>
       </div>
     </div>
-    <div class="footer-shape"></div>
+    
+    <!-- Decorative Footer Shape -->
+    <div class="footer-shape" aria-hidden="true"></div>
   </footer>
 
-  <!-- Script file -->
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+  
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button id="cookie-accept" class="cookie-btn accept">Accept</button>
+        <button id="cookie-decline" class="cookie-btn decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
   <script src="javascript.js"></script>
+  
+  <!-- Initialization Script -->
+  <script>
+    // Initialize AOS animation library when page is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS animations
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+      
+      // Initialize Vanilla Tilt for 3D card effects
+      VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+        max: 15,
+        speed: 400,
+        glare: false
+      });
+    });
+  </script>
 </body>
 </html>
