@@ -7,26 +7,52 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loading-animation">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <span>Loading...</span>
+    </div>
+  </div>
+
+  <!-- Cursor Follower -->
+  <div class="cursor-follower"></div>
+  <div class="cursor-dot"></div>
+
   <!-- Header -->
   <header class="glass-nav">
     <div class="container">
       <nav>
-        <div class="logo">
+        <div class="logo" data-tilt data-tilt-max="15">
           <div class="logo-icon">
             <i class="fas fa-microchip"></i>
           </div>
           <span class="logo-text">iFixTech</span>
         </div>
         <div class="nav-toggle" id="navToggle">
-          <i class="fas fa-bars"></i>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#contact" class="nav-link highlight">Get Help</a></li>
         </ul>
       </nav>
     </div>
@@ -34,19 +60,31 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="particle particle-1"></div>
-    <div class="particle particle-2"></div>
-    <div class="particle particle-3"></div>
-    <div class="particle particle-4"></div>
+    <div class="particle-container">
+      <canvas id="particle-canvas"></canvas>
+    </div>
     
     <div class="container">
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-        <h1 class="gradient-text">Expert Tech Solutions for Every Problem</h1>
-        <p>Whether it's a broken device, software issues, or IT infrastructure needs, our team of certified technicians is ready to help you get back on track quickly and efficiently.</p>
-        <a href="#contact" class="cta-button">
-          Get Help Now
-          <i class="fas fa-arrow-right"></i>
+      <div class="hero-content">
+        <h1 class="gradient-text animate__animated animate__fadeInUp">Expert Tech Solutions for Every Problem</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Whether it's a broken device, software issues, or IT infrastructure needs, our team of certified technicians is ready to help you get back on track quickly and efficiently.</p>
+        <a href="#contact" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">
+          <span>Get Help Now</span>
+          <svg class="button-arrow" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
         </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div class="arrows">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
 
@@ -56,44 +94,53 @@
   <!-- Services Section -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-heading" data-aos="fade-up">
-        <span class="subheading">What We Do</span>
-        <h2>Our Services</h2>
-        <p>We offer comprehensive tech repair and support services for all your needs</p>
+      <div class="section-heading" data-scroll>
+        <span class="subheading reveal-text">What We Do</span>
+        <h2 class="reveal-text">Our Services</h2>
+        <p class="reveal-text">We offer comprehensive tech repair and support services for all your needs</p>
       </div>
       <div class="services-grid">
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card" data-tilt data-tilt-max="10">
           <div class="service-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
           <h3>Device Repair</h3>
           <p>We fix smartphones, tablets, laptops, and desktop computers with fast turnaround times and quality parts.</p>
           <a href="#contact" class="btn-link">
-            Learn More
-            <i class="fas fa-chevron-right"></i>
+            <span>Learn More</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
           </a>
+          <div class="card-overlay"></div>
         </div>
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card" data-tilt data-tilt-max="10">
           <div class="service-icon">
             <i class="fas fa-server"></i>
           </div>
           <h3>IT Support</h3>
           <p>Professional IT support for businesses and individuals, including networking, security, and cloud services.</p>
           <a href="#contact" class="btn-link">
-            Learn More
-            <i class="fas fa-chevron-right"></i>
+            <span>Learn More</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
           </a>
+          <div class="card-overlay"></div>
         </div>
-        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card" data-tilt data-tilt-max="10">
           <div class="service-icon">
             <i class="fas fa-database"></i>
           </div>
           <h3>Data Recovery</h3>
           <p>Specialized data recovery services to retrieve lost or corrupted files from any storage device.</p>
           <a href="#contact" class="btn-link">
-            Learn More
-            <i class="fas fa-chevron-right"></i>
+            <span>Learn More</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
           </a>
+          <div class="card-overlay"></div>
         </div>
       </div>
     </div>
@@ -103,119 +150,157 @@
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-image" data-aos="fade-right">
-          <div class="image-container">
+        <div class="about-image" data-scroll>
+          <div class="image-container parallax-element">
             <img src="/api/placeholder/600/400" alt="Tech Support Team">
-            <div class="experience-badge">
-              <span class="years">10+</span>
+            <div class="floating-tech-elements">
+              <div class="tech-element" id="tech1"><i class="fas fa-laptop"></i></div>
+              <div class="tech-element" id="tech2"><i class="fas fa-tablet-alt"></i></div>
+              <div class="tech-element" id="tech3"><i class="fas fa-mobile-alt"></i></div>
+              <div class="tech-element" id="tech4"><i class="fas fa-desktop"></i></div>
+            </div>
+            <div class="experience-badge" data-tilt data-tilt-max="25">
+              <span class="years counter">10+</span>
               <span class="text">Years Experience</span>
             </div>
           </div>
         </div>
-        <div class="about-content" data-aos="fade-left">
-          <span class="subheading">About Us</span>
-          <h2>We're Passionate About Solving Tech Problems</h2>
-          <p>At iFixTech, we understand how frustrating technology issues can be. Our team of certified technicians brings years of experience and a passion for problem-solving to every job.</p>
+        <div class="about-content" data-scroll>
+          <span class="subheading reveal-text">About Us</span>
+          <h2 class="reveal-text">We're Passionate About Solving Tech Problems</h2>
+          <p class="reveal-text">At iFixTech, we understand how frustrating technology issues can be. Our team of certified technicians brings years of experience and a passion for problem-solving to every job.</p>
           <ul class="about-features">
-            <li>
-              <i class="fas fa-check-circle"></i>
+            <li class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
               <span>Certified Technicians</span>
             </li>
-            <li>
-              <i class="fas fa-check-circle"></i>
+            <li class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
               <span>Fast Turnaround Times</span>
             </li>
-            <li>
-              <i class="fas fa-check-circle"></i>
+            <li class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
               <span>Quality Parts & Service</span>
             </li>
-            <li>
-              <i class="fas fa-check-circle"></i>
+            <li class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
               <span>90-Day Warranty</span>
             </li>
           </ul>
           <a href="#contact" class="cta-button">
-            Get in Touch
-            <i class="fas fa-arrow-right"></i>
+            <span>Get in Touch</span>
+            <svg class="button-arrow" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
           </a>
         </div>
       </div>
+    </div>
+    <div class="tech-background">
+      <div class="circuit-lines"></div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="container">
-      <div class="section-heading light" data-aos="fade-up">
-        <span class="subheading">Contact Us</span>
-        <h2>Get In Touch</h2>
-        <p>Have a tech problem? Send us a message and we'll get back to you as soon as possible.</p>
+      <div class="section-heading light" data-scroll>
+        <span class="subheading reveal-text">Contact Us</span>
+        <h2 class="reveal-text">Get In Touch</h2>
+        <p class="reveal-text">Have a tech problem? Send us a message and we'll get back to you as soon as possible.</p>
       </div>
       <div class="contact-wrapper">
-        <div class="contact-info" data-aos="fade-right">
-          <h3>Contact Information</h3>
-          <p>Our team of expert technicians is ready to help solve your tech issues. Reach out to us for a consultation.</p>
+        <div class="contact-info" data-scroll>
+          <h3 class="reveal-text">Contact Information</h3>
+          <p class="reveal-text">Our team of expert technicians is ready to help solve your tech issues. Reach out to us for a consultation.</p>
           <ul class="contact-info-list">
-            <li>
-              <i class="fas fa-map-marker-alt"></i>
+            <li class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
               <span>123 Tech Street, Suite 101<br>Tech City, TX 12345</span>
             </li>
-            <li>
-              <i class="fas fa-envelope"></i>
+            <li class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
               <span>support@ifixtech.com</span>
             </li>
-            <li>
-              <i class="fas fa-phone-alt"></i>
+            <li class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
               <span>(555) 123-4567</span>
             </li>
-            <li>
-              <i class="fas fa-clock"></i>
+            <li class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
               <span>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</span>
             </li>
           </ul>
           <div class="social-links">
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon" data-tilt data-tilt-max="25"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" data-tilt data-tilt-max="25"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon" data-tilt data-tilt-max="25"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" data-tilt data-tilt-max="25"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-        <div class="contact-form glass-card" data-aos="fade-left">
+        <div class="contact-form glass-card" data-scroll data-tilt data-tilt-max="5">
           <form action="https://formspree.io/f/xnnnrgrb" method="POST">
             <div class="form-group">
-              <label for="name">Your Name</label>
               <input type="text" id="name" name="name" class="form-control" required>
+              <label for="name" class="form-label">Your Name</label>
+              <div class="line"></div>
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
               <input type="email" id="email" name="_replyto" class="form-control" required>
+              <label for="email" class="form-label">Email Address</label>
+              <div class="line"></div>
             </div>
             <div class="form-group">
-              <label for="phone">Phone Number</label>
               <input type="tel" id="phone" name="phone" class="form-control">
+              <label for="phone" class="form-label">Phone Number</label>
+              <div class="line"></div>
             </div>
             <div class="form-group">
-              <label for="service">Service Needed</label>
               <select id="service" name="service" class="form-control">
-                <option value="">Select a service</option>
+                <option value="" selected disabled hidden></option>
                 <option value="device-repair">Device Repair</option>
                 <option value="it-support">IT Support</option>
                 <option value="data-recovery">Data Recovery</option>
                 <option value="other">Other</option>
               </select>
+              <label for="service" class="form-label">Service Needed</label>
+              <div class="line"></div>
             </div>
             <div class="form-group">
-              <label for="message">Your Message</label>
               <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+              <label for="message" class="form-label">Your Message</label>
+              <div class="line"></div>
             </div>
             <button type="submit" class="submit-btn">
-              Send Message
-              <i class="fas fa-paper-plane"></i>
+              <span>Send Message</span>
+              <svg class="button-arrow" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+              <div class="button-animation">
+                <span></span>
+              </div>
             </button>
           </form>
         </div>
       </div>
     </div>
+    <div id="globe-container"></div>
   </section>
 
   <!-- Footer -->
@@ -241,11 +326,26 @@
         <p>&copy; 2025 iFixTech. All rights reserved.</p>
       </div>
     </div>
+    <div class="footer-shape"></div>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
   <script>
+    // Preloader
+    window.addEventListener('load', function() {
+      const preloader = document.querySelector('.preloader');
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        // Animate elements in view on page load
+        animateElementsInView();
+      }, 1000);
+    });
+
     // Initialize AOS
     AOS.init({
       duration: 800,
@@ -253,9 +353,59 @@
       once: true
     });
 
+    // Initialize 3D tilt effect
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+      max: 10,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.3,
+    });
+
+    // Custom cursor
+    const cursor = document.querySelector('.cursor-follower');
+    const cursorDot = document.querySelector('.cursor-dot');
+    
+    document.addEventListener('mousemove', e => {
+      gsap.to(cursor, { 
+        x: e.clientX, 
+        y: e.clientY,
+        duration: 0.3
+      });
+      gsap.to(cursorDot, { 
+        x: e.clientX, 
+        y: e.clientY,
+        duration: 0.1
+      });
+    });
+
+    document.addEventListener('mousedown', () => {
+      cursor.classList.add('active');
+      cursorDot.classList.add('active');
+    });
+
+    document.addEventListener('mouseup', () => {
+      cursor.classList.remove('active');
+      cursorDot.classList.remove('active');
+    });
+
+    // Add hover effect to links and buttons
+    const links = document.querySelectorAll('a, button');
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+        cursorDot.classList.add('hover');
+      });
+      link.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+        cursorDot.classList.remove('hover');
+      });
+    });
+
     // Mobile navigation toggle
     document.getElementById('navToggle').addEventListener('click', function() {
+      this.classList.toggle('active');
       document.querySelector('.nav-links').classList.toggle('active');
+      document.body.classList.toggle('menu-open');
     });
 
     // Smooth scrolling for anchor links
@@ -267,6 +417,8 @@
         });
         // Close mobile menu if open
         document.querySelector('.nav-links').classList.remove('active');
+        document.getElementById('navToggle').classList.remove('active');
+        document.body.classList.remove('menu-open');
       });
     });
 
@@ -274,6 +426,345 @@
     window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
       header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Particle animation for hero section
+    function initParticles() {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      const particles = [];
+      const particleCount = 100;
+      
+      for(let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 3 + 1,
+          color: `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.1})`,
+          speedX: Math.random() * 2 - 1,
+          speedY: Math.random() * 2 - 1
+        });
+      }
+      
+      function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        for(let i = 0; i < particleCount; i++) {
+          const p = particles[i];
+          
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+          
+          p.x += p.speedX;
+          p.y += p.speedY;
+          
+          if(p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+          if(p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+          
+          // Connect nearby particles with lines
+          for(let j = i + 1; j < particleCount; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if(distance < 100) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 - distance/500})`;
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+      
+      animate();
+      
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    }
+    
+    initParticles();
+
+    // GSAP animations
+    function initGSAPAnimations() {
+      // Hero section animations
+      gsap.from(".hero-content h1", { 
+        duration: 1.2, 
+        y: 100, 
+        opacity: 0, 
+        ease: "power4.out" 
+      });
+      gsap.from(".hero-content p", { 
+        duration: 1.2, 
+        y: 50, 
+        opacity: 0, 
+        delay: 0.3, 
+        ease: "power4.out" 
+      });
+      gsap.from(".hero-content .cta-button", { 
+        duration: 1.2, 
+        y: 50, 
+        opacity: 0, 
+        delay: 0.6, 
+        ease: "power4.out" 
+      });
+      gsap.from(".scroll-indicator", { 
+        duration: 1, 
+        y: -30, 
+        opacity: 0, 
+        delay: 1.2, 
+        ease: "power2.out" 
+      });
+
+      // Create scroll animations
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Reveal text animation
+      const revealTextElements = document.querySelectorAll('.reveal-text');
+      revealTextElements.forEach(element => {
+        gsap.from(element, {
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          duration: 1,
+          y: 50,
+          opacity: 0,
+          ease: "power3.out"
+        });
+      });
+
+      // Service cards stagger animation
+      gsap.from(".service-card", {
+        scrollTrigger: {
+          trigger: ".services-grid",
+          start: "top 80%"
+        },
+        y: 100,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out"
+      });
+
+      // Floating tech elements animation
+      const techElements = document.querySelectorAll('.tech-element');
+      techElements.forEach((element, index) => {
+        gsap.to(element, {
+          y: `${(index % 2 === 0 ? '-' : '')}20`,
+          x: `${(index % 3 === 0 ? '-' : '')}10`,
+          rotation: index % 2 === 0 ? 5 : -5,
+          duration: 3 + index,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      });
+
+      // Contact form animation
+      gsap.from(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-wrapper",
+          start: "top 70%"
+        },
+        x: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      gsap.from(".contact-info", {
+        scrollTrigger: {
+          trigger: ".contact-wrapper",
+          start: "top 70%"
+        },
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+    }
+
+    // Counter animation
+    function initCounters() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = parseInt(counter.getAttribute('data-target') || counter.innerText);
+          const countUp = new CountUp(counter, target, {
+            startVal: 0,
+            duration: 2
+          });
+          
+          if (!countUp.error) {
+            countUp.start();
+          } else {
+            console.error(countUp.error);
+          }
+        };
+
+        const waypoint = new Waypoint({
+          element: counter,
+          handler: function() {
+            updateCount();
+            this.destroy();
+          },
+          offset: '90%'
+        });
+      });
+    }
+
+    // Initialize 3D globe for contact section
+    function initGlobe() {
+      const container = document.getElementById('globe-container');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      
+      const renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+      
+      // Create globe geometry
+      const geometry = new THREE.SphereGeometry(3.5, 64, 64);
+      
+      // Create material with custom shader
+      const material = new THREE.MeshBasicMaterial({
+        color: 0x4169E1,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.4
+      });
+      
+      const globe = new THREE.Mesh(geometry, material);
+      scene.add(globe);
+      
+      // Add particles around globe
+      const particlesGeometry = new THREE.BufferGeometry();
+      const particlesCount = 1000;
+      
+      const posArray = new Float32Array(particlesCount * 3);
+      
+      for(let i = 0; i < particlesCount * 3; i++) {
+        // Random positions in a sphere around the globe
+        const radius = 3.5 + Math.random() * 2;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos(2 * Math.random() - 1);
+        
+        posArray[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+        posArray[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+        posArray[i * 3 + 2] = radius * Math.cos(phi);
+      }
+      
+      particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.03,
+        color: 0x00FFFF
+      });
+      
+      const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+      scene.add(particlesMesh);
+      
+      camera.position.z = 10;
+      
+      // Animation
+      function animate() {
+        requestAnimationFrame(animate);
+        
+        globe.rotation.y += 0.002;
+        particlesMesh.rotation.y += 0.001;
+        
+        renderer.render(scene, camera);
+      }
+      
+      animate();
+      
+      // Handle resize
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    }
+
+    // Form animations
+    function initFormAnimations() {
+      const inputs = document.querySelectorAll('.form-control');
+      
+      inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          input.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', () => {
+          if(input.value === '') {
+            input.parentElement.classList.remove('focused');
+          }
+        });
+        
+        // Check for pre-filled inputs on page load
+        if(input.value !== '') {
+          input.parentElement.classList.add('focused');
+        }
+      });
+    }
+
+    // Circuit background animation for About section
+    function initCircuitAnimation() {
+      const circuitLines = document.querySelector('.circuit-lines');
+      const lineCount = 15;
+      
+      for(let i = 0; i < lineCount; i++) {
+        const line = document.createElement('div');
+        line.classList.add('circuit-line');
+        line.style.top = `${Math.random() * 100}%`;
+        line.style.left = `${Math.random() * 100}%`;
+        line.style.width = `${Math.random() * 150 + 50}px`;
+        line.style.height = `${Math.random() * 2 + 1}px`;
+        line.style.transform = `rotate(${Math.random() * 360}deg)`;
+        line.style.animationDelay = `${Math.random() * 5}s`;
+        
+        // Add nodes to some lines
+        if(Math.random() > 0.5) {
+          const node = document.createElement('div');
+          node.classList.add('circuit-node');
+          line.appendChild(node);
+        }
+        
+        circuitLines.appendChild(line);
+      }
+    }
+
+    // Initialize all animations
+    function animateElementsInView() {
+      initGSAPAnimations();
+      initCounters();
+      initGlobe();
+      initFormAnimations();
+      initCircuitAnimation();
+    }
+
+    // Set focused state on form fields with values
+    window.addEventListener('DOMContentLoaded', function() {
+      const formFields = document.querySelectorAll('.form-control');
+      formFields.forEach(field => {
+        if (field.value !== '') {
+          field.parentElement.classList.add('focused');
+        }
+      });
     });
   </script>
 </body>
