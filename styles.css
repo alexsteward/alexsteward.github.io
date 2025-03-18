@@ -385,7 +385,7 @@ nav {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 30px; /* Changed from 30px to 60px to move it higher */
+  bottom: 90px; /* Changed from 30px to 60px to move it higher */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
