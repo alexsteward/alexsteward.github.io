@@ -545,14 +545,16 @@
           ease: "power3.out"
         });
       });
-
-      // Service cards stagger animation
+      
+      // Service cards stagger animation - FIXED HERE
       gsap.from(".service-card", {
         scrollTrigger: {
           trigger: ".services-grid",
-          start: "top 80%"
+          start: "top 80%",
+          // Adding this to ensure the animation only plays once
+          toggleActions: "play none none none"
         },
-        y: 100,
+        y: 50, // Reduced from 100 for less dramatic movement
         opacity: 0,
         duration: 0.8,
         stagger: 0.2,
@@ -571,24 +573,25 @@
           yoyo: true,
           ease: "sine.inOut",
         });
-      });
-
-      // Contact form animation
+      });  
+     // Contact form animation
       gsap.from(".contact-form", {
         scrollTrigger: {
           trigger: ".contact-wrapper",
-          start: "top 70%"
+          start: "top 70%",
+          toggleActions: "play none none none" // Added to prevent repeating
         },
         x: 100,
         opacity: 0,
         duration: 1,
         ease: "power3.out"
       });
-
+    
       gsap.from(".contact-info", {
         scrollTrigger: {
           trigger: ".contact-wrapper",
-          start: "top 70%"
+          start: "top 70%",
+          toggleActions: "play none none none" // Added to prevent repeating
         },
         x: -100,
         opacity: 0,
@@ -596,7 +599,7 @@
         ease: "power3.out"
       });
     }
-
+    
     // Counter animation
     function initCounters() {
       const counters = document.querySelectorAll('.counter');
