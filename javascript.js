@@ -758,6 +758,125 @@ function initFormAnimations() {
   }
 }
 
+// Formspree Form Submission Handler
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('.contact-form form');
+  const submitBtn = document.querySelector('.submit-btn');
+  
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent the default form submission
+      
+      // Store the original button content
+      const originalBtnHTML = submitBtn.innerHTML;
+      
+      // Change button text to "Submitting..."
+      submitBtn.innerHTML = '<span>Submitting...</span>';
+      submitBtn.disabled = true;
+      
+      // Collect form data
+      const formData = new FormData(form);
+      
+      // Send form data to Formspree
+      fetch("https://formspree.io/f/xnnnrgrb", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          // Success - change button text
+          submitBtn.innerHTML = '<span>Submitted!</span>';
+          
+          // Reset form
+          form.reset();
+          
+          // Reset labels
+          document.querySelectorAll('.form-group').forEach(group => {
+            group.classList.remove('focused');
+          });
+          
+          // Show success message
+          const successMessage = document.createElement('div');
+          successMessage.className = 'success-message';
+          successMessage.textContent = 'Thank you! Your message has been sent successfully.';
+          successMessage.style.color = 'var(--accent)';
+          successMessage.style.marginTop = '20px';
+          successMessage.style.textAlign = 'center';
+          form.appendChild(successMessage);
+          
+          // Restore button after delay
+          setTimeout(() => {
+            submitBtn.innerHTML = originalBtnHTML;
+            submitBtn.disabled = false;
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+              const message = document.querySelector('.success-message');
+              if (message) {
+                message.style.opacity = '0';
+                message.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => message.remove(), 500);
+              }
+            }, 5000);
+          }, 2000);
+        } else {
+          // Error
+          submitBtn.innerHTML = '<span>Error! Try Again</span>';
+          submitBtn.disabled = false;
+          
+          // Show error message
+          const errorMessage = document.createElement('div');
+          errorMessage.className = 'error-message';
+          errorMessage.textContent = 'There was a problem sending your message. Please try again.';
+          errorMessage.style.color = '#ff3366';
+          errorMessage.style.marginTop = '20px';
+          errorMessage.style.textAlign = 'center';
+          form.appendChild(errorMessage);
+          
+          // Remove error message after 5 seconds
+          setTimeout(() => {
+            const message = document.querySelector('.error-message');
+            if (message) {
+              message.style.opacity = '0';
+              message.style.transition = 'opacity 0.5s ease';
+              setTimeout(() => message.remove(), 500);
+            }
+          }, 5000);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        submitBtn.innerHTML = '<span>Error! Try Again</span>';
+        submitBtn.disabled = false;
+      });
+    });
+  }
+  
+  // Form field focus handling
+  const formControls = document.querySelectorAll('.form-control');
+  formControls.forEach(control => {
+    // Check initial state
+    if (control.value !== '') {
+      control.parentElement.classList.add('focused');
+    }
+    
+    // Add focus event
+    control.addEventListener('focus', function() {
+      this.parentElement.classList.add('focused');
+    });
+    
+    // Add blur event
+    control.addEventListener('blur', function() {
+      if (this.value === '') {
+        this.parentElement.classList.remove('focused');
+      }
+    });
+  });
+});
 
 
 // ==============================================
@@ -787,86 +906,3 @@ function initFormAnimations() {
 //}\
 
 
-// Form submission handler
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('form'); // Adjust selector if your form has a specific ID
-  const submitBtn = document.querySelector('.submit-btn');
-  
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent the default form submission
-      
-      // Store the original button text
-      const originalBtnText = submitBtn.innerHTML;
-      
-      // Change button text to "Submitting..."
-      submitBtn.innerHTML = 'Submitting...';
-      submitBtn.disabled = true;
-      
-      // Collect form data
-      const formData = new FormData(form);
-      
-      // Send form data using fetch API
-      fetch(form.action, {
-        method: form.method,
-        body: formData
-      })
-      .then(response => {
-        if (response.ok) {
-          // Success - change button text
-          submitBtn.innerHTML = 'Submitted!';
-          
-          // Optional: Reset form
-          form.reset();
-          
-          // Optional: Reset labels
-          document.querySelectorAll('.form-group').forEach(group => {
-            group.classList.remove('focused');
-          });
-          
-          // Optional: Show success message
-          const successMessage = document.createElement('div');
-          successMessage.className = 'success-message';
-          successMessage.textContent = 'Thank you! Your form has been submitted successfully.';
-          successMessage.style.color = 'var(--accent)';
-          successMessage.style.marginTop = '20px';
-          form.appendChild(successMessage);
-          
-          // Optional: Restore button after delay
-          setTimeout(() => {
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-          }, 3000);
-        } else {
-          // Error
-          submitBtn.innerHTML = 'Error! Try Again';
-          submitBtn.disabled = false;
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        submitBtn.innerHTML = 'Error! Try Again';
-        submitBtn.disabled = false;
-      });
-    });
-  }
-  
-  // Additional code for form field focus handling
-  const formControls = document.querySelectorAll('.form-control');
-  formControls.forEach(control => {
-    control.addEventListener('focus', function() {
-      this.parentElement.classList.add('focused');
-    });
-    
-    control.addEventListener('blur', function() {
-      if (this.value === '') {
-        this.parentElement.classList.remove('focused');
-      }
-    });
-    
-    // Check if the field has a value on page load
-    if (control.value !== '') {
-      control.parentElement.classList.add('focused');
-    }
-  });
-});
