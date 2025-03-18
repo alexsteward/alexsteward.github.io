@@ -522,20 +522,12 @@ function initCircuitAnimation() {
 }
 
 // ==============================================
-// TECH FORM ANIMATIONS - Cutting-edge form animations for tech companies
+// TECH FORM ANIMATIONS - Subtle hover effects without mouse tracking
 // ==============================================
 function initFormAnimations() {
   const inputs = document.querySelectorAll('.form-control');
   
-  // Add neon glow container to form
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    const glowContainer = document.createElement('div');
-    glowContainer.classList.add('form-glow-container');
-    form.appendChild(glowContainer);
-  }
-  
-  // Set up observer for intersection animations
+  // Set up field entry animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -545,40 +537,66 @@ function initFormAnimations() {
     });
   }, { threshold: 0.2 });
   
-  // Observe each form field for entry animations
+  // Add hover effects to form fields
   inputs.forEach((input, index) => {
     const parent = input.parentElement;
     parent.style.setProperty('--field-index', index);
     observer.observe(parent);
+    
+    // Add hover effect without moving the form
+    parent.addEventListener('mouseenter', () => {
+      if (typeof gsap !== 'undefined') {
+        // Create gentle glow effect on hover
+        gsap.to(parent, {
+          boxShadow: '0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 255, 255, 0.1)',
+          duration: 0.4
+        });
+        
+        // Subtle border highlight
+        const line = parent.querySelector('.line');
+        if (line) {
+          gsap.to(line, {
+            width: '100%',
+            opacity: 0.7,
+            backgroundColor: '#00FFFF',
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        }
+      }
+    });
+    
+    parent.addEventListener('mouseleave', () => {
+      if (!parent.classList.contains('focused') && typeof gsap !== 'undefined') {
+        gsap.to(parent, {
+          boxShadow: 'none',
+          duration: 0.4
+        });
+        
+        // Reset border highlight
+        const line = parent.querySelector('.line');
+        if (line && !input.value) {
+          gsap.to(line, {
+            width: '0%',
+            opacity: 0.3,
+            backgroundColor: 'var(--accent)',
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        }
+      }
+    });
     
     // High-tech focus effect
     input.addEventListener('focus', () => {
       parent.classList.add('focused');
       
       if (typeof gsap !== 'undefined') {
-        // Create digital particles effect
-        for (let i = 0; i < 10; i++) {
-          const particle = document.createElement('span');
-          particle.classList.add('digital-particle');
-          particle.style.setProperty('--x', Math.random() * 100 + '%');
-          parent.appendChild(particle);
-          
-          gsap.fromTo(particle, 
-            { 
-              scale: 0, 
-              opacity: 0.8,
-              y: 0
-            },
-            { 
-              scale: 1.5, 
-              opacity: 0, 
-              y: -50 - (Math.random() * 50),
-              x: (Math.random() - 0.5) * 100,
-              duration: 0.8 + (Math.random() * 1),
-              onComplete: () => particle.remove()
-            }
-          );
-        }
+        // Static glow effect instead of particles
+        gsap.to(parent, {
+          boxShadow: '0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2)',
+          duration: 0.5
+        });
         
         // Holographic label effect
         const label = parent.querySelector('label');
@@ -587,24 +605,21 @@ function initFormAnimations() {
             y: -25, 
             scale: 0.9, 
             color: '#00FFFF', 
-            textShadow: '0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5)',
+            textShadow: '0 0 10px rgba(0, 255, 255, 0.7)',
             duration: 0.3,
             ease: "power3.out"
           });
         }
         
-        // Glow effect on the form field
-        gsap.to(parent, {
-          boxShadow: '0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.3)',
-          duration: 0.5
-        });
-        
-        // Update the glow container
-        const glowContainer = document.querySelector('.form-glow-container');
-        if (glowContainer) {
-          gsap.to(glowContainer, {
-            background: `radial-gradient(circle at ${parent.offsetLeft + parent.offsetWidth/2}px ${parent.offsetTop + parent.offsetHeight/2}px, rgba(0, 255, 255, 0.15), transparent 50%)`,
-            duration: 0.5
+        // Line animation
+        const line = parent.querySelector('.line');
+        if (line) {
+          gsap.to(line, {
+            width: '100%',
+            opacity: 1,
+            backgroundColor: '#00FFFF',
+            duration: 0.4,
+            ease: "power2.out"
           });
         }
       }
@@ -632,71 +647,48 @@ function initFormAnimations() {
             boxShadow: 'none',
             duration: 0.5
           });
+          
+          // Reset line
+          const line = parent.querySelector('.line');
+          if (line) {
+            gsap.to(line, {
+              width: '0%',
+              opacity: 0.3,
+              backgroundColor: 'var(--accent)',
+              duration: 0.4,
+              ease: "power2.out"
+            });
+          }
         }
       } else {
-        // Digital scanning effect for validation
+        // Success state
         parent.classList.add('success');
         
         if (typeof gsap !== 'undefined') {
-          // Scan line effect
-          const scanLine = document.createElement('div');
-          scanLine.classList.add('scan-line');
-          parent.appendChild(scanLine);
-          
-          gsap.fromTo(scanLine, 
-            { left: '0%', opacity: 0.7 },
-            { 
-              left: '100%', 
-              opacity: 0,
-              duration: 0.8,
-              ease: "power1.inOut",
-              onComplete: () => scanLine.remove()
-            }
-          );
-          
           // Success indicator
           gsap.to(parent, {
-            boxShadow: '0 0 10px rgba(0, 255, 170, 0.6), 0 0 20px rgba(0, 255, 170, 0.3)',
+            boxShadow: '0 0 10px rgba(0, 255, 170, 0.4), 0 0 20px rgba(0, 255, 170, 0.2)',
             duration: 0.3
           });
           
-          // Pulse the line underneath
+          // Success line
           const line = parent.querySelector('.line');
           if (line) {
-            gsap.fromTo(line, 
-              { scaleX: 0.5, backgroundColor: '#00FFAA' },
-              { 
-                scaleX: 1, 
-                backgroundColor: '#00FFAA',
-                duration: 0.5,
-                ease: "elastic.out(1, 0.5)"
-              }
-            );
+            gsap.to(line, {
+              width: '100%',
+              backgroundColor: '#00FFAA',
+              opacity: 1,
+              duration: 0.4,
+              ease: "power2.out"
+            });
           }
         }
       }
     });
     
-    // Typing effect with dynamic response
+    // Typing effect 
     input.addEventListener('input', () => {
       if (typeof gsap !== 'undefined') {
-        // Create typing particles
-        const particle = document.createElement('span');
-        particle.classList.add('typing-particle');
-        particle.style.setProperty('--x', Math.random() * 100 + '%');
-        parent.appendChild(particle);
-        
-        gsap.fromTo(particle, 
-          { scale: 0, opacity: 0.8 },
-          { 
-            scale: 1, 
-            opacity: 0, 
-            y: -20,
-            duration: 0.4,
-            onComplete: () => particle.remove()
-          }
-        );
-        
         // Dynamic line coloring
         const line = parent.querySelector('.line');
         if (line) {
@@ -716,92 +708,55 @@ function initFormAnimations() {
     }
   });
   
-  // Futuristic submit button animations
+  // Subtle button hover animation
   const submitBtn = document.querySelector('.contact-form button[type="submit"]');
   if (submitBtn && typeof gsap !== 'undefined') {
-    // Create energy field around button
-    const energyField = document.createElement('div');
-    energyField.classList.add('button-energy-field');
-    submitBtn.appendChild(energyField);
+    // Add glow element
+    const btnGlow = document.createElement('div');
+    btnGlow.classList.add('btn-glow');
+    submitBtn.appendChild(btnGlow);
     
     submitBtn.addEventListener('mouseenter', () => {
       gsap.to(submitBtn, {
-        scale: 1.05,
+        boxShadow: '0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2)',
         duration: 0.4,
         ease: "power2.out"
       });
       
-      gsap.to(energyField, {
-        opacity: 1,
-        scale: 1.2,
-        duration: 0.6
+      gsap.to(btnGlow, {
+        opacity: 0.8,
+        duration: 0.4
       });
-      
-      // Create pulse wave effect
-      const pulseWave = document.createElement('div');
-      pulseWave.classList.add('button-pulse-wave');
-      submitBtn.appendChild(pulseWave);
-      
-      gsap.fromTo(pulseWave, 
-        { scale: 0.8, opacity: 0.6 },
-        { 
-          scale: 1.5, 
-          opacity: 0, 
-          duration: 1,
-          ease: "power2.out",
-          onComplete: () => pulseWave.remove()
-        }
-      );
     });
     
     submitBtn.addEventListener('mouseleave', () => {
       gsap.to(submitBtn, {
-        scale: 1,
+        boxShadow: '0 0 0 rgba(0, 255, 255, 0)',
         duration: 0.4,
         ease: "power2.in"
       });
       
-      gsap.to(energyField, {
-        opacity: 0.4,
-        scale: 1,
-        duration: 0.6
+      gsap.to(btnGlow, {
+        opacity: 0,
+        duration: 0.4
       });
     });
     
     submitBtn.addEventListener('mousedown', () => {
       gsap.to(submitBtn, {
-        scale: 0.95,
+        scale: 0.98,
         duration: 0.1
       });
-      
-      // Create impact particles
-      for (let i = 0; i < 12; i++) {
-        const particle = document.createElement('span');
-        particle.classList.add('impact-particle');
-        particle.style.setProperty('--angle', (i * 30) + 'deg');
-        submitBtn.appendChild(particle);
-        
-        gsap.fromTo(particle, 
-          { scale: 0, opacity: 0.9 },
-          { 
-            scale: 1, 
-            opacity: 0, 
-            duration: 0.6 + (Math.random() * 0.4),
-            onComplete: () => particle.remove()
-          }
-        );
-      }
     });
     
     submitBtn.addEventListener('mouseup', () => {
       gsap.to(submitBtn, {
-        scale: 1.05,
-        duration: 0.2
+        scale: 1,
+        duration: 0.1
       });
     });
   }
 }
-
 
 
 
