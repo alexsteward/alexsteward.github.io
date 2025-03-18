@@ -522,74 +522,66 @@ function initCircuitAnimation() {
 }
 
 
-// FORUM ANIMATIONS
-
 function initFormAnimations() {
-  const inputs = document.querySelectorAll('.form-control');
-  
   // Find the form container
   const formContainer = document.querySelector('.contact-form') || document.querySelector('form');
   
-  // Add hover effect to the entire form container
-  if (formContainer && typeof gsap !== 'undefined') {
-    formContainer.addEventListener('mouseenter', () => {
-      gsap.to(formContainer, {
-        boxShadow: '0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1)',
-        backgroundColor: 'rgba(0, 255, 255, 0.05)',
-        duration: 0.5,
-        ease: "power2.out"
-      });
-    });
+  // Make sure the form container is visible
+  if (formContainer) {
+    // Force visibility
+    formContainer.style.opacity = '1';
+    formContainer.style.visibility = 'visible';
+    formContainer.style.display = 'block';
     
-    formContainer.addEventListener('mouseleave', () => {
-      gsap.to(formContainer, {
-        boxShadow: 'none',
-        backgroundColor: 'transparent',
-        duration: 0.5,
-        ease: "power2.in"
+    // Ensure it doesn't move
+    formContainer.style.transform = 'none';
+    formContainer.style.position = 'relative';
+    
+    // Add hover effect to the entire form container
+    if (typeof gsap !== 'undefined') {
+      // Make sure we're not already animating the form
+      gsap.killTweensOf(formContainer);
+      
+      formContainer.addEventListener('mouseenter', () => {
+        gsap.to(formContainer, {
+          boxShadow: '0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1)',
+          duration: 0.5,
+          ease: "power2.out",
+          // Explicitly prevent any movement
+          x: 0,
+          y: 0,
+          scale: 1,
+          rotation: 0
+        });
       });
-    });
+      
+      formContainer.addEventListener('mouseleave', () => {
+        gsap.to(formContainer, {
+          boxShadow: 'none',
+          duration: 0.5,
+          ease: "power2.in",
+          // Explicitly prevent any movement
+          x: 0,
+          y: 0,
+          scale: 1,
+          rotation: 0
+        });
+      });
+    }
   }
   
-  // Set up field entry animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('form-field-revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
+  // Keep the form field animations simplified
+  const inputs = document.querySelectorAll('.form-control');
   
-  // Handle individual form fields (without hover effects)
-  inputs.forEach((input, index) => {
+  inputs.forEach((input) => {
     const parent = input.parentElement;
-    parent.style.setProperty('--field-index', index);
-    observer.observe(parent);
     
-    // Focus effect
+    // Focus effect (simplified)
     input.addEventListener('focus', () => {
       parent.classList.add('focused');
       
       if (typeof gsap !== 'undefined') {
-        // Static glow effect
-        gsap.to(parent, {
-          boxShadow: '0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2)',
-          duration: 0.5
-        });
-        
-        // Color change for label
-        const label = parent.querySelector('label');
-        if (label) {
-          gsap.to(label, { 
-            color: '#00FFFF', 
-            textShadow: '0 0 10px rgba(0, 255, 255, 0.7)',
-            duration: 0.3,
-            ease: "power3.out"
-          });
-        }
-        
-        // Line animation
+        // Static glow effect without movement
         const line = parent.querySelector('.line');
         if (line) {
           gsap.to(line, {
@@ -603,21 +595,30 @@ function initFormAnimations() {
       }
     });
     
-    // Blur effect
+    // Blur effect (simplified)
     input.addEventListener('blur', () => {
       if (input.value === '') {
         parent.classList.remove('focused');
         
         if (typeof gsap !== 'undefined') {
-          const label = parent.querySelector('label');
-          if (label) {
-            gsap.to(label, { 
-              color: 'rgba(255, 255, 255, 0.6)', 
-              textShadow: 'none',
-              duration: 0.3,
+          const line = parent.querySelector('.line');
+          if (line) {
+            gsap.to(line, {
+              width: '0%',
+              opacity: 0.3,
+              backgroundColor: 'var(--accent)',
+              duration: 0.4,
               ease: "power2.out"
             });
           }
+        }
+      }
+    });
+  });
+}
+
+// Make sure the function is called after the DOM is loaded
+document.addEventListener('DOMContentLoaded', initFormAnimations);
           
           gsap.to(parent, {
             boxShadow: 'none',
@@ -661,6 +662,7 @@ function initFormAnimations() {
         }
       }
     });
+
     
     // Typing effect 
     input.addEventListener('input', () => {
