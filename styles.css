@@ -391,7 +391,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 3; /* Increased from 2 to 3 to ensure it's above other elements */
+  z-index: 10; /* Increased from 2 to 3 to ensure it's above other elements */
 }
 
 .mouse {
