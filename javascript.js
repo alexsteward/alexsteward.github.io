@@ -522,8 +522,35 @@ function initCircuitAnimation() {
 }
 
 
+
+// FORUM ANIMATIONS
+
 function initFormAnimations() {
   const inputs = document.querySelectorAll('.form-control');
+  
+  // Find the form container
+  const formContainer = document.querySelector('.contact-form') || document.querySelector('form');
+  
+  // Add hover effect to the entire form container
+  if (formContainer && typeof gsap !== 'undefined') {
+    formContainer.addEventListener('mouseenter', () => {
+      gsap.to(formContainer, {
+        boxShadow: '0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1)',
+        backgroundColor: 'rgba(0, 255, 255, 0.05)',
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    });
+    
+    formContainer.addEventListener('mouseleave', () => {
+      gsap.to(formContainer, {
+        boxShadow: 'none',
+        backgroundColor: 'transparent',
+        duration: 0.5,
+        ease: "power2.in"
+      });
+    });
+  }
   
   // Set up field entry animations
   const observer = new IntersectionObserver((entries) => {
@@ -535,57 +562,13 @@ function initFormAnimations() {
     });
   }, { threshold: 0.2 });
   
-  // Process each input field
+  // Handle individual form fields (without hover effects)
   inputs.forEach((input, index) => {
     const parent = input.parentElement;
     parent.style.setProperty('--field-index', index);
     observer.observe(parent);
     
-    // Add hover effect without any movement
-    parent.addEventListener('mouseenter', () => {
-      if (typeof gsap !== 'undefined') {
-        // Create gentle glow effect on hover without movement
-        gsap.to(parent, {
-          boxShadow: '0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 255, 255, 0.1)',
-          duration: 0.4
-        });
-        
-        // Subtle border highlight without moving anything
-        const line = parent.querySelector('.line');
-        if (line) {
-          gsap.to(line, {
-            width: '100%',
-            opacity: 0.7,
-            backgroundColor: '#00FFFF',
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        }
-      }
-    });
-    
-    parent.addEventListener('mouseleave', () => {
-      if (!parent.classList.contains('focused') && typeof gsap !== 'undefined') {
-        gsap.to(parent, {
-          boxShadow: 'none',
-          duration: 0.4
-        });
-        
-        // Reset border highlight
-        const line = parent.querySelector('.line');
-        if (line && !input.value) {
-          gsap.to(line, {
-            width: '0%',
-            opacity: 0.3,
-            backgroundColor: 'var(--accent)',
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        }
-      }
-    });
-    
-    // Focus effect without moving the label
+    // Focus effect
     input.addEventListener('focus', () => {
       parent.classList.add('focused');
       
@@ -596,7 +579,7 @@ function initFormAnimations() {
           duration: 0.5
         });
         
-        // Color change only for label, no movement
+        // Color change for label
         const label = parent.querySelector('label');
         if (label) {
           gsap.to(label, { 
@@ -604,7 +587,6 @@ function initFormAnimations() {
             textShadow: '0 0 10px rgba(0, 255, 255, 0.7)',
             duration: 0.3,
             ease: "power3.out"
-            // Removed y: -25 and scale: 0.9 to prevent movement
           });
         }
         
@@ -622,22 +604,21 @@ function initFormAnimations() {
       }
     });
     
-    // Blur effect without movement
+    // Blur effect
     input.addEventListener('blur', () => {
-      const parent = input.parentElement;
-      const label = parent.querySelector('label');
-      
       if (input.value === '') {
         parent.classList.remove('focused');
         
-        if (typeof gsap !== 'undefined' && label) {
-          gsap.to(label, { 
-            color: 'rgba(255, 255, 255, 0.6)', 
-            textShadow: 'none',
-            duration: 0.3,
-            ease: "power2.out"
-            // Removed y: 0 and scale: 1 to prevent movement
-          });
+        if (typeof gsap !== 'undefined') {
+          const label = parent.querySelector('label');
+          if (label) {
+            gsap.to(label, { 
+              color: 'rgba(255, 255, 255, 0.6)', 
+              textShadow: 'none',
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          }
           
           gsap.to(parent, {
             boxShadow: 'none',
