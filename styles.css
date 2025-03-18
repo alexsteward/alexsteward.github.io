@@ -528,52 +528,68 @@ nav {
 }
 
 .service-card {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 40px 30px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
   position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
   overflow: hidden;
-  z-index: 1;
+  transition: all 0.3s ease;
+  z-index: 1; /* Ensure card content is above overlay */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .service-icon {
   font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  color: #4169E1;
+  z-index: 2; /* Ensure icon is above overlay */
+  position: relative; /* Position for z-index to work */
 }
 
 .service-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+  z-index: 2; /* Ensure heading is above overlay */
+  position: relative; /* Position for z-index to work */
 }
 
 .service-card p {
-  color: var(--text-light);
-  margin-bottom: 20px;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  z-index: 2; /* Ensure paragraph is above overlay */
+  position: relative; /* Position for z-index to work */
 }
 
 .btn-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  color: var(--primary);
+  color: #4169E1;
   font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 2; /* Ensure link is above overlay */
 }
 
 .btn-arrow {
   width: 16px;
   height: 16px;
-  stroke: var(--primary);
-  stroke-width: 2px;
-  margin-left: 8px;
-  transition: var(--transition);
+  stroke: currentColor;
+  stroke-width: 2;
   fill: none;
+  transition: transform 0.3s ease;
 }
 
 .btn-link:hover .btn-arrow {
@@ -584,16 +600,16 @@ nav {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 5px;
-  background: var(--gradient);
-  z-index: -1;
-  transition: var(--transition);
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(65, 105, 225, 0.05) 0%, rgba(0, 191, 255, 0.05) 100%);
+  opacity: 0.1; /* Reduce opacity of overlay */
+  z-index: 0; /* Ensure overlay is below content */
+  transition: opacity 0.3s ease;
 }
 
 .service-card:hover .card-overlay {
-  height: 100%;
-  opacity: 0.05;
+ opacity: 0.3; /* Slightly increase on hover but still keep it subtle */
 }
 
 /* About Section */
