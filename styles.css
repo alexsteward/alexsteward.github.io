@@ -1012,9 +1012,17 @@ nav {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
+/* Tech company hover-only form animation styles */
 .form-group {
   position: relative;
-  margin-bottom: 30px;
+  animation-delay: calc(var(--field-index) * 0.1s);
+  transition: box-shadow 0.4s ease;
+}
+
+.form-field-revealed {
+  animation: reveal-field 0.6s forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .form-control {
@@ -1041,6 +1049,7 @@ nav {
   pointer-events: none;
 }
 
+.form-group:hover .form-label,
 .form-group.focused .form-label {
   top: -20px;
   font-size: 0.85rem;
@@ -1048,41 +1057,33 @@ nav {
 }
 
 .line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: var(--transition);
+  width: 0%;
+  opacity: 0.3;
+  transition: background-color 0.3s ease;
 }
 
+.form-group:hover .line,
 .form-control:focus ~ .line {
   width: 100%;
 }
 
-/* Additional styling to improve the select element itself */
+/* Select styling */
 select.form-control {
-  color: var(--light);            /* Ensure text is visible */
-  background-color: transparent;  /* Keep transparent background */
+  color: var(--light);
+  background-color: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding: 10px 0;
-}
-
-/* Add a custom arrow indicator for the dropdown */
-select.form-control {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 12px 12px;
-  padding-right: 28px; /* Make room for the arrow */
+  padding-right: 28px;
 }
 
-/* Fix for select dropdown options */
 select.form-control option {
-  background-color: var(--dark);  /* Dark background for options */
-  color: var(--light);            /* Light text color */
-  padding: 10px;                  /* Add some padding */
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 10px;
 }
 
 textarea.form-control {
@@ -1120,21 +1121,20 @@ textarea.form-control {
   overflow: hidden;
 }
 
-.button-animation span {
+.btn-glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transition: 0.5s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: radial-gradient(circle, rgba(0,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
 }
 
-.submit-btn:hover .button-animation span {
-  width: 300%;
-  height: 300%;
+.submit-btn:hover .btn-glow {
+  opacity: 1;
 }
 
 #globe-container {
@@ -1143,19 +1143,29 @@ textarea.form-control {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Already at 0, which is good */
+  z-index: 0;
   opacity: 0.2;
 }
 
-/* Add this to ensure your form is above the globe */
 .glass-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: var(--border-radius);
   padding: 40px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  position: relative; /* Add this */
-  z-index: 1; /* Add this to place form above globe */
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes reveal-field {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Footer */
