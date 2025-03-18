@@ -521,6 +521,7 @@ function initCircuitAnimation() {
   }
 }
 
+
 function initFormAnimations() {
   const inputs = document.querySelectorAll('.form-control');
   
@@ -752,7 +753,6 @@ function initFormAnimations() {
     });
   }
 }
-
 
 
 
