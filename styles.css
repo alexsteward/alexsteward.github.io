@@ -443,6 +443,7 @@ nav {
   transform: rotate(45deg);
   margin: -5px 0;
   animation: arrow 1.5s infinite;
+  z-index: 11;
 }
 
 .arrows span:nth-child(2) {
