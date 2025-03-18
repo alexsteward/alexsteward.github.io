@@ -522,27 +522,152 @@ function initCircuitAnimation() {
 }
 
 // ==============================================
-// FORM ANIMATIONS - Handles form field animations
+// FORM ANIMATIONS - Handles form field animations with modern effects
 // ==============================================
 function initFormAnimations() {
   const inputs = document.querySelectorAll('.form-control');
   
   inputs.forEach(input => {
-    // Focus effect
+    // Focus effect with smooth animation
     input.addEventListener('focus', () => {
-      input.parentElement.classList.add('focused');
+      const parent = input.parentElement;
+      parent.classList.add('focused');
+      
+      // Add ripple effect if GSAP is available
+      if (typeof gsap !== 'undefined') {
+        // Create ripple effect
+        const ripple = document.createElement('span');
+        ripple.classList.add('form-ripple');
+        parent.appendChild(ripple);
+        
+        gsap.fromTo(ripple, 
+          { scale: 0, opacity: 0.5 },
+          { scale: 2, opacity: 0, duration: 0.8, onComplete: () => ripple.remove() }
+        );
+        
+        // Animate label with more modern transition
+        const label = parent.querySelector('label');
+        if (label) {
+          gsap.to(label, { 
+            y: -25, 
+            scale: 0.9, 
+            color: '#4169E1', 
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        }
+      }
     });
     
     // Blur effect - keep focused if value exists
     input.addEventListener('blur', () => {
-      if(input.value === '') {
-        input.parentElement.classList.remove('focused');
+      const parent = input.parentElement;
+      const label = parent.querySelector('label');
+      
+      if (input.value === '') {
+        parent.classList.remove('focused');
+        
+        // Animate label back to original position if GSAP is available
+        if (typeof gsap !== 'undefined' && label) {
+          gsap.to(label, { 
+            y: 0, 
+            scale: 1, 
+            color: '#666', 
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        }
+      } else {
+        // Add success class if input has value
+        parent.classList.add('success');
+        
+        // Pulse animation to indicate successful input
+        if (typeof gsap !== 'undefined') {
+          gsap.to(input, {
+            boxShadow: '0 0 0 2px rgba(65, 105, 225, 0.3)',
+            duration: 0.3,
+            yoyo: true, 
+            repeat: 1
+          });
+        }
+      }
+    });
+    
+    // Input typing effect for smoother interaction
+    input.addEventListener('input', () => {
+      if (typeof gsap !== 'undefined') {
+        gsap.to(input, {
+          borderColor: '#4169E1',
+          duration: 0.2
+        });
       }
     });
     
     // Check for pre-filled inputs on page load
-    if(input.value !== '') {
-      input.parentElement.classList.add('focused');
+    if (input.value !== '') {
+      const parent = input.parentElement;
+      parent.classList.add('focused');
+      parent.classList.add('success');
     }
   });
+  
+  // Add submit button animation
+  const submitBtn = document.querySelector('.contact-form button[type="submit"]');
+  if (submitBtn && typeof gsap !== 'undefined') {
+    submitBtn.addEventListener('mouseenter', () => {
+      gsap.to(submitBtn, {
+        scale: 1.03,
+        duration: 0.3,
+        ease: "power1.out"
+      });
+    });
+    
+    submitBtn.addEventListener('mouseleave', () => {
+      gsap.to(submitBtn, {
+        scale: 1,
+        duration: 0.3,
+        ease: "power1.in"
+      });
+    });
+    
+    submitBtn.addEventListener('mousedown', () => {
+      gsap.to(submitBtn, {
+        scale: 0.97,
+        duration: 0.1
+      });
+    });
+    
+    submitBtn.addEventListener('mouseup', () => {
+      gsap.to(submitBtn, {
+        scale: 1.03,
+        duration: 0.1
+      });
+    });
+  }
 }
+
+// ==============================================
+// FORM ANIMATIONS - Handles form field animations
+// ==============================================
+//function initFormAnimations() {
+ // const inputs = document.querySelectorAll('.form-control');
+  
+  //inputs.forEach(input => {
+    // Focus effect
+    //input.addEventListener('focus', () => {
+      //input.parentElement.classList.add('focused');
+   // });
+    
+    // Blur effect - keep focused if value exists
+    //input.addEventListener('blur', () => {
+      //if(input.value === '') {
+        //input.parentElement.classList.remove('focused');
+     // }
+   // });
+    
+    // Check for pre-filled inputs on page load
+   // if(input.value !== '') {
+     // input.parentElement.classList.add('focused');
+//    }
+ // });
+//}
