@@ -627,79 +627,105 @@
     }
 
     // Initialize 3D globe for contact section
-    function initGlobe() {
-      const container = document.getElementById('globe-container');
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+function initGlobe() {
+  const container = document.getElementById('globe-container');
+  
+  // Check if container exists before proceeding
+  if (!container) return;
+  
+  // Clear any existing content
+  container.innerHTML = '';
+  
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+  
+  // Create renderer with appropriate size based on container, not window
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setClearColor(0x000000, 0);
+  container.appendChild(renderer.domElement);
+  
+  // Create globe geometry with slightly reduced complexity
+  const geometry = new THREE.SphereGeometry(3, 48, 48);
+  
+  // Create material with custom shader
+  const material = new THREE.MeshBasicMaterial({
+    color: 0x4169E1,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.3
+  });
+  
+  const globe = new THREE.Mesh(geometry, material);
+  scene.add(globe);
+  
+  // Add particles around globe with reduced count
+  const particlesGeometry = new THREE.BufferGeometry();
+  const particlesCount = 500; // Reduced from 1000
+  
+  const posArray = new Float32Array(particlesCount * 3);
+  
+  for(let i = 0; i < particlesCount; i++) {
+    // Random positions in a sphere around the globe
+    const radius = 3 + Math.random() * 1.5;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    
+    posArray[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+    posArray[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+    posArray[i * 3 + 2] = radius * Math.cos(phi);
+  }
+  
+  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  
+  const particlesMaterial = new THREE.PointsMaterial({
+    size: 0.04,
+    color: 0x00FFFF
+  });
+  
+  const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+  scene.add(particlesMesh);
+  
+  camera.position.z = 8;
+  
+  // Implement proper animation cleanup with RAF ID
+  let animationId;
+  
+  function animate() {
+    animationId = requestAnimationFrame(animate);
+    
+    globe.rotation.y += 0.001;
+    particlesMesh.rotation.y += 0.0005;
+    
+    renderer.render(scene, camera);
+  }
+  
+  animate();
       
-      const renderer = new THREE.WebGLRenderer({ alpha: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setClearColor(0x000000, 0);
-      container.appendChild(renderer.domElement);
-      
-      // Create globe geometry
-      const geometry = new THREE.SphereGeometry(3.5, 64, 64);
-      
-      // Create material with custom shader
-      const material = new THREE.MeshBasicMaterial({
-        color: 0x4169E1,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.4
-      });
-      
-      const globe = new THREE.Mesh(geometry, material);
-      scene.add(globe);
-      
-      // Add particles around globe
-      const particlesGeometry = new THREE.BufferGeometry();
-      const particlesCount = 1000;
-      
-      const posArray = new Float32Array(particlesCount * 3);
-      
-      for(let i = 0; i < particlesCount * 3; i++) {
-        // Random positions in a sphere around the globe
-        const radius = 3.5 + Math.random() * 2;
-        const theta = Math.random() * Math.PI * 2;
-        const phi = Math.acos(2 * Math.random() - 1);
-        
-        posArray[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-        posArray[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-        posArray[i * 3 + 2] = radius * Math.cos(phi);
-      }
-      
-      particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-      
-      const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.03,
-        color: 0x00FFFF
-      });
-      
-      const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-      scene.add(particlesMesh);
-      
-      camera.position.z = 10;
-      
-      // Animation
-      function animate() {
-        requestAnimationFrame(animate);
-        
-        globe.rotation.y += 0.002;
-        particlesMesh.rotation.y += 0.001;
-        
-        renderer.render(scene, camera);
-      }
-      
-      animate();
-      
-      // Handle resize
-      window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      });
-    }
+  // Handle resize - use container dimensions instead of window
+  function handleResize() {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+  
+  window.addEventListener('resize', handleResize);
 
+    // Add cleanup function to prevent memory leaks
+  return function cleanup() {
+    window.removeEventListener('resize', handleResize);
+    cancelAnimationFrame(animationId);
+    renderer.dispose();
+    geometry.dispose();
+    material.dispose();
+    particlesGeometry.dispose();
+    particlesMaterial.dispose();
+    container.removeChild(renderer.domElement);
+  };
+}
     // Form animations
     function initFormAnimations() {
       const inputs = document.querySelectorAll('.form-control');
