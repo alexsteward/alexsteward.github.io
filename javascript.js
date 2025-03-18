@@ -522,44 +522,95 @@ function initCircuitAnimation() {
 }
 
 // ==============================================
-// FORM ANIMATIONS - Handles form field animations with modern effects
+// TECH FORM ANIMATIONS - Cutting-edge form animations for tech companies
 // ==============================================
 function initFormAnimations() {
   const inputs = document.querySelectorAll('.form-control');
   
-  inputs.forEach(input => {
-    // Focus effect with smooth animation
+  // Add neon glow container to form
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    const glowContainer = document.createElement('div');
+    glowContainer.classList.add('form-glow-container');
+    form.appendChild(glowContainer);
+  }
+  
+  // Set up observer for intersection animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('form-field-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  // Observe each form field for entry animations
+  inputs.forEach((input, index) => {
+    const parent = input.parentElement;
+    parent.style.setProperty('--field-index', index);
+    observer.observe(parent);
+    
+    // High-tech focus effect
     input.addEventListener('focus', () => {
-      const parent = input.parentElement;
       parent.classList.add('focused');
       
-      // Add ripple effect if GSAP is available
       if (typeof gsap !== 'undefined') {
-        // Create ripple effect
-        const ripple = document.createElement('span');
-        ripple.classList.add('form-ripple');
-        parent.appendChild(ripple);
+        // Create digital particles effect
+        for (let i = 0; i < 10; i++) {
+          const particle = document.createElement('span');
+          particle.classList.add('digital-particle');
+          particle.style.setProperty('--x', Math.random() * 100 + '%');
+          parent.appendChild(particle);
+          
+          gsap.fromTo(particle, 
+            { 
+              scale: 0, 
+              opacity: 0.8,
+              y: 0
+            },
+            { 
+              scale: 1.5, 
+              opacity: 0, 
+              y: -50 - (Math.random() * 50),
+              x: (Math.random() - 0.5) * 100,
+              duration: 0.8 + (Math.random() * 1),
+              onComplete: () => particle.remove()
+            }
+          );
+        }
         
-        gsap.fromTo(ripple, 
-          { scale: 0, opacity: 0.5 },
-          { scale: 2, opacity: 0, duration: 0.8, onComplete: () => ripple.remove() }
-        );
-        
-        // Animate label with more modern transition
+        // Holographic label effect
         const label = parent.querySelector('label');
         if (label) {
           gsap.to(label, { 
             y: -25, 
             scale: 0.9, 
-            color: '#4169E1', 
+            color: '#00FFFF', 
+            textShadow: '0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5)',
             duration: 0.3,
-            ease: "power2.out"
+            ease: "power3.out"
+          });
+        }
+        
+        // Glow effect on the form field
+        gsap.to(parent, {
+          boxShadow: '0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.3)',
+          duration: 0.5
+        });
+        
+        // Update the glow container
+        const glowContainer = document.querySelector('.form-glow-container');
+        if (glowContainer) {
+          gsap.to(glowContainer, {
+            background: `radial-gradient(circle at ${parent.offsetLeft + parent.offsetWidth/2}px ${parent.offsetTop + parent.offsetHeight/2}px, rgba(0, 255, 255, 0.15), transparent 50%)`,
+            duration: 0.5
           });
         }
       }
     });
     
-    // Blur effect - keep focused if value exists
+    // Blur effect with tech-inspired transitions
     input.addEventListener('blur', () => {
       const parent = input.parentElement;
       const label = parent.querySelector('label');
@@ -567,43 +618,97 @@ function initFormAnimations() {
       if (input.value === '') {
         parent.classList.remove('focused');
         
-        // Animate label back to original position if GSAP is available
         if (typeof gsap !== 'undefined' && label) {
           gsap.to(label, { 
             y: 0, 
             scale: 1, 
-            color: '#666', 
+            color: 'rgba(255, 255, 255, 0.6)', 
+            textShadow: 'none',
             duration: 0.3,
             ease: "power2.out"
           });
+          
+          gsap.to(parent, {
+            boxShadow: 'none',
+            duration: 0.5
+          });
         }
       } else {
-        // Add success class if input has value
+        // Digital scanning effect for validation
         parent.classList.add('success');
         
-        // Pulse animation to indicate successful input
         if (typeof gsap !== 'undefined') {
-          gsap.to(input, {
-            boxShadow: '0 0 0 2px rgba(65, 105, 225, 0.3)',
-            duration: 0.3,
-            yoyo: true, 
-            repeat: 1
+          // Scan line effect
+          const scanLine = document.createElement('div');
+          scanLine.classList.add('scan-line');
+          parent.appendChild(scanLine);
+          
+          gsap.fromTo(scanLine, 
+            { left: '0%', opacity: 0.7 },
+            { 
+              left: '100%', 
+              opacity: 0,
+              duration: 0.8,
+              ease: "power1.inOut",
+              onComplete: () => scanLine.remove()
+            }
+          );
+          
+          // Success indicator
+          gsap.to(parent, {
+            boxShadow: '0 0 10px rgba(0, 255, 170, 0.6), 0 0 20px rgba(0, 255, 170, 0.3)',
+            duration: 0.3
+          });
+          
+          // Pulse the line underneath
+          const line = parent.querySelector('.line');
+          if (line) {
+            gsap.fromTo(line, 
+              { scaleX: 0.5, backgroundColor: '#00FFAA' },
+              { 
+                scaleX: 1, 
+                backgroundColor: '#00FFAA',
+                duration: 0.5,
+                ease: "elastic.out(1, 0.5)"
+              }
+            );
+          }
+        }
+      }
+    });
+    
+    // Typing effect with dynamic response
+    input.addEventListener('input', () => {
+      if (typeof gsap !== 'undefined') {
+        // Create typing particles
+        const particle = document.createElement('span');
+        particle.classList.add('typing-particle');
+        particle.style.setProperty('--x', Math.random() * 100 + '%');
+        parent.appendChild(particle);
+        
+        gsap.fromTo(particle, 
+          { scale: 0, opacity: 0.8 },
+          { 
+            scale: 1, 
+            opacity: 0, 
+            y: -20,
+            duration: 0.4,
+            onComplete: () => particle.remove()
+          }
+        );
+        
+        // Dynamic line coloring
+        const line = parent.querySelector('.line');
+        if (line) {
+          gsap.to(line, {
+            backgroundColor: `hsl(${180 + Math.random() * 60}, 100%, 60%)`,
+            duration: 0.2
           });
         }
       }
     });
     
-    // Input typing effect for smoother interaction
-    input.addEventListener('input', () => {
-      if (typeof gsap !== 'undefined') {
-        gsap.to(input, {
-          borderColor: '#4169E1',
-          duration: 0.2
-        });
-      }
-    });
-    
-    // Check for pre-filled inputs on page load
+    // Preloaded inputs
     if (input.value !== '') {
       const parent = input.parentElement;
       parent.classList.add('focused');
@@ -611,40 +716,94 @@ function initFormAnimations() {
     }
   });
   
-  // Add submit button animation
+  // Futuristic submit button animations
   const submitBtn = document.querySelector('.contact-form button[type="submit"]');
   if (submitBtn && typeof gsap !== 'undefined') {
+    // Create energy field around button
+    const energyField = document.createElement('div');
+    energyField.classList.add('button-energy-field');
+    submitBtn.appendChild(energyField);
+    
     submitBtn.addEventListener('mouseenter', () => {
       gsap.to(submitBtn, {
-        scale: 1.03,
-        duration: 0.3,
-        ease: "power1.out"
+        scale: 1.05,
+        duration: 0.4,
+        ease: "power2.out"
       });
+      
+      gsap.to(energyField, {
+        opacity: 1,
+        scale: 1.2,
+        duration: 0.6
+      });
+      
+      // Create pulse wave effect
+      const pulseWave = document.createElement('div');
+      pulseWave.classList.add('button-pulse-wave');
+      submitBtn.appendChild(pulseWave);
+      
+      gsap.fromTo(pulseWave, 
+        { scale: 0.8, opacity: 0.6 },
+        { 
+          scale: 1.5, 
+          opacity: 0, 
+          duration: 1,
+          ease: "power2.out",
+          onComplete: () => pulseWave.remove()
+        }
+      );
     });
     
     submitBtn.addEventListener('mouseleave', () => {
       gsap.to(submitBtn, {
         scale: 1,
-        duration: 0.3,
-        ease: "power1.in"
+        duration: 0.4,
+        ease: "power2.in"
+      });
+      
+      gsap.to(energyField, {
+        opacity: 0.4,
+        scale: 1,
+        duration: 0.6
       });
     });
     
     submitBtn.addEventListener('mousedown', () => {
       gsap.to(submitBtn, {
-        scale: 0.97,
+        scale: 0.95,
         duration: 0.1
       });
+      
+      // Create impact particles
+      for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('span');
+        particle.classList.add('impact-particle');
+        particle.style.setProperty('--angle', (i * 30) + 'deg');
+        submitBtn.appendChild(particle);
+        
+        gsap.fromTo(particle, 
+          { scale: 0, opacity: 0.9 },
+          { 
+            scale: 1, 
+            opacity: 0, 
+            duration: 0.6 + (Math.random() * 0.4),
+            onComplete: () => particle.remove()
+          }
+        );
+      }
     });
     
     submitBtn.addEventListener('mouseup', () => {
       gsap.to(submitBtn, {
-        scale: 1.03,
-        duration: 0.1
+        scale: 1.05,
+        duration: 0.2
       });
     });
   }
 }
+
+
+
 
 // ==============================================
 // FORM ANIMATIONS - Handles form field animations
