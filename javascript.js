@@ -800,30 +800,189 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// ==============================================
-// FORM ANIMATIONS - Handles form field animations
-// ==============================================
-//function initFormAnimations() {
- // const inputs = document.querySelectorAll('.form-control');
+
+// Enhanced animation script for About section
+document.addEventListener('DOMContentLoaded', function() {
   
-  //inputs.forEach(input => {
-    // Focus effect
-    //input.addEventListener('focus', () => {
-      //input.parentElement.classList.add('focused');
-   // });
+  // Initialize ScrollReveal for smooth element entrance
+  const sr = ScrollReveal({
+    origin: 'bottom',
+    distance: '30px',
+    duration: 800,
+    delay: 300,
+    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+    reset: false
+  });
+  
+  // Apply reveal animations to key elements
+  sr.reveal('.section-intro .badge', { delay: 100 });
+  sr.reveal('.section-intro h2', { delay: 300 });
+  sr.reveal('.about-image', { 
+    origin: 'left', 
+    delay: 400,
+    distance: '50px' 
+  });
+  sr.reveal('.about-text', { 
+    origin: 'right', 
+    delay: 500,
+    distance: '50px' 
+  });
+  
+  // Features sequential reveal with increasing delays
+  document.querySelectorAll('.feature').forEach((feature, index) => {
+    sr.reveal(feature, { delay: 600 + (index * 100) });
+  });
+  
+  sr.reveal('.cta-button', { delay: 900 });
+  
+  // Add parallax effect to background circuit pattern
+  if (window.innerWidth > 768) {
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.pageYOffset;
+      const circuitPattern = document.querySelector('.circuit-pattern');
+      if (circuitPattern) {
+        circuitPattern.style.transform = `translateY(${scrollPosition * 0.05}px)`;
+      }
+    });
+  }
+  
+  // Add mouse movement effect to tech bubbles
+  const aboutSection = document.querySelector('.about');
+  const techBubbles = document.querySelectorAll('.tech-bubble');
+  
+  if (aboutSection && techBubbles.length > 0 && window.innerWidth > 992) {
+    aboutSection.addEventListener('mousemove', function(e) {
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      
+      techBubbles.forEach((bubble, index) => {
+        const oddEven = index % 2 ? -1 : 1;
+        const factor = (index + 1) * 3;
+        
+        const moveX = oddEven * mouseX * factor;
+        const moveY = mouseY * factor * 0.5;
+        
+        // Apply subtle movement based on mouse position
+        bubble.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    });
     
-    // Blur effect - keep focused if value exists
-    //input.addEventListener('blur', () => {
-      //if(input.value === '') {
-        //input.parentElement.classList.remove('focused');
-     // }
-   // });
+    // Reset positions when mouse leaves the section
+    aboutSection.addEventListener('mouseleave', function() {
+      techBubbles.forEach(bubble => {
+        bubble.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+  
+  // Improved hover effects for feature cards
+  const features = document.querySelectorAll('.feature');
+  features.forEach(feature => {
+    const featureIcon = feature.querySelector('.feature-icon');
     
-    // Check for pre-filled inputs on page load
-   // if(input.value !== '') {
-     // input.parentElement.classList.add('focused');
-//    }
- // });
-//}\
+    feature.addEventListener('mouseenter', function() {
+      if (featureIcon) {
+        // Add pulse animation
+        featureIcon.style.animation = 'pulse 1s infinite alternate';
+      }
+    });
+    
+    feature.addEventListener('mouseleave', function() {
+      if (featureIcon) {
+        // Remove animation
+        featureIcon.style.animation = '';
+      }
+    });
+  });
+  
+  // Add tilt effect to the about image
+  const aboutImage = document.querySelector('.about-image');
+  if (aboutImage && window.innerWidth > 768) {
+    const tiltEffect = function(e) {
+      const boundingRect = aboutImage.getBoundingClientRect();
+      const mouseX = e.clientX - boundingRect.left;
+      const mouseY = e.clientY - boundingRect.top;
+      
+      const centerX = boundingRect.width / 2;
+      const centerY = boundingRect.height / 2;
+      
+      const percentX = (mouseX - centerX) / centerX;
+      const percentY = (mouseY - centerY) / centerY;
+      
+      const tiltAmount = 5; // Maximum tilt in degrees
+      const tiltX = percentY * tiltAmount;
+      const tiltY = -percentX * tiltAmount;
+      
+      aboutImage.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+    };
+    
+    const resetTilt = function() {
+      aboutImage.style.transform = '';
+    };
+    
+    aboutImage.addEventListener('mousemove', tiltEffect);
+    aboutImage.addEventListener('mouseleave', resetTilt);
+  }
+  
+  // Enhance logo image on scroll
+  const logoImage = document.querySelector('.logo-image');
+  if (logoImage) {
+    const scrollEffect = function() {
+      const rect = logoImage.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const scrollPercent = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        const rotateAmount = Math.min(scrollPercent * 5, 5); // Max 5 degrees
+        logoImage.style.transform = `scale(${1 + scrollPercent * 0.05}) rotate(${rotateAmount}deg)`;
+      }
+    };
+    
+    // Add passive: true for better performance
+    window.addEventListener('scroll', scrollEffect, { passive: true });
+    
+    // Initial check
+    scrollEffect();
+  }
+  
+  // Enhance CTA button with ripple effect
+  const ctaButton = document.querySelector('.cta-button');
+  if (ctaButton) {
+    ctaButton.addEventListener('click', function(e) {
+      const rect = ctaButton.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const ripple = document.createElement('span');
+      ripple.style.position = 'absolute';
+      ripple.style.width = '1px';
+      ripple.style.height = '1px';
+      ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+      ripple.style.borderRadius = '50%';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      
+      ctaButton.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.style.transform = 'scale(100)';
+        ripple.style.opacity = '0';
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 500);
+      }, 10);
+    });
+  }
+});
+
+// Add this to the head of your document 
+// <style>
+//   @keyframes pulse {
+//     0% { transform: scale(1); }
+//     50% { transform: scale(1.1); }
+//     100% { transform: scale(1); }
+//   }
+// </style>
 
 
