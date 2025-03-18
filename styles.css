@@ -385,19 +385,19 @@ nav {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px; /* Changed from 30px to 60px to move it higher */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
+  z-index: 3; /* Increased from 2 to 3 to ensure it's above other elements */
 }
 
 .mouse {
   width: 30px;
   height: 50px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8); /* Increased opacity from 0.5 to 0.8 */
   border-radius: 20px;
   position: relative;
 }
@@ -438,8 +438,8 @@ nav {
   display: block;
   width: 12px;
   height: 12px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8); /* Increased opacity from 0.5 to 0.8 */
+  border-right: 2px solid rgba(255, 255, 255, 0.8); /* Increased opacity from 0.5 to 0.8 */
   transform: rotate(45deg);
   margin: -5px 0;
   animation: arrow 1.5s infinite;
