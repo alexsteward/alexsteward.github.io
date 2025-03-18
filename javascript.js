@@ -522,36 +522,30 @@ function initCircuitAnimation() {
 }
 
 
+
+
+
 function initFormAnimations() {
   // Find the form container
   const formContainer = document.querySelector('.contact-form') || document.querySelector('form');
   
-  // Make sure the form container is visible
+  // Make sure the form container is always visible
   if (formContainer) {
-    // Force visibility
+    // Force visibility always
     formContainer.style.opacity = '1';
     formContainer.style.visibility = 'visible';
     formContainer.style.display = 'block';
     
-    // Ensure it doesn't move
-    formContainer.style.transform = 'none';
-    formContainer.style.position = 'relative';
-    
     // Add hover effect to the entire form container
     if (typeof gsap !== 'undefined') {
-      // Make sure we're not already animating the form
-      gsap.killTweensOf(formContainer);
-      
       formContainer.addEventListener('mouseenter', () => {
         gsap.to(formContainer, {
           boxShadow: '0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1)',
           duration: 0.5,
           ease: "power2.out",
-          // Explicitly prevent any movement
-          x: 0,
-          y: 0,
-          scale: 1,
-          rotation: 0
+          // Ensure these properties don't change
+          opacity: 1,
+          visibility: 'visible'
         });
       });
       
@@ -560,11 +554,10 @@ function initFormAnimations() {
           boxShadow: 'none',
           duration: 0.5,
           ease: "power2.in",
-          // Explicitly prevent any movement
-          x: 0,
-          y: 0,
-          scale: 1,
-          rotation: 0
+          // CRITICAL: Keep the form visible!
+          opacity: 1,
+          visibility: 'visible',
+          display: 'block'
         });
       });
     }
