@@ -1061,9 +1061,28 @@ nav {
   width: 100%;
 }
 
+/* Additional styling to improve the select element itself */
 select.form-control {
-  appearance: none;
-  cursor: pointer;
+  color: var(--light);            /* Ensure text is visible */
+  background-color: transparent;  /* Keep transparent background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 0;
+}
+
+/* Add a custom arrow indicator for the dropdown */
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 12px;
+  padding-right: 28px; /* Make room for the arrow */
+}
+
+/* Fix for select dropdown options */
+select.form-control option {
+  background-color: var(--dark);  /* Dark background for options */
+  color: var(--light);            /* Light text color */
+  padding: 10px;                  /* Add some padding */
 }
 
 textarea.form-control {
