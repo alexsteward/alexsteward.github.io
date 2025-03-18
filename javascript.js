@@ -1,3 +1,13 @@
+// At the top of your JS file
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if GSAP is loaded
+  if (typeof gsap === 'undefined') {
+    console.warn('GSAP is not loaded. Animation features will be disabled.');
+  }
+  
+  initFormAnimations();
+});
+
 /**
  * iFixTech Website JavaScript
  * Organized into functional sections for better readability and maintenance
