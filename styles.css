@@ -652,7 +652,7 @@ nav {
 .image-container img {
   width: 100%;
   border-radius: var(--border-radius);
-  transition: var(--transition);
+  transform: translateY(-20px); /* Move the logo up by 20px */
 }
 
 .floating-tech-elements {
