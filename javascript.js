@@ -521,9 +521,6 @@ function initCircuitAnimation() {
   }
 }
 
-// ==============================================
-// TECH FORM ANIMATIONS - Subtle hover effects without mouse tracking
-// ==============================================
 function initFormAnimations() {
   const inputs = document.querySelectorAll('.form-control');
   
@@ -537,22 +534,22 @@ function initFormAnimations() {
     });
   }, { threshold: 0.2 });
   
-  // Add hover effects to form fields
+  // Process each input field
   inputs.forEach((input, index) => {
     const parent = input.parentElement;
     parent.style.setProperty('--field-index', index);
     observer.observe(parent);
     
-    // Add hover effect without moving the form
+    // Add hover effect without any movement
     parent.addEventListener('mouseenter', () => {
       if (typeof gsap !== 'undefined') {
-        // Create gentle glow effect on hover
+        // Create gentle glow effect on hover without movement
         gsap.to(parent, {
           boxShadow: '0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 255, 255, 0.1)',
           duration: 0.4
         });
         
-        // Subtle border highlight
+        // Subtle border highlight without moving anything
         const line = parent.querySelector('.line');
         if (line) {
           gsap.to(line, {
@@ -587,27 +584,26 @@ function initFormAnimations() {
       }
     });
     
-    // High-tech focus effect
+    // Focus effect without moving the label
     input.addEventListener('focus', () => {
       parent.classList.add('focused');
       
       if (typeof gsap !== 'undefined') {
-        // Static glow effect instead of particles
+        // Static glow effect
         gsap.to(parent, {
           boxShadow: '0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2)',
           duration: 0.5
         });
         
-        // Holographic label effect
+        // Color change only for label, no movement
         const label = parent.querySelector('label');
         if (label) {
           gsap.to(label, { 
-            y: -25, 
-            scale: 0.9, 
             color: '#00FFFF', 
             textShadow: '0 0 10px rgba(0, 255, 255, 0.7)',
             duration: 0.3,
             ease: "power3.out"
+            // Removed y: -25 and scale: 0.9 to prevent movement
           });
         }
         
@@ -625,7 +621,7 @@ function initFormAnimations() {
       }
     });
     
-    // Blur effect with tech-inspired transitions
+    // Blur effect without movement
     input.addEventListener('blur', () => {
       const parent = input.parentElement;
       const label = parent.querySelector('label');
@@ -635,12 +631,11 @@ function initFormAnimations() {
         
         if (typeof gsap !== 'undefined' && label) {
           gsap.to(label, { 
-            y: 0, 
-            scale: 1, 
             color: 'rgba(255, 255, 255, 0.6)', 
             textShadow: 'none',
             duration: 0.3,
             ease: "power2.out"
+            // Removed y: 0 and scale: 1 to prevent movement
           });
           
           gsap.to(parent, {
@@ -757,6 +752,10 @@ function initFormAnimations() {
     });
   }
 }
+
+
+
+
 
 // Formspree Form Submission Handler
 document.addEventListener('DOMContentLoaded', function() {
