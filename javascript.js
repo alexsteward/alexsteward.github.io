@@ -784,4 +784,89 @@ function initFormAnimations() {
      // input.parentElement.classList.add('focused');
 //    }
  // });
-//}
+//}\
+
+
+// Form submission handler
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form'); // Adjust selector if your form has a specific ID
+  const submitBtn = document.querySelector('.submit-btn');
+  
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent the default form submission
+      
+      // Store the original button text
+      const originalBtnText = submitBtn.innerHTML;
+      
+      // Change button text to "Submitting..."
+      submitBtn.innerHTML = 'Submitting...';
+      submitBtn.disabled = true;
+      
+      // Collect form data
+      const formData = new FormData(form);
+      
+      // Send form data using fetch API
+      fetch(form.action, {
+        method: form.method,
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Success - change button text
+          submitBtn.innerHTML = 'Submitted!';
+          
+          // Optional: Reset form
+          form.reset();
+          
+          // Optional: Reset labels
+          document.querySelectorAll('.form-group').forEach(group => {
+            group.classList.remove('focused');
+          });
+          
+          // Optional: Show success message
+          const successMessage = document.createElement('div');
+          successMessage.className = 'success-message';
+          successMessage.textContent = 'Thank you! Your form has been submitted successfully.';
+          successMessage.style.color = 'var(--accent)';
+          successMessage.style.marginTop = '20px';
+          form.appendChild(successMessage);
+          
+          // Optional: Restore button after delay
+          setTimeout(() => {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+          }, 3000);
+        } else {
+          // Error
+          submitBtn.innerHTML = 'Error! Try Again';
+          submitBtn.disabled = false;
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        submitBtn.innerHTML = 'Error! Try Again';
+        submitBtn.disabled = false;
+      });
+    });
+  }
+  
+  // Additional code for form field focus handling
+  const formControls = document.querySelectorAll('.form-control');
+  formControls.forEach(control => {
+    control.addEventListener('focus', function() {
+      this.parentElement.classList.add('focused');
+    });
+    
+    control.addEventListener('blur', function() {
+      if (this.value === '') {
+        this.parentElement.classList.remove('focused');
+      }
+    });
+    
+    // Check if the field has a value on page load
+    if (control.value !== '') {
+      control.parentElement.classList.add('focused');
+    }
+  });
+});
