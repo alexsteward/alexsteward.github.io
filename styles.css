@@ -414,6 +414,19 @@ nav {
   animation: scroll 1.5s infinite;
 }
 
+.form-control {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 0;
+  color: var(--light);
+  font-size: 1rem;
+  transition: var(--transition);
+  position: relative; /* Add this */
+  z-index: 2; /* Add this for extra insurance */
+}
+
 .arrows {
   display: flex;
   flex-direction: column;
@@ -947,8 +960,19 @@ textarea.form-control {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 0; /* Already at 0, which is good */
   opacity: 0.2;
+}
+
+/* Add this to ensure your form is above the globe */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  position: relative; /* Add this */
+  z-index: 1; /* Add this to place form above globe */
 }
 
 /* Footer */
