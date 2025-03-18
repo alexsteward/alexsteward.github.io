@@ -427,6 +427,16 @@ nav {
   z-index: 2; /* Add this for extra insurance */
 }
 
+.services .form-control {
+  color: var(--text); /* This uses your dark text color instead of white */
+}
+
+/* If your form is inside a different section, use that selector instead */
+/* For example, if it's in a div with class "service-form": */
+.service-form .form-control {
+  color: var(--text);
+}
+
 .arrows {
   display: flex;
   flex-direction: column;
