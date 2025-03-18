@@ -11,6 +11,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
 </head>
 <body>
   <!-- Preloader -->
@@ -146,83 +150,80 @@
     </div>
   </section>
 
-  <!-- About Section - Updated Version -->
-  <!-- About Section - Modern Version -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="section-intro">
-      <span class="badge">About Us</span>
-      <h2>Your Tech Problems, Our Expertise</h2>
-    </div>
-    
-    <div class="about-content">
-      <div class="about-image-wrapper">
-        <div class="about-image">
-          <img src="images/logo.png" alt="iFixTech Logo" class="logo-image">
-          <div class="tech-bubble" data-device="laptop"><i class="fas fa-laptop"></i></div>
-          <div class="tech-bubble" data-device="mobile"><i class="fas fa-mobile-alt"></i></div>
-          <div class="tech-bubble" data-device="desktop"><i class="fas fa-desktop"></i></div>
-          <div class="tech-bubble" data-device="server"><i class="fas fa-server"></i></div>
-          <div class="expertise-badge">
-            <span>Expert Service</span>
-          </div>
-        </div>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-intro">
+        <span class="badge">About Us</span>
+        <h2>Your Tech Problems, Our Expertise</h2>
       </div>
       
-      <div class="about-text">
-        <p>At iFixTech, we understand the frustration of technology issues. Our certified technicians bring years of experience and problem-solving expertise to every job, ensuring your devices and systems work flawlessly.</p>
-        <p>Based in Hastings, MI, we provide personalized tech support and repair services for all your devices. No tech problem is too big or small for our dedicated team.</p>
-        
-        <div class="features-grid">
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-certificate"></i>
+      <div class="about-content">
+        <div class="about-image-wrapper">
+          <div class="about-image">
+            <img src="images/logo.png" alt="iFixTech Logo" class="logo-image">
+            <div class="tech-bubble" data-device="laptop"><i class="fas fa-laptop"></i></div>
+            <div class="tech-bubble" data-device="mobile"><i class="fas fa-mobile-alt"></i></div>
+            <div class="tech-bubble" data-device="desktop"><i class="fas fa-desktop"></i></div>
+            <div class="tech-bubble" data-device="server"><i class="fas fa-server"></i></div>
+            <div class="expertise-badge">
+              <span>Expert Service</span>
             </div>
-            <h4>Certified Expertise</h4>
-            <p>Our technicians are certified and continuously trained on the latest technologies.</p>
-          </div>
-          
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h4>Fast Turnaround</h4>
-            <p>We value your time and work efficiently to get your technology back up and running.</p>
-          </div>
-          
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-thumbs-up"></i>
-            </div>
-            <h4>Quality Service</h4>
-            <p>We use only high-quality parts and follow industry best practices.</p>
-          </div>
-          
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-dollar-sign"></i>
-            </div>
-            <h4>Affordable Rates</h4>
-            <p>Professional tech support at competitive and transparent pricing.</p>
           </div>
         </div>
         
-        <a href="#contact" class="cta-button">
-          Get Expert Help Today
-          <svg viewBox="0 0 24 24" class="arrow-icon">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
+        <div class="about-text">
+          <p>At iFixTech, we understand the frustration of technology issues. Our certified technicians bring years of experience and problem-solving expertise to every job, ensuring your devices and systems work flawlessly.</p>
+          <p>Based in Hastings, MI, we provide personalized tech support and repair services for all your devices. No tech problem is too big or small for our dedicated team.</p>
+          
+          <div class="features-grid">
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h4>Certified Expertise</h4>
+              <p>Our technicians are certified and continuously trained on the latest technologies.</p>
+            </div>
+            
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h4>Fast Turnaround</h4>
+              <p>We value your time and work efficiently to get your technology back up and running.</p>
+            </div>
+            
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-thumbs-up"></i>
+              </div>
+              <h4>Quality Service</h4>
+              <p>We use only high-quality parts and follow industry best practices.</p>
+            </div>
+            
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <h4>Affordable Rates</h4>
+              <p>Professional tech support at competitive and transparent pricing.</p>
+            </div>
+          </div>
+          
+          <a href="#contact" class="cta-button">
+            Get Expert Help Today
+            <svg viewBox="0 0 24 24" class="arrow-icon">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="tech-background">
-    <div class="circuit-pattern"></div>
-  </div>
-</section>
-
-
+    
+    <div class="tech-background">
+      <div class="circuit-pattern"></div>
+    </div>
+  </section>
   
   <!-- Contact Section -->
   <section class="contact" id="contact">
@@ -262,14 +263,14 @@
               <span>Monday - Friday: All day <br>Saturday: All day<br>Sunday: All day</span>
             </li>
           </ul>
-        <div class="social-links">
-          <a href="https://www.facebook.com/profile.php?id=61572289192480" class="social-icon" data-tilt data-tilt-max="25" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/ifixtechofficial/" class="social-icon" data-tilt data-tilt-max="25" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61572289192480" class="social-icon" data-tilt data-tilt-max="25" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/ifixtechofficial/" class="social-icon" data-tilt data-tilt-max="25" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
         <div class="contact-form glass-card" data-scroll data-tilt data-tilt-max="5">
           <form action="https://formspree.io/f/xnnnrgrb" method="POST">
@@ -346,489 +347,7 @@
     <div class="footer-shape"></div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
-  <script>
-    // Preloader
-    window.addEventListener('load', function() {
-      const preloader = document.querySelector('.preloader');
-      preloader.classList.add('fade-out');
-      setTimeout(() => {
-        preloader.style.display = 'none';
-        // Animate elements in view on page load
-        animateElementsInView();
-      }, 1000);
-    });
-
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
-
-    // Initialize 3D tilt effect
-    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-      max: 10,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.3,
-    });
-
-    // Custom cursor
-    const cursor = document.querySelector('.cursor-follower');
-    const cursorDot = document.querySelector('.cursor-dot');
-    
-    document.addEventListener('mousemove', e => {
-      gsap.to(cursor, { 
-        x: e.clientX, 
-        y: e.clientY,
-        duration: 0.3
-      });
-      gsap.to(cursorDot, { 
-        x: e.clientX, 
-        y: e.clientY,
-        duration: 0.1
-      });
-    });
-
-    document.addEventListener('mousedown', () => {
-      cursor.classList.add('active');
-      cursorDot.classList.add('active');
-    });
-
-    document.addEventListener('mouseup', () => {
-      cursor.classList.remove('active');
-      cursorDot.classList.remove('active');
-    });
-
-    // Add hover effect to links and buttons
-    const links = document.querySelectorAll('a, button');
-    links.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-        cursorDot.classList.add('hover');
-      });
-      link.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-        cursorDot.classList.remove('hover');
-      });
-    });
-
-    // Mobile navigation toggle
-    document.getElementById('navToggle').addEventListener('click', function() {
-      this.classList.toggle('active');
-      document.querySelector('.nav-links').classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        // Close mobile menu if open
-        document.querySelector('.nav-links').classList.remove('active');
-        document.getElementById('navToggle').classList.remove('active');
-        document.body.classList.remove('menu-open');
-      });
-    });
-
-    // Add background to navbar on scroll
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Particle animation for hero section
-    function initParticles() {
-      const canvas = document.getElementById('particle-canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      
-      const particles = [];
-      const particleCount = 100;
-      
-      for(let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 3 + 1,
-          color: `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.1})`,
-          speedX: Math.random() * 2 - 1,
-          speedY: Math.random() * 2 - 1
-        });
-      }
-      
-      function animate() {
-        requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        for(let i = 0; i < particleCount; i++) {
-          const p = particles[i];
-          
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.fill();
-          
-          p.x += p.speedX;
-          p.y += p.speedY;
-          
-          if(p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-          if(p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-          
-          // Connect nearby particles with lines
-          for(let j = i + 1; j < particleCount; j++) {
-            const p2 = particles[j];
-            const dx = p.x - p2.x;
-            const dy = p.y - p2.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if(distance < 100) {
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 - distance/500})`;
-              ctx.lineWidth = 0.5;
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.stroke();
-            }
-          }
-        }
-      }
-      
-      animate();
-      
-      window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      });
-    }
-    
-    initParticles();
-
-    // GSAP animations
-    function initGSAPAnimations() {
-      // Hero section animations
-      gsap.from(".hero-content h1", { 
-        duration: 1.2, 
-        y: 100, 
-        opacity: 0, 
-        ease: "power4.out" 
-      });
-      gsap.from(".hero-content p", { 
-        duration: 1.2, 
-        y: 50, 
-        opacity: 0, 
-        delay: 0.3, 
-        ease: "power4.out" 
-      });
-      gsap.from(".hero-content .cta-button", { 
-        duration: 1.2, 
-        y: 50, 
-        opacity: 0, 
-        delay: 0.6, 
-        ease: "power4.out" 
-      });
-      gsap.from(".scroll-indicator", { 
-        duration: 1, 
-        y: -30, 
-        opacity: 0, 
-        delay: 1.2, 
-        ease: "power2.out" 
-      });
-    
-      // Create scroll animations
-      gsap.registerPlugin(ScrollTrigger);
-    
-      // Reveal text animation
-      const revealTextElements = document.querySelectorAll('.reveal-text');
-      revealTextElements.forEach(element => {
-        gsap.from(element, {
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none none"
-          },
-          duration: 1,
-          y: 50,
-          opacity: 0,
-          ease: "power3.out"
-        });
-      });
-    
-      // COMPLETELY REVAMPED SERVICE CARDS ANIMATION
-      // First, ensure all cards are visible by default
-      gsap.set(".service-card", { opacity: 1, y: 0 });
-      
-      // Then apply a simple fade-in animation that won't interfere with positioning
-      const serviceCards = document.querySelectorAll('.service-card');
-      serviceCards.forEach((card, index) => {
-        gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            once: true // This ensures the animation only happens once
-          },
-          opacity: 0,
-          y: 20, // Minimal movement
-          duration: 0.7,
-          delay: index * 0.15, // Staggered effect
-          ease: "power2.out"
-        });
-      });
-    
-      // Floating tech elements animation
-      const techElements = document.querySelectorAll('.tech-element');
-      techElements.forEach((element, index) => {
-        gsap.to(element, {
-          y: `${(index % 2 === 0 ? '-' : '')}20`,
-          x: `${(index % 3 === 0 ? '-' : '')}10`,
-          rotation: index % 2 === 0 ? 5 : -5,
-          duration: 3 + index,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      });
-    
-      // Contact form animation
-      gsap.from(".contact-form", {
-        scrollTrigger: {
-          trigger: ".contact-wrapper",
-          start: "top 70%",
-          once: true
-        },
-        x: 100,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
-      });
-    
-      gsap.from(".contact-info", {
-        scrollTrigger: {
-          trigger: ".contact-wrapper",
-          start: "top 70%",
-          once: true
-        },
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
-      });
-    }
-    
-    // Add this code right after your window.addEventListener('load', function() {...}) 
-    // to ensure all service cards are fully visible by default
-    window.addEventListener('DOMContentLoaded', function() {
-      // Force service cards to be visible
-      document.querySelectorAll('.service-card').forEach(card => {
-        card.style.opacity = '1';
-        card.style.transform = 'none';
-      });
-    });
-    
-    // Counter animation
-    function initCounters() {
-      const counters = document.querySelectorAll('.counter');
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = parseInt(counter.getAttribute('data-target') || counter.innerText);
-          const countUp = new CountUp(counter, target, {
-            startVal: 0,
-            duration: 2
-          });
-          
-          if (!countUp.error) {
-            countUp.start();
-          } else {
-            console.error(countUp.error);
-          }
-        };
-
-        const waypoint = new Waypoint({
-          element: counter,
-          handler: function() {
-            updateCount();
-            this.destroy();
-          },
-          offset: '90%'
-        });
-      });
-    }
-
-    // Initialize 3D globe for contact section
-function initGlobe() {
-  const container = document.getElementById('globe-container');
-  
-  // Check if container exists before proceeding
-  if (!container) return;
-  
-  // Clear any existing content
-  container.innerHTML = '';
-  
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-  
-  // Create renderer with appropriate size based on container, not window
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setClearColor(0x000000, 0);
-  container.appendChild(renderer.domElement);
-  
-  // Create globe geometry with slightly reduced complexity
-  const geometry = new THREE.SphereGeometry(3, 48, 48);
-  
-  // Create material with custom shader
-  const material = new THREE.MeshBasicMaterial({
-    color: 0x4169E1,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.3
-  });
-  
-  const globe = new THREE.Mesh(geometry, material);
-  scene.add(globe);
-  
-  // Add particles around globe with reduced count
-  const particlesGeometry = new THREE.BufferGeometry();
-  const particlesCount = 500; // Reduced from 1000
-  
-  const posArray = new Float32Array(particlesCount * 3);
-  
-  for(let i = 0; i < particlesCount; i++) {
-    // Random positions in a sphere around the globe
-    const radius = 3 + Math.random() * 1.5;
-    const theta = Math.random() * Math.PI * 2;
-    const phi = Math.acos(2 * Math.random() - 1);
-    
-    posArray[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-    posArray[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-    posArray[i * 3 + 2] = radius * Math.cos(phi);
-  }
-  
-  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-  
-  const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.04,
-    color: 0x00FFFF
-  });
-  
-  const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-  scene.add(particlesMesh);
-  
-  camera.position.z = 8;
-  
-  // Implement proper animation cleanup with RAF ID
-  let animationId;
-  
-  function animate() {
-    animationId = requestAnimationFrame(animate);
-    
-    globe.rotation.y += 0.001;
-    particlesMesh.rotation.y += 0.0005;
-    
-    renderer.render(scene, camera);
-  }
-  
-  animate();
-      
-  // Handle resize - use container dimensions instead of window
-  function handleResize() {
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-    
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
-  }
-  
-  window.addEventListener('resize', handleResize);
-
-    // Add cleanup function to prevent memory leaks
-  return function cleanup() {
-    window.removeEventListener('resize', handleResize);
-    cancelAnimationFrame(animationId);
-    renderer.dispose();
-    geometry.dispose();
-    material.dispose();
-    particlesGeometry.dispose();
-    particlesMaterial.dispose();
-    container.removeChild(renderer.domElement);
-  };
-}
-    // Form animations
-    function initFormAnimations() {
-      const inputs = document.querySelectorAll('.form-control');
-      
-      inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-          input.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', () => {
-          if(input.value === '') {
-            input.parentElement.classList.remove('focused');
-          }
-        });
-        
-        // Check for pre-filled inputs on page load
-        if(input.value !== '') {
-          input.parentElement.classList.add('focused');
-        }
-      });
-    }
-
-    // Circuit background animation for About section
-    function initCircuitAnimation() {
-      const circuitLines = document.querySelector('.circuit-lines');
-      const lineCount = 15;
-      
-      for(let i = 0; i < lineCount; i++) {
-        const line = document.createElement('div');
-        line.classList.add('circuit-line');
-        line.style.top = `${Math.random() * 100}%`;
-        line.style.left = `${Math.random() * 100}%`;
-        line.style.width = `${Math.random() * 150 + 50}px`;
-        line.style.height = `${Math.random() * 2 + 1}px`;
-        line.style.transform = `rotate(${Math.random() * 360}deg)`;
-        line.style.animationDelay = `${Math.random() * 5}s`;
-        
-        // Add nodes to some lines
-        if(Math.random() > 0.5) {
-          const node = document.createElement('div');
-          node.classList.add('circuit-node');
-          line.appendChild(node);
-        }
-        
-        circuitLines.appendChild(line);
-      }
-    }
-
-    // Initialize all animations
-    function animateElementsInView() {
-      initGSAPAnimations();
-      initCounters();
-      initGlobe();
-      initFormAnimations();
-      initCircuitAnimation();
-    }
-
-    // Set focused state on form fields with values
-    window.addEventListener('DOMContentLoaded', function() {
-      const formFields = document.querySelectorAll('.form-control');
-      formFields.forEach(field => {
-        if (field.value !== '') {
-          field.parentElement.classList.add('focused');
-        }
-      });
-    });
-  </script>
+  <!-- Script file -->
+  <script src="javascript.js"></script>
 </body>
 </html>
