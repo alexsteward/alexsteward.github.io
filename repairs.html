@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Tech Repairs - iFixTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="repair.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Modern Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-microchip me-2"></i>iFixTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Why Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill nav-btn" href="#contact">Get a Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with SVG Illustration -->
+    <header id="home" class="repair-hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-lg-start text-center">
+                    <h1 class="display-4 fw-bold hero-title">Expert <span class="text-accent">Tech</span> Repairs</h1>
+                    <p class="lead hero-subtitle">Bringing your valuable devices back to life</p>
+                    <div class="d-flex justify-content-lg-start justify-content-center mt-4 gap-3">
+                        <a href="#services" class="btn btn-primary btn-lg rounded-pill">Our Services</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill">Contact Us</a>
+                    </div>
+                    <div class="hero-stats mt-4 d-flex justify-content-lg-start justify-content-center">
+                        <div class="me-4">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-text">Repairs</div>
+                        </div>
+                        <div class="me-4">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-text">Success Rate</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">24h</div>
+                            <div class="stat-text">Turnaround</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="tech-illustration">
+                        <!-- SVG Illustration of repair tools -->
+                        <svg viewBox="0 0 600 500" class="tech-svg">
+                            <!-- Screwdriver -->
+                            <rect x="200" y="150" width="20" height="200" rx="5" fill="#2A3440" />
+                            <polygon points="210,150 230,130 190,130" fill="#5F7BFF" />
+                            <rect x="195" y="350" width="30" height="30" rx="5" fill="#5F7BFF" />
+                            
+                            <!-- Wrench -->
+                            <path d="M350,150 Q400,130 400,180 L320,260 Q300,280 280,260 Q260,240 280,220 L350,150" fill="#2A3440" />
+                            <circle cx="350" cy="150" r="15" fill="#5F7BFF" />
+                            <circle cx="280" cy="240" r="15" fill="#5F7BFF" />
+                            
+                            <!-- Circuit board -->
+                            <rect x="100" y="300" width="150" height="100" rx="5" fill="#192335" />
+                            <circle cx="120" cy="320" r="5" fill="#5F7BFF" opacity="0.8" class="pulse-circle" />
+                            <circle cx="150" cy="320" r="5" fill="#5F7BFF" opacity="0.8" class="pulse-circle" />
+                            <circle cx="180" cy="320" r="5" fill="#5F7BFF" opacity="0.8" class="pulse-circle" />
+                            <line x1="120" y1="320" x2="150" y2="320" stroke="#5F7BFF" stroke-width="2" />
+                            <line x1="150" y1="320" x2="180" y2="320" stroke="#5F7BFF" stroke-width="2" />
+                            <line x1="120" y1="320" x2="120" y2="350" stroke="#5F7BFF" stroke-width="2" />
+                            <line x1="150" y1="320" x2="150" y2="350" stroke="#5F7BFF" stroke-width="2" />
+                            <line x1="180" y1="320" x2="180" y2="350" stroke="#5F7BFF" stroke-width="2" />
+                            <circle cx="120" cy="350" r="5" fill="#5F7BFF" opacity="0.8" class="pulse-circle" />
+                            <circle cx="150" cy="350" r="5" fill="#5F7BFF" opacity="0.8" class="pulse-circle" />
+                            <circle cx="180" cy="350" r="5" fill="#5F7BFF" opacity="0.8" class="pulse-circle" />
+                            
+                            <!-- Broken phone -->
+                            <rect x="400" y="300" width="80" height="140" rx="10" fill="#131C2A" />
+                            <path d="M410,310 L470,390" stroke="#5F7BFF" stroke-width="2" />
+                            <path d="M410,390 L470,310" stroke="#5F7BFF" stroke-width="2" />
+                            <circle cx="440" cy="420" r="8" fill="#5F7BFF" opacity="0.8" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section id="intro" class="section-padding bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <span class="section-badge">Why Choose Us</span>
+                    <h2 class="section-title">The iFixTech Difference</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">At iFixTech, we offer expert repair services for all your tech devices. Our certified technicians use high-quality parts to ensure your devices are fixed quickly and efficiently. With years of experience, we specialize in diagnosing and resolving a wide range of issues, from broken screens and faulty batteries to complex software glitches.</p>
+                    <p class="mt-4">We prioritize customer satisfaction by providing personalized service, fast turnaround times, and transparent communication every step of the way. Trust iFixTech to restore your devices to optimal performance and get you back to using them with ease.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <span class="section-badge">Our Services</span>
+                    <h2 class="section-title">Expert Tech Repair Services</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Professional repair solutions for all your electronic devices</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Phone Repairs</h3>
+                        <p>We specialize in repairing all types of smartphones, from screen replacements to battery changes and software fixes.</p>
+                        <div class="hover-button">
+                            <a href="#phone-repair">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Laptop Repairs</h3>
+                        <p>Need a laptop repair? Our expert technicians fix everything from hardware issues to software glitches.</p>
+                        <div class="hover-button">
+                            <a href="#laptop-repair">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tablet-alt"></i>
+                        </div>
+                        <h3>Tablet Repairs</h3>
+                        <p>Get reliable repair solutions for your tablets, whether it's a screen issue, battery replacement, or software update.</p>
+                        <div class="hover-button">
+                            <a href="#tablet-repair">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <span class="section-badge">Our Process</span>
+                    <h2 class="section-title">How Our Repair Process Works</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">We make getting your device fixed simple, fast, and hassle-free</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h4>Easy Booking</h4>
+                        <p>Simply book an appointment online or call us to get your repair started at your convenience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Expert Diagnosis</h4>
+                        <p>Our certified technicians accurately diagnose your device issues using professional tools.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h4>Fast Turnaround</h4>
+                        <p>We ensure a quick and reliable repair process with minimal downtime for your device.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <h4>Guaranteed Quality</h4>
+                        <p>All our repairs come with a satisfaction guarantee and warranty on parts and labor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section with Geometric Shapes -->
+    <section class="cta-section">
+        <div class="geometric-bg">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-lg-start text-center">
+                    <h2>Need Your Device Fixed Today?</h2>
+                    <p class="cta-text">Our expert technicians are ready to help you with same-day repairs and free diagnostics. Don't let a broken device slow you down.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+                    <a href="#contact" class="btn btn-light btn-lg rounded-pill">Schedule a Repair</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <span class="section-badge">Customer Reviews</span>
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Hear from our satisfied customers about their repair experiences</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"iFixTech saved my laptop just before a major presentation. The team was professional, quick, and the price was reasonable. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-image">
+                                <img src="/api/placeholder/50/50" alt="Customer 1">
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Sarah Johnson</h5>
+                                <span>Marketing Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"After cracking my phone screen, I was worried about losing all my data. iFixTech not only fixed the screen perfectly but also ensured all my data remained intact. Great service!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-image">
+                                <img src="/api/placeholder/50/50" alt="Customer 2">
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Michael Torres</h5>
+                                <span>Graphic Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"My tablet had been slow for months, and I was considering buying a new one. Thanks to iFixTech's affordable repair service, it's working like new again. Saved me hundreds of dollars!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-image">
+                                <img src="/api/placeholder/50/50" alt="Customer 3">
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Lisa Chen</h5>
+                                <span>Small Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2 class="section-title">Contact Us</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Have questions or need a quote? Reach out to our team.</p>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <p>123 Tech Street, Suite 456<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>support@ifixtech.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Friday: 9AM - 7PM<br>Saturday: 10AM - 5PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-form-container">
+                        <form class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" placeholder="Message" style="height: 150px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="container-fluid p-0">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.031499594765!2d-85.27892998801532!3d42.63949217104802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88183dc816fcf975%3A0x9122631a874ff2aa!2siFixTech!5e0!3m2!1sen!2sus!4v1742242683140!5m2!1sen!2sus" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="#"><i class="fas fa-microchip me-2"></i>iFixTech</a>
+                        <p class="mt-3">Expert tech repair services you can trust. We bring your devices back to life with quality parts and experienced technicians.</p>
+                        <div class="social-links mt-3">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#features">Why Us</a></li>
+                            <li><a href="#testimonials">Reviews</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#phone-repair">Phone Repairs</a></li>
+                            <li><a href="#laptop-repair">Laptop Repairs</a></li>
+                            <li><a href="#tablet-repair">Tablet Repairs</a></li>
+                            <li><a href="#data-recovery">Data Recovery</a></li>
+                            <li><a href="#software-issues">Software Issues</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe to our newsletter for tech tips and exclusive offers</p>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2025 iFixTech. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p>Privacy Policy | Terms of Service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom Script -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
