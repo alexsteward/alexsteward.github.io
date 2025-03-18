@@ -522,7 +522,6 @@ function initCircuitAnimation() {
 }
 
 
-
 // FORUM ANIMATIONS
 
 function initFormAnimations() {
