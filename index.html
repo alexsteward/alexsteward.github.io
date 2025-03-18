@@ -526,10 +526,10 @@
         delay: 1.2, 
         ease: "power2.out" 
       });
-
+    
       // Create scroll animations
       gsap.registerPlugin(ScrollTrigger);
-
+    
       // Reveal text animation
       const revealTextElements = document.querySelectorAll('.reveal-text');
       revealTextElements.forEach(element => {
@@ -545,22 +545,28 @@
           ease: "power3.out"
         });
       });
+    
+      // COMPLETELY REVAMPED SERVICE CARDS ANIMATION
+      // First, ensure all cards are visible by default
+      gsap.set(".service-card", { opacity: 1, y: 0 });
       
-      // Service cards stagger animation - FIXED HERE
-      gsap.from(".service-card", {
-        scrollTrigger: {
-          trigger: ".services-grid",
-          start: "top 80%",
-          // Adding this to ensure the animation only plays once
-          toggleActions: "play none none none"
-        },
-        y: 50, // Reduced from 100 for less dramatic movement
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out"
+      // Then apply a simple fade-in animation that won't interfere with positioning
+      const serviceCards = document.querySelectorAll('.service-card');
+      serviceCards.forEach((card, index) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            once: true // This ensures the animation only happens once
+          },
+          opacity: 0,
+          y: 20, // Minimal movement
+          duration: 0.7,
+          delay: index * 0.15, // Staggered effect
+          ease: "power2.out"
+        });
       });
-
+    
       // Floating tech elements animation
       const techElements = document.querySelectorAll('.tech-element');
       techElements.forEach((element, index) => {
@@ -573,13 +579,14 @@
           yoyo: true,
           ease: "sine.inOut",
         });
-      });  
-     // Contact form animation
+      });
+    
+      // Contact form animation
       gsap.from(".contact-form", {
         scrollTrigger: {
           trigger: ".contact-wrapper",
           start: "top 70%",
-          toggleActions: "play none none none" // Added to prevent repeating
+          once: true
         },
         x: 100,
         opacity: 0,
@@ -591,7 +598,7 @@
         scrollTrigger: {
           trigger: ".contact-wrapper",
           start: "top 70%",
-          toggleActions: "play none none none" // Added to prevent repeating
+          once: true
         },
         x: -100,
         opacity: 0,
@@ -599,6 +606,16 @@
         ease: "power3.out"
       });
     }
+    
+    // Add this code right after your window.addEventListener('load', function() {...}) 
+    // to ensure all service cards are fully visible by default
+    window.addEventListener('DOMContentLoaded', function() {
+      // Force service cards to be visible
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+      });
+    });
     
     // Counter animation
     function initCounters() {
