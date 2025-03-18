@@ -534,18 +534,14 @@ function initFormAnimations() {
     // Force visibility always
     formContainer.style.opacity = '1';
     formContainer.style.visibility = 'visible';
-    formContainer.style.display = 'block';
     
-    // Add hover effect to the entire form container
+    // Add hover effect to the entire form container - ONLY SHADOW, NO MOVEMENT
     if (typeof gsap !== 'undefined') {
       formContainer.addEventListener('mouseenter', () => {
         gsap.to(formContainer, {
           boxShadow: '0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1)',
           duration: 0.5,
-          ease: "power2.out",
-          // Ensure these properties don't change
-          opacity: 1,
-          visibility: 'visible'
+          ease: "power2.out"
         });
       });
       
@@ -553,28 +549,23 @@ function initFormAnimations() {
         gsap.to(formContainer, {
           boxShadow: 'none',
           duration: 0.5,
-          ease: "power2.in",
-          // CRITICAL: Keep the form visible!
-          opacity: 1,
-          visibility: 'visible',
-          display: 'block'
+          ease: "power2.in"
         });
       });
     }
   }
   
-  // Keep the form field animations simplified
+  // Form field animations
   const inputs = document.querySelectorAll('.form-control');
   
   inputs.forEach((input) => {
     const parent = input.parentElement;
     
-    // Focus effect (simplified)
+    // Focus effect
     input.addEventListener('focus', () => {
       parent.classList.add('focused');
       
       if (typeof gsap !== 'undefined') {
-        // Static glow effect without movement
         const line = parent.querySelector('.line');
         if (line) {
           gsap.to(line, {
@@ -588,7 +579,7 @@ function initFormAnimations() {
       }
     });
     
-    // Blur effect (simplified)
+    // Blur effect
     input.addEventListener('blur', () => {
       if (input.value === '') {
         parent.classList.remove('focused');
@@ -607,60 +598,10 @@ function initFormAnimations() {
         }
       }
     });
-  });
-}
-
-// Make sure the function is called after the DOM is loaded
-document.addEventListener('DOMContentLoaded', initFormAnimations);
-          
-          gsap.to(parent, {
-            boxShadow: 'none',
-            duration: 0.5
-          });
-          
-          // Reset line
-          const line = parent.querySelector('.line');
-          if (line) {
-            gsap.to(line, {
-              width: '0%',
-              opacity: 0.3,
-              backgroundColor: 'var(--accent)',
-              duration: 0.4,
-              ease: "power2.out"
-            });
-          }
-        }
-      } else {
-        // Success state
-        parent.classList.add('success');
-        
-        if (typeof gsap !== 'undefined') {
-          // Success indicator
-          gsap.to(parent, {
-            boxShadow: '0 0 10px rgba(0, 255, 170, 0.4), 0 0 20px rgba(0, 255, 170, 0.2)',
-            duration: 0.3
-          });
-          
-          // Success line
-          const line = parent.querySelector('.line');
-          if (line) {
-            gsap.to(line, {
-              width: '100%',
-              backgroundColor: '#00FFAA',
-              opacity: 1,
-              duration: 0.4,
-              ease: "power2.out"
-            });
-          }
-        }
-      }
-    });
-
     
     // Typing effect 
     input.addEventListener('input', () => {
       if (typeof gsap !== 'undefined') {
-        // Dynamic line coloring
         const line = parent.querySelector('.line');
         if (line) {
           gsap.to(line, {
@@ -673,19 +614,20 @@ document.addEventListener('DOMContentLoaded', initFormAnimations);
     
     // Preloaded inputs
     if (input.value !== '') {
-      const parent = input.parentElement;
       parent.classList.add('focused');
       parent.classList.add('success');
     }
   });
   
-  // Subtle button hover animation
+  // Button animation
   const submitBtn = document.querySelector('.contact-form button[type="submit"]');
   if (submitBtn && typeof gsap !== 'undefined') {
-    // Add glow element
-    const btnGlow = document.createElement('div');
-    btnGlow.classList.add('btn-glow');
-    submitBtn.appendChild(btnGlow);
+    // Add glow element if it doesn't exist
+    if (!submitBtn.querySelector('.btn-glow')) {
+      const btnGlow = document.createElement('div');
+      btnGlow.classList.add('btn-glow');
+      submitBtn.appendChild(btnGlow);
+    }
     
     submitBtn.addEventListener('mouseenter', () => {
       gsap.to(submitBtn, {
@@ -694,10 +636,13 @@ document.addEventListener('DOMContentLoaded', initFormAnimations);
         ease: "power2.out"
       });
       
-      gsap.to(btnGlow, {
-        opacity: 0.8,
-        duration: 0.4
-      });
+      const btnGlow = submitBtn.querySelector('.btn-glow');
+      if (btnGlow) {
+        gsap.to(btnGlow, {
+          opacity: 0.8,
+          duration: 0.4
+        });
+      }
     });
     
     submitBtn.addEventListener('mouseleave', () => {
@@ -707,27 +652,19 @@ document.addEventListener('DOMContentLoaded', initFormAnimations);
         ease: "power2.in"
       });
       
-      gsap.to(btnGlow, {
-        opacity: 0,
-        duration: 0.4
-      });
-    });
-    
-    submitBtn.addEventListener('mousedown', () => {
-      gsap.to(submitBtn, {
-        scale: 0.98,
-        duration: 0.1
-      });
-    });
-    
-    submitBtn.addEventListener('mouseup', () => {
-      gsap.to(submitBtn, {
-        scale: 1,
-        duration: 0.1
-      });
+      const btnGlow = submitBtn.querySelector('.btn-glow');
+      if (btnGlow) {
+        gsap.to(btnGlow, {
+          opacity: 0,
+          duration: 0.4
+        });
+      }
     });
   }
 }
+
+// Make sure the function is called after the DOM is loaded
+document.addEventListener('DOMContentLoaded', initFormAnimations);
 
 
 
