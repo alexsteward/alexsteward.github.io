@@ -3,389 +3,1206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iFixTech - Tech Repair & Refurbishing Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>iFixTech - Professional Tech Repair Services</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <style>
+        /* Base Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        :root {
+            --primary: #00f0ff;
+            --secondary: #7000ff;
+            --dark: #0a0a12;
+            --light: #f0f0ff;
+            --accent: #ff00b3;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--primary));
+            background-size: 200% 200%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 50px;
+            animation: glowing 3s ease infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes glowing {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            background: rgba(10, 10, 18, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo-icon {
+            margin-right: 8px;
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            width: 60%;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title span {
+            display: block;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(240, 240, 255, 0.8);
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 650px;
+        }
+        
+        /* Services Section */
+        .services {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(240, 240, 255, 0.8);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(112, 0, 255, 0.1));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .service-card:hover .service-icon::after {
+            left: 100%;
+        }
+        
+        .service-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-description {
+            color: rgba(240, 240, 255, 0.7);
+            margin-bottom: 20px;
+        }
+        
+        .service-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-link:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: rgba(255, 255, 255, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: rgba(240, 240, 255, 0.7);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            font-size: 1rem;
+            color: rgba(240, 240, 255, 0.9);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            color: rgba(0, 240, 255, 0.1);
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            overflow: hidden;
+            position: relative;
+            background: #333;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .testimonial-rating {
+            display: flex;
+            margin-top: 10px;
+        }
+        
+        .star {
+            color: var(--accent);
+            margin-right: 3px;
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            position: relative;
+            background: linear-gradient(45deg, rgba(0, 10, 30, 0.8), rgba(20, 0, 50, 0.8));
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1200/800') center center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .contact-flex {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        
+        .contact-text {
+            color: rgba(240, 240, 255, 0.8);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(240, 240, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transform: translateY(-3px);
+        }
+        
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(240, 240, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations and Effects */
+        .glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--primary);
+            filter: blur(100px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .glow.purple {
+            background: var(--secondary);
+        }
+        
+        .glow.pink {
+            background: var(--accent);
+        }
+        
+        /* Lines effect */
+        .lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.1), transparent);
+            animation: line-animation 20s infinite linear;
+        }
+        
+        @keyframes line-animation {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .hero-content {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 80%;
+                margin: 30px auto 0;
+                right: auto;
+                transform: none;
+                top: auto;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .contact-flex, .footer-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 15px 0;
+            }
+            
+            nav {
+                display: none; /* Mobile menu would be implemented with JavaScript */
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Hover underline animation */
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Floater animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        /* Rotate animation */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .rotate {
+            animation: rotate 20s linear infinite;
+        }
+    </style>
 </head>
 <body>
+    <!-- Random animated glow effects -->
+    <div class="glow" style="top: 20%; left: 10%;"></div>
+    <div class="glow purple" style="top: 60%; left: 70%;"></div>
+    <div class="glow pink" style="top: 30%; left: 60%;"></div>
+    <div class="glow" style="top: 80%; left: 30%;"></div>
+    
+    <!-- Animated lines -->
+    <div class="lines">
+        <div class="line" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="line" style="left: 40%; animation-delay: -5s;"></div>
+        <div class="line" style="left: 60%; animation-delay: -10s;"></div>
+        <div class="line" style="left: 80%; animation-delay: -15s;"></div>
+    </div>
+    
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"></path>
+                    </svg>
+                </div>
+                <span>iFix<b>Tech</b></span>
+            </a>
             <nav>
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <div class="logo-text">
-                        <span>iFixTech</span>
-                        <span class="tagline">Expert Tech Solutions</span>
-                    </div>
-                </div>
-                <div class="nav-links">
-                    <a href="#services">Services</a>
-                    <a href="#reviews">Reviews</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#contact">Contact</a>
-                </div>
+                <ul>
+                    <li><a href="#home" class="hover-underline-animation">Home</a></li>
+                    <li><a href="#services" class="hover-underline-animation">Services</a></li>
+                    <li><a href="#testimonials" class="hover-underline-animation">Reviews</a></li>
+                    <li><a href="#contact" class="hover-underline-animation">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
     
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="particles-container" id="particles"></div>
-        <div class="circuit-pattern"></div>
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">trusted by 5000+ customers</div>
-                <h1>Expert Tech Repair <span class="hero-highlight">&</span> Refurbishing</h1>
-                <p>Professional service for all your devices. Fast turnaround times, quality repairs, and affordable prices starting at just $15!</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5K+</span>
-                        <span class="stat-label">Happy Customers</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">99%</span>
-                        <span class="stat-label">Success Rate</span>
-                    </div>
+                <h1 class="hero-title">Quick & Reliable <span>Tech Repair Solutions</span></h1>
+                <p class="hero-description">From broken screens to complex system failures, our expert technicians fix it all. Fast diagnosis, transparent pricing, and guaranteed repairs starting at just $15.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get a Quote</a>
                 </div>
-                <a href="#contact" class="btn">Get a Free Quote</a>
             </div>
-            <div class="hero-image">
-                <div class="pulse-circle"></div>
-                <div class="device-graphic"></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Value Proposition Cards -->
-    <section class="section">
-        <div class="container">
-            <div class="value-cards">
-                <div class="value-card">
-                    <i class="fas fa-hand-holding-dollar"></i>
-                    <h3>Affordable</h3>
-                    <p>Budget-friendly repairs with no hidden costs. Our services start at just $15!</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Quick</h3>
-                    <p>Most repairs completed same-day. Get back to using your device in no time!</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-medal"></i>
-                    <h3>Quality</h3>
-                    <p>Premium parts and expert technicians ensure lasting repairs and performance.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Guaranteed</h3>
-                    <p>All our repairs come with a 90-day warranty for your peace of mind.</p>
-                </div>
+            <div class="hero-image float">
+                <img src="/api/placeholder/600/500" alt="Tech repair illustration" style="width: 100%; height: auto;">
             </div>
         </div>
     </section>
     
     <!-- Services Section -->
-    <section id="services" class="section">
+    <section class="services" id="services">
+        <div class="glow" style="top: 30%; left: 20%;"></div>
+        <div class="glow purple" style="bottom: 10%; right: 10%;"></div>
+        
         <div class="container">
-            <div class="section-heading">
-                <h2>Our Services</h2>
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-description">Professional tech repair solutions for all your devices, with transparent pricing and expert technicians.</p>
             </div>
-            <div class="service-cards">
+            
+            <div class="services-grid">
                 <div class="service-card">
-                    <div class="price-tag">From $15</div>
-                    <img src="/api/placeholder/400/320" alt="Screen Repair">
-                    <div class="service-content">
-                        <h3>Screen Repair</h3>
-                        <p>Cracked screen? No problem! We fix phones, tablets, and laptops with precision and care.</p>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12" y2="18"></line>
+                        </svg>
                     </div>
-                    <div class="learn-more">
-                        <p>We use only high-quality replacement screens that match or exceed original equipment specifications. Our technicians are certified and trained to handle all major brands including Apple, Samsung, and more.</p>
-                        <p><strong>Typical turnaround time:</strong> 1-2 hours</p>
-                    </div>
+                    <h3 class="service-title">Smartphone Repair</h3>
+                    <p class="service-description">Screen replacements, battery upgrades, water damage fixes, and more for all major brands.</p>
+                    <a href="#contact" class="service-link">Learn More →</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="price-tag">From $25</div>
-                    <img src="/api/placeholder/400/320" alt="Battery Replacement">
-                    <div class="service-content">
-                        <h3>Battery Replacement</h3>
-                        <p>Restore your device's battery life with our expert replacement service.</p>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
                     </div>
-                    <div class="learn-more">
-                        <p>We offer premium batteries that provide long-lasting performance. All batteries come with a 6-month warranty and are installed by certified technicians who ensure proper calibration.</p>
-                        <p><strong>Typical turnaround time:</strong> 30-60 minutes</p>
-                    </div>
+                    <h3 class="service-title">Laptop & PC Repair</h3>
+                    <p class="service-description">Hardware upgrades, virus removal, data recovery, and system optimization services.</p>
+                    <a href="#contact" class="service-link">Learn More →</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="price-tag">From $30</div>
-                    <img src="/api/placeholder/400/320" alt="Data Recovery">
-                    <div class="service-content">
-                        <h3>Data Recovery</h3>
-                        <p>Lost important files? Our specialists can help recover your valuable data.</p>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                            <polyline points="17 2 12 7 7 2"></polyline>
+                        </svg>
                     </div>
-                    <div class="learn-more">
-                        <p>Our data recovery experts utilize advanced software and hardware tools to recover data from damaged drives, corrupted memory cards, and water-damaged devices. We maintain strict confidentiality protocols for all customer data.</p>
-                        <p><strong>Typical turnaround time:</strong> 1-3 days depending on complexity</p>
-                    </div>
+                    <h3 class="service-title">Gaming Console Repair</h3>
+                    <p class="service-description">Fix HDMI ports, optical drives, overheating issues, and controller problems.</p>
+                    <a href="#contact" class="service-link">Learn More →</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="price-tag">From $40</div>
-                    <img src="/api/placeholder/400/320" alt="Device Refurbishing">
-                    <div class="service-content">
-                        <h3>Device Refurbishing</h3>
-                        <p>Give your old tech new life with our comprehensive refurbishing services.</p>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                            <polyline points="17 2 12 7 7 2"></polyline>
+                        </svg>
                     </div>
-                    <div class="learn-more">
-                        <p>Our refurbishing process includes thorough cleaning, component testing, parts replacement, software updates, and quality assurance testing. Each refurbished device undergoes rigorous testing before being returned to the customer.</p>
-                        <p><strong>Typical turnaround time:</strong> 2-5 days</p>
-                    </div>
+                    <h3 class="service-title">Gaming Console Repair</h3>
+                    <p class="service-description">Fix HDMI ports, optical drives, overheating issues, and controller problems.</p>
+                    <a href="#contact" class="service-link">Learn More →</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="price-tag">From $15</div>
-                    <img src="/api/placeholder/400/320" alt="Virus Removal">
-                    <div class="service-content">
-                        <h3>Virus Removal</h3>
-                        <p>Computer running slow? We'll remove viruses and optimize performance.</p>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z"></path>
+                        </svg>
                     </div>
-                    <div class="learn-more">
-                        <p>Our virus removal service includes comprehensive malware scanning, removal of threats, system cleaning, and optimization for improved performance. We also provide recommendations to prevent future infections.</p>
-                        <p><strong>Typical turnaround time:</strong> 2-4 hours</p>
-                    </div>
+                    <h3 class="service-title">Tablet Repair</h3>
+                    <p class="service-description">Screen replacements, charging port repairs, battery replacements, and software fixes.</p>
+                    <a href="#contact" class="service-link">Learn More →</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="price-tag">From $20</div>
-                    <img src="/api/placeholder/400/320" alt="Accessories Repair">
-                    <div class="service-content">
-                        <h3>Accessories Repair</h3>
-                        <p>We repair headphones, speakers, controllers, and other tech accessories.</p>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
                     </div>
-                    <div class="learn-more">
-                        <p>From fixing frayed cables to replacing worn components, our technicians can repair a wide range of accessories. We specialize in audio equipment, gaming peripherals, and smart home devices.</p>
-                        <p><strong>Typical turnaround time:</strong> 1-3 days</p>
+                    <h3 class="service-title">Network Solutions</h3>
+                    <p class="service-description">WiFi troubleshooting, router setup, network security, and connectivity issues.</p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
                     </div>
+                    <h3 class="service-title">Software Services</h3>
+                    <p class="service-description">OS installations, software updates, virus removal, and data backup solutions.</p>
+                    <a href="#contact" class="service-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Reviews Section -->
-    <section id="reviews" class="section reviews-section">
+    <!-- Stats Section -->
+    <section class="stats">
         <div class="container">
-            <div class="section-heading">
-                <h2>Customer Reviews</h2>
-            </div>
-            <div class="reviews-container">
-                <div class="review-card">
-                    <div class="review-profile">
-                        <div class="profile-circle">
-                            <img src="/api/placeholder/60/60" alt="Sarah Johnson">
-                        </div>
-                        <div class="review-info">
-                            <h4>Sarah Johnson</h4>
-                            <span class="review-date">2 weeks ago</span>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Absolutely amazing service! My phone screen was completely shattered, and they fixed it in less than an hour. Looks brand new and was much cheaper than going to the manufacturer. Highly recommend!"</p>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5000">5,000+</div>
+                    <div class="stat-text">Repairs Completed</div>
                 </div>
-                <div class="review-card">
-                    <div class="review-profile">
-                        <div class="profile-circle">
-                            <img src="/api/placeholder/60/60" alt="Michael Chen">
-                        </div>
-                        <div class="review-info">
-                            <h4>Michael Chen</h4>
-                            <span class="review-date">1 month ago</span>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="review-text">"I thought my laptop was toast after a coffee spill, but iFixTech saved all my data and repaired it for a fraction of what the manufacturer quoted. Great job and friendly staff too!"</p>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">98%</div>
+                    <div class="stat-text">Customer Satisfaction</div>
                 </div>
-                <div class="review-card">
-                    <div class="review-profile">
-                        <div class="profile-circle">
-                            <img src="/api/placeholder/60/60" alt="Emily Rodriguez">
-                        </div>
-                        <div class="review-info">
-                            <h4>Emily Rodriguez</h4>
-                            <span class="review-date">3 months ago</span>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"These guys are miracle workers! They recovered all my photos from a corrupted SD card that I thought was destroyed. Fast service and very reasonable prices. Will definitely come back for any tech issues!"</p>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">15+</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-count="24">24hr</div>
+                    <div class="stat-text">Turnaround Time</div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Pricing Section -->
-    <section id="pricing" class="section pricing-section">
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="glow purple" style="top: 20%; left: 50%;"></div>
+        <div class="glow" style="bottom: 20%; right: 30%;"></div>
+        
         <div class="container">
-            <div class="section-heading">
-                <h2>Our Pricing</h2>
+            <div class="section-header">
+                <h2 class="section-title">Customer Reviews</h2>
+                <p class="section-description">Don't just take our word for it. Here's what our customers have to say about our services.</p>
             </div>
-            <p class="text-center mb-20">We offer competitive and transparent pricing for all our services, with repairs starting at just <span class="highlight">$15!</span></p>
-            <table class="pricing-table">
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Starting Price</th>
-                        <th>Turnaround Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Screen Replacement (Phone)</td>
-                        <td>$45 - $199</td>
-                        <td>1-2 hours</td>
-                    </tr>
-                    <tr>
-                        <td>Screen Replacement (Tablet)</td>
-                        <td>$65 - $299</td>
-                        <td>2-3 hours</td>
-                    </tr>
-                    <tr>
-                        <td>Battery Replacement</td>
-                        <td>$25 - $99</td>
-                        <td>30-60 minutes</td>
-                    </tr>
-                    <tr>
-                        <td>Water Damage Repair</td>
-                        <td>$50 - $250</td>
-                        <td>1-3 days</td>
-                    </tr>
-                    <tr>
-                        <td>Data Recovery</td>
-                        <td>$30 - $150</td>
-                        <td>1-3 days</td>
-                    </tr>
-                    <tr>
-                        <td>Virus Removal</td>
-                        <td>$15 - $75</td>
-                        <td>2-4 hours</td>
-                    </tr>
-                    <tr>
-                        <td>Phone Unlocking</td>
-                        <td>$15 - $45</td>
-                        <td>15-60 minutes</td>
-                    </tr>
-                    <tr>
-                        <td>Computer Optimization</td>
-                        <td>$25 - $80</td>
-                        <td>1-3 hours</td>
-                    </tr>
-                    <tr>
-                        <td>Headphones/Earbuds Repair</td>
-                        <td>$15 - $60</td>
-                        <td>1-2 days</td>
-                    </tr>
-                    <tr>
-                        <td>Game Console Repair</td>
-                        <td>$35 - $150</td>
-                        <td>1-5 days</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="text-center" style="margin-top: 30px;">
-                <a href="#contact" class="btn">Get a Custom Quote</a>
-            </p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">iFixTech saved my work laptop just hours before a crucial presentation. They were quick, professional, and cost-effective. I can't recommend them enough!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/100/100" alt="Jennifer M.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Jennifer M.</h4>
+                            <p>Marketing Director</p>
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">After my gaming rig started overheating, iFixTech diagnosed the issue immediately. They cleaned the system, replaced thermal paste, and now it runs better than new. Great service at a fair price.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/100/100" alt="Michael T.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael T.</h4>
+                            <p>Software Developer</p>
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">My iPhone screen was completely shattered, but iFixTech had it looking brand new in just 45 minutes. Incredible service and they even threw in a free screen protector. Will definitely return!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/100/100" alt="Sarah K.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah K.</h4>
+                            <p>Photographer</p>
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
+    <section class="contact" id="contact">
+        <div class="glow" style="top: 50%; left: 20%;"></div>
+        <div class="glow pink" style="bottom: 30%; right: 10%;"></div>
+        
         <div class="container">
-            <div class="section-heading">
-                <h2>Contact Us</h2>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">Have questions or need a repair quote? Contact us today for fast and friendly service.</p>
             </div>
-            <div class="contact-wrapper">
+            
+            <div class="contact-flex">
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="info-text">
-                            <h4>Location</h4>
-                            <p>123 Tech Street, Digital City, TX 75001</p>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Our Location</h4>
+                            <p>123 Tech Street, Digital City, CA 90210</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="info-text">
-                            <h4>Phone</h4>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
                             <p>(555) 123-4567</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info-text">
-                            <h4>Email</h4>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
                             <p>support@ifixtech.com</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div class="info-text">
-                            <h4>Hours</h4>
-                            <p>Mon-Fri: 9AM - 7PM<br>Sat: 10AM - 5PM<br>Sun: Closed</p>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Business Hours</h4>
+                            <p>Mon - Fri: 9AM - 7PM<br>Saturday: 10AM - 5PM</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="contact-form">
+                    <h3>Request a Quote</h3>
+                    <p>Tell us about your device and the issue you're experiencing. Prices start at just $15!</p>
+                    
                     <form action="https://formspree.io/f/xnnnrgrb" method="POST">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control">
+                            <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
                         </div>
+                        
                         <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" name="service" class="form-control" required>
-                                <option value="">-- Select a Service --</option>
-                                <option value="screen-repair">Screen Repair</option>
-                                <option value="battery-replacement">Battery Replacement</option>
-                                <option value="data-recovery">Data Recovery</option>
-                                <option value="device-refurbishing">Device Refurbishing</option>
-                                <option value="virus-removal">Virus Removal</option>
-                                <option value="accessories-repair">Accessories Repair</option>
+                            <select name="service" class="form-control" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="smartphone">Smartphone Repair</option>
+                                <option value="laptop">Laptop & PC Repair</option>
+                                <option value="gaming">Gaming Console Repair</option>
+                                <option value="tablet">Tablet Repair</option>
+                                <option value="network">Network Solutions</option>
+                                <option value="software">Software Services</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <textarea name="message" class="form-control" placeholder="Describe your issue" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -395,16 +1212,191 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <a href="#" class="logo">
+                        <span>iFix<b>Tech</b></span>
+                    </a>
+                    <p>Your trusted partner for all tech repair needs. Fast, affordable, and professional service guaranteed.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Smartphone Repair</a></li>
+                        <li><a href="#services">Laptop & PC Repair</a></li>
+                        <li><a href="#services">Gaming Console Repair</a></li>
+                        <li><a href="#services">Tablet Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Help & Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#contact">Support</a></li>
+                    </ul>
+                </div>
             </div>
-            <p class="copyright">&copy; 2025 iFixTech. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 iFixTech. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     
-    <script src="javascript.js"></script>
+    <script>
+        // Initialize GSAP animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero animations
+            gsap.from('.hero-content', {
+                opacity: 0,
+                y: 50,
+                duration: 1.2,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.hero-image', {
+                opacity: 0,
+                x: 100,
+                duration: 1.2,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+            
+            // Service card animations
+            gsap.utils.toArray('.service-card').forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 80%',
+                    },
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    ease: 'power3.out'
+                });
+            });
+            
+            // Stats counter animation
+            gsap.utils.toArray('.stat-number').forEach(stat => {
+                let target = stat.getAttribute('data-count');
+                let isCurrency = target.indexOf('$') >= 0;
+                let isPlus = target.indexOf('+') >= 0;
+                let isPercentage = target.indexOf('%') >= 0;
+                
+                // Clean the target value
+                target = target.replace(/[^0-9.]/g, '');
+                
+                ScrollTrigger.create({
+                    trigger: stat,
+                    start: 'top 80%',
+                    once: true,
+                    onEnter: () => {
+                        gsap.to(stat, {
+                            innerHTML: function(index, target) {
+                                let cleanTarget = target.replace(/[^0-9.]/g, '');
+                                let value = Math.floor(parseFloat(cleanTarget));
+                                
+                                if (isPercentage) return value + '%';
+                                if (isPlus) return value + '+';
+                                if (isCurrency) return '$' + value;
+                                return target;
+                            },
+                            duration: 1.5,
+                            ease: 'power2.out'
+                        });
+                    }
+                });
+            });
+            
+            // Testimonial animations
+            gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 80%',
+                    },
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                    delay: i * 0.2,
+                    ease: 'power3.out'
+                });
+            });
+            
+            // Contact section animations
+            gsap.from('.contact-info', {
+                scrollTrigger: {
+                    trigger: '.contact',
+                    start: 'top 70%',
+                },
+                x: -50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.contact-form', {
+                scrollTrigger: {
+                    trigger: '.contact',
+                    start: 'top 70%',
+                },
+                x: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+            
+            // Moving glow effect for cursor
+            document.addEventListener('mousemove', function(e) {
+                gsap.to('.glow:first-child', {
+                    x: e.clientX - 100,
+                    y: e.clientY - 100,
+                    duration: 1.5,
+                    ease: 'power3.out'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
