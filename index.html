@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iFixTech - Professional Tech Repair Services</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -55,8 +55,7 @@
                     <a href="#contact" class="btn btn-primary">Get a Quote</a>
                 </div>
             </div>
-            <div class="hero-image float">
-            </div>
+            <div class="hero-image float"></div>
         </div>
     </section>
     
@@ -94,18 +93,6 @@
                     </div>
                     <h3 class="service-title">Laptop & PC Repair</h3>
                     <p class="service-description">Hardware upgrades, virus removal, data recovery, and system optimization services.</p>
-                    <a href="#contact" class="service-link">Learn More →</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
-                            <polyline points="17 2 12 7 7 2"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Gaming Console Repair</h3>
-                    <p class="service-description">Fix HDMI ports, optical drives, overheating issues, and controller problems.</p>
                     <a href="#contact" class="service-link">Learn More →</a>
                 </div>
                 
@@ -202,7 +189,7 @@
                     <p class="testimonial-text">iFixTech saved my work laptop just hours before a crucial presentation. They were quick, professional, and cost-effective. I can't recommend them enough!</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="/api/placeholder/100/100" alt="Jennifer M.">
+                            <img src="/api/placeholder/100/100" alt="Jennifer M." loading="lazy">
                         </div>
                         <div class="author-info">
                             <h4>Jennifer M.</h4>
@@ -222,7 +209,7 @@
                     <p class="testimonial-text">After my gaming rig started overheating, iFixTech diagnosed the issue immediately. They cleaned the system, replaced thermal paste, and now it runs better than new. Great service at a fair price.</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="/api/placeholder/100/100" alt="Michael T.">
+                            <img src="/api/placeholder/100/100" alt="Michael T." loading="lazy">
                         </div>
                         <div class="author-info">
                             <h4>Michael T.</h4>
@@ -242,7 +229,7 @@
                     <p class="testimonial-text">My iPhone screen was completely shattered, but iFixTech had it looking brand new in just 45 minutes. Incredible service and they even threw in a free screen protector. Will definitely return!</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="/api/placeholder/100/100" alt="Sarah K.">
+                            <img src="/api/placeholder/100/100" alt="Sarah K." loading="lazy">
                         </div>
                         <div class="author-info">
                             <h4>Sarah K.</h4>
@@ -439,13 +426,8 @@
                 <p>&copy; 2025 iFixTech. All rights reserved.</p>
             </div>
         </div>
-    <footer>
-    <div class="footer-bottom">
-        <p>&copy; 2025 iFixTech. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
-
