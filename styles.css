@@ -724,11 +724,15 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden; /* Important: hide cloned slides that extend beyond the container */
 }
 
 .testimonial-track {
     display: flex;
-    transition: transform 0.5s ease;
+    /* Remove the transition property - we'll add it via JavaScript */
+    /* This allows us to make the snap-back seamless */
+    width: fit-content; /* Ensure track expands to fit all items including clones */
+    position: relative;
 }
 
 .testimonial-item {
@@ -739,7 +743,7 @@ footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 200, 255, 0.1);
     text-align: center;
-    transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .testimonial-content {
@@ -790,12 +794,17 @@ footer {
     background-color: rgba(0, 200, 255, 0.2);
     margin: 0 5px;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .testimonial-dot.active {
     background-color: var(--accent-color);
     box-shadow: 0 0 10px var(--accent-glow);
+    transform: scale(1.2);
+}
+
+.testimonial-dot:hover {
+    background-color: rgba(0, 200, 255, 0.5);
 }
 
 .testimonial-arrows {
@@ -810,21 +819,18 @@ footer {
 }
 
 .testimonial-arrow {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: var(--transition);
-    color: var(--accent-color);
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .testimonial-arrow:hover {
     background-color: rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
+}
+
+.testimonial-arrow.disabled {
+    opacity: 0.5;
+    cursor: default;
 }
 
 /* Animations */
