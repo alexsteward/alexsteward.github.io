@@ -94,46 +94,106 @@ formControls.forEach(control => {
     });
 });
 
-// Testimonials Carousel
+// Testimonials Carousel with Infinite Scroll
 const testimonialTrack = document.querySelector('.testimonial-track');
 const testimonialItems = document.querySelectorAll('.testimonial-item');
 const testimonialDots = document.querySelectorAll('.testimonial-dot');
 const prevBtn = document.querySelector('.prev-testimonial');
 const nextBtn = document.querySelector('.next-testimonial');
 
-let currentIndex = 0;
-const itemWidth = 100; // 100%
+// Clone first and last slides for infinite loop effect
+const firstClone = testimonialItems[0].cloneNode(true);
+const lastClone = testimonialItems[testimonialItems.length - 1].cloneNode(true);
 
+// Add clones to the track
+testimonialTrack.appendChild(firstClone);
+testimonialTrack.insertBefore(lastClone, testimonialItems[0]);
+
+// Set initial position to show the first real slide (not clone)
+let currentIndex = 1; // Start at index 1 (after the clone of the last slide)
+const itemWidth = 100; // 100%
+testimonialTrack.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+
+// Add transition after initial positioning
+setTimeout(() => {
+  testimonialTrack.style.transition = 'transform 0.5s ease';
+}, 0);
+
+// Function to update slide position
 function moveToSlide(index) {
-    if (index < 0) index = testimonialItems.length - 1;
-    if (index >= testimonialItems.length) index = 0;
-    
-    currentIndex = index;
-    testimonialTrack.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
-    
-    // Update active dot
-    testimonialDots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
-    });
+  testimonialTrack.style.transform = `translateX(-${index * itemWidth}%)`;
+  currentIndex = index;
+  
+  // Update active dot - adjust index for dot display
+  updateActiveDot(index - 1);
 }
+
+// Update active dot based on current visible slide
+function updateActiveDot(index) {
+  // Handle edge cases for the cloned slides
+  if (index < 0) index = testimonialItems.length - 1;
+  if (index >= testimonialItems.length) index = 0;
+  
+  testimonialDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+// Check when transition ends to handle loop
+testimonialTrack.addEventListener('transitionend', () => {
+  // If we're at the first clone, jump to the real last slide
+  if (currentIndex === 0) {
+    testimonialTrack.style.transition = 'none';
+    currentIndex = testimonialItems.length;
+    testimonialTrack.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+    setTimeout(() => {
+      testimonialTrack.style.transition = 'transform 0.5s ease';
+    }, 10);
+  }
+  
+  // If we're at the last clone, jump to the real first slide
+  if (currentIndex === testimonialItems.length + 1) {
+    testimonialTrack.style.transition = 'none';
+    currentIndex = 1;
+    testimonialTrack.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+    setTimeout(() => {
+      testimonialTrack.style.transition = 'transform 0.5s ease';
+    }, 10);
+  }
+});
 
 // Next and Previous buttons
 nextBtn.addEventListener('click', () => {
-    moveToSlide(currentIndex + 1);
+  if (currentIndex >= testimonialItems.length + 1) return;
+  moveToSlide(currentIndex + 1);
 });
 
 prevBtn.addEventListener('click', () => {
-    moveToSlide(currentIndex - 1);
+  if (currentIndex <= 0) return;
+  moveToSlide(currentIndex - 1);
 });
 
 // Dot navigation
 testimonialDots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-        moveToSlide(i);
-    });
+  dot.addEventListener('click', () => {
+    // Add 1 to account for the cloned first slide
+    moveToSlide(i + 1);
+  });
 });
 
 // Auto-advance the carousel
-setInterval(() => {
-    moveToSlide(currentIndex + 1);
+let carouselInterval = setInterval(() => {
+  moveToSlide(currentIndex + 1);
 }, 5000);
+
+// Pause auto-advance on hover
+testimonialTrack.addEventListener('mouseenter', () => {
+  clearInterval(carouselInterval);
+});
+
+// Resume auto-advance on mouse leave
+testimonialTrack.addEventListener('mouseleave', () => {
+  carouselInterval = setInterval(() => {
+    moveToSlide(currentIndex + 1);
+  }, 5000);
+});
