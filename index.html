@@ -1,1 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iFixTech offers professional tech repair solutions for smartphones, laptops, and more. Fast, affordable, and reliable repairs with certified technicians.">
+    
+    <title>iFixTech - Professional Tech Repair Solutions</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span><span class="highlight">i</span>FixTech</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Cursor Trail Container -->
+    <div class="cursor-trail" id="cursor-trail"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <!-- Animated diagnostic icon -->
+                <div class="diagnostic-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path class="circuit-path" d="M3,12 L7,12 L9,7 L12,17 L15,10 L17,12 L21,12" />
+                        <circle class="pulse-dot" cx="12" cy="12" r="1.5" />
+                    </svg>
+                </div>
+                <span><span class="highlight">i</span>FixTech</span>
+            </div>
+            
+            <!-- Smaller typing text animation -->
+            <div class="typing-container">
+                <span class="typing-prefix">Experts in</span>
+                <span class="typing-text">smartphone repair</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section animated-gradient" id="home">
+        <div class="hero-parallax">
+            <div class="parallax-layer layer-1"></div>
+            <div class="parallax-layer layer-2"></div>
+        </div>
+        <div class="circuit-animation" id="circuit-animation"></div>
+        <div class="hero-content reveal">
+            <span class="company-name glitch-text" data-text="iFIXTECH">iFIXTECH</span>
+            <h1 class="hero-title">Professional <span class="highlight">Tech Repair</span> Solutions</h1>
+            <p class="hero-subtitle">We fix what others can't. Fast, affordable, and reliable tech repair services.</p>
+            <a href="#services" class="btn hero-btn"><span>Explore Our Services</span></a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <h2 class="section-title reveal">Our Services</h2>
+            <p class="section-subtitle reveal">We offer comprehensive tech repair and refurbishment services to keep your devices running smoothly.</p>
+            
+            <a href="all-services.html" class="btn btn-centered reveal"><span>View All Services</span></a>
+            
+            <div class="services-container">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Tech Repairs</h3>
+                    <p class="service-description">Expert repair services for smartphones, laptops, tablets, and other electronic devices with quick turnaround times.</p>
+                    <a href="repairs.html" class="btn"><span>Learn More</span></a>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Refurbished Devices</h3>
+                    <p class="service-description">Quality refurbished smartphones, laptops, and tablets at affordable prices with warranty and support.</p>
+                    <a href="devices.html" class="btn"><span>Learn More</span></a>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="service-title">Refurbished Accessories</h3>
+                    <p class="service-description">Certified refurbished accessories including chargers, headphones, and other peripherals at discounted prices.</p>
+                    <a href="accessories.html" class="btn"><span>Learn More</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us section" id="why-us">
+        <div class="container">
+            <h2 class="section-title reveal">Why Choose Us</h2>
+            <p class="section-subtitle reveal">We pride ourselves on delivering exceptional service and value to our customers.</p>
+            
+            <div class="features-container">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">Affordable Pricing</h3>
+                    <p class="feature-description">Competitive rates without compromising on quality, with transparent pricing and no hidden fees.</p>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Quick Turnaround</h3>
+                    <p class="feature-description">Most repairs completed within 24-48 hours, getting your devices back to you as quickly as possible.</p>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="feature-title">Certified Technicians</h3>
+                    <p class="feature-description">Our team consists of certified professionals with years of experience in tech repair.</p>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Quality Repairs</h3>
+                    <p class="feature-description">We use only the highest quality parts and thorough testing to ensure lasting repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title reveal">Client Testimonials</h2>
+            <p class="section-subtitle reveal">Here's what our satisfied customers have to say about our services</p>
+            
+            <div class="testimonial-container reveal">
+                <div class="testimonial-arrows">
+                    <div class="testimonial-arrow prev-testimonial" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="testimonial-arrow next-testimonial" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-track">
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="images/avatars/avatar-1.jpg" alt="Sarah Johnson" width="70" height="70">
+                        </div>
+                        <p class="testimonial-content">"iFixTech saved my business when my laptop died right before a major presentation. They fixed it within hours, and their technician even helped me recover some crucial data. Absolute lifesavers!"</p>
+                        <h4 class="testimonial-author">Sarah Johnson</h4>
+                        <p class="testimonial-role">Marketing Director</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="images/avatars/avatar-2.jpg" alt="Michael Rodriguez" width="70" height="70">
+                        </div>
+                        <p class="testimonial-content">"I've tried several repair services in the past, but iFixTech stands out for their honesty and expertise. They didn't try to upsell me on unnecessary repairs, and my phone works better than ever now."</p>
+                        <h4 class="testimonial-author">Michael Rodriguez</h4>
+                        <p class="testimonial-role">Photographer</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="images/avatars/avatar-3.jpg" alt="Emily Chen" width="70" height="70">
+                        </div>
+                        <p class="testimonial-content">"After my son spilled water on my laptop, I thought it was done for. The team at iFixTech not only repaired it but also gave me tips on how to prevent future damage. Excellent customer service!"</p>
+                        <h4 class="testimonial-author">Emily Chen</h4>
+                        <p class="testimonial-role">College Professor</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="images/avatars/avatar-4.jpg" alt="Jason Taylor" width="70" height="70">
+                        </div>
+                        <p class="testimonial-content">"iFixTech refurbished my old gaming PC at half the cost of buying a new one. It's running faster than when I first bought it! Their technicians really know what they're doing and took the time to explain everything."</p>
+                        <h4 class="testimonial-author">Jason Taylor</h4>
+                        <p class="testimonial-role">Software Developer</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="images/avatars/avatar-5.jpg" alt="Olivia Martinez" width="70" height="70">
+                        </div>
+                        <p class="testimonial-content">"When my phone screen shattered, I was quoted high prices everywhere until I found iFixTech. They repaired it same-day at an affordable price, and even threw in a free screen protector. I'll never go anywhere else!"</p>
+                        <h4 class="testimonial-author">Olivia Martinez</h4>
+                        <p class="testimonial-role">Small Business Owner</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <div class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></div>
+                    <div class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></div>
+                    <div class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></div>
+                    <div class="testimonial-dot" data-index="3" aria-label="Testimonial 4"></div>
+                    <div class="testimonial-dot" data-index="4" aria-label="Testimonial 5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <p class="section-subtitle reveal">Have questions or need assistance? Reach out to us and we'll get back to you promptly.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info reveal">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out to us through any of the following channels. Our customer service team is available to assist you with any inquiries.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Tech Street, Digital City, TC 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>support@ifixtech.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 7:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form reveal">
+                    <form id="contactForm" action="https://formspree.io/f/xnnnrgrb" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn form-btn"><span>Send Message</span></button>
+                    </form>
+                    <div id="formSuccess" class="form-success" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Form Submitted Successfully!</h3>
+                        <p>Thank you for contacting iFixTech. We'll respond to your message within 24 hours.</p>
+                        <button class="btn" id="resetForm"><span>Send Another Message</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-microchip microchip-icon"></i>
+                        <span><span class="highlight">i</span>FixTech</span>
+                    </div>
+                    <p>Professional tech repair services with a focus on quality, affordability, and customer satisfaction. Serving tech lovers since 2018.</p>
+                    
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Phone Repair</a></li>
+                        <li><a href="#">Laptop Repair</a></li>
+                        <li><a href="#">Tablet Repair</a></li>
+                        <li><a href="#">Refurbished Devices</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#" id="faqLink">FAQ</a></li>
+                        <li><a href="#" id="tosLink">Terms of Service</a></li>
+                        <li><a href="#" id="privacyLink">Privacy Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <p>Get the latest news, promotions and updates directly to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 iFixTech. All Rights Reserved.</p>
+                <div class="footer-payment">
+                    <span>Accepted Payment Methods:</span>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navigation Arrows -->
+    <div class="page-navigation">
+        <button class="nav-arrow nav-up" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4L4 12H9V20H15V12H20L12 4Z" fill="currentColor"/>
+            </svg>
+        </button>
+        <button class="nav-arrow nav-down" aria-label="Scroll to bottom">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 20L20 12H15V4H9V12H4L12 20Z" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Popup Modals -->
+    <div class="modal" id="faqModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Frequently Asked Questions</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>How long do repairs typically take?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Most repairs are completed within 24-48 hours. Simple repairs like screen replacements are often done same-day, while more complex issues may take longer. We'll always give you an estimated completion time when you drop off your device.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Do you offer a warranty on repairs?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Yes! All our repairs come with a 90-day warranty that covers both parts and labor. If the same issue recurs within the warranty period, we'll fix it at no additional cost.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>What forms of payment do you accept?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>We accept all major credit cards, debit cards, PayPal, and cash. We also offer financing options for larger repairs through Affirm.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Do I need to make an appointment?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Walk-ins are always welcome, but appointments are recommended for faster service. You can schedule an appointment through our website or by calling us directly.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>What if my device can't be repaired?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>If we determine that your device cannot be repaired, you won't be charged for our diagnostic service. We can also offer advice on replacement options, including our selection of quality refurbished devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="tosModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms of Service</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>1. Service Agreement</h4>
+                <p>By using iFixTech's repair services, you agree to these terms and conditions. We reserve the right to refuse service to anyone for any reason at our discretion.</p>
+                
+                <h4>2. Warranty</h4>
+                <p>All repairs include a 90-day warranty covering parts and labor for the specific repair performed. This warranty does not cover physical damage, water damage, or software issues unrelated to the original repair.</p>
+                
+                <h4>3. Data and Privacy</h4>
+                <p>iFixTech is not responsible for data loss during the repair process. We recommend backing up your device before bringing it in for repair. Your privacy is important to us - we will never access your personal data without permission.</p>
+                
+                <h4>4. Unclaimed Devices</h4>
+                <p>Devices left unclaimed for more than 30 days after completion of repair become the property of iFixTech and may be recycled or resold to recover repair costs.</p>
+                
+                <h4>5. Diagnostic Fee</h4>
+                <p>A diagnostic fee may apply for complex issues requiring extensive testing. This fee will be credited toward the cost of repair if you proceed with our service.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Information We Collect</h4>
+                <p>We collect contact information (name, email, phone number) and device information necessary to perform repairs. Payment information is processed securely through our payment processors.</p>
+                
+                <h4>How We Use Your Information</h4>
+                <p>We use your information to provide repair services, contact you about your device, process payments, and occasionally send promotional offers (which you can opt out of).</p>
+                
+                <h4>Data Security</h4>
+                <p>We implement appropriate security measures to protect your personal information. Your data is never sold to third parties.</p>
+                
+                <h4>Cookies and Tracking</h4>
+                <p>Our website uses cookies to enhance user experience and analyze site traffic. You can adjust your browser settings to refuse cookies, but this may affect site functionality.</p>
+                
+                <h4>Your Rights</h4>
+                <p>You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at privacy@ifixtech.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
