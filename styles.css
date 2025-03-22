@@ -713,7 +713,7 @@ footer {
     color: var(--primary-color);
 }
 
-/* Testimonials Carousel */
+/* Testimonials Carousel - FIXED VERSION */
 .testimonials {
     position: relative;
     overflow: hidden;
@@ -724,15 +724,13 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    overflow: hidden; /* Important: hide cloned slides that extend beyond the container */
+    overflow: hidden; /* Hide cloned slides that overflow */
 }
 
 .testimonial-track {
     display: flex;
-    /* Remove the transition property - we'll add it via JavaScript */
-    /* This allows us to make the snap-back seamless */
-    width: fit-content; /* Ensure track expands to fit all items including clones */
-    position: relative;
+    width: fit-content; /* Allow track to expand with clones */
+    /* Transition will be added via JS for better control */
 }
 
 .testimonial-item {
@@ -794,7 +792,7 @@ footer {
     background-color: rgba(0, 200, 255, 0.2);
     margin: 0 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .testimonial-dot.active {
@@ -819,18 +817,21 @@ footer {
 }
 
 .testimonial-arrow {
-    opacity: 1;
-    transition: opacity 0.3s ease;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--accent-color);
 }
 
 .testimonial-arrow:hover {
     background-color: rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
-}
-
-.testimonial-arrow.disabled {
-    opacity: 0.5;
-    cursor: default;
 }
 
 /* Animations */
@@ -950,6 +951,10 @@ footer {
         grid-template-columns: 1fr;
         gap: 30px;
     }
+    
+    .company-name {
+        font-size: 4rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -977,4 +982,85 @@ footer {
     .features-container {
         grid-template-columns: 1fr;
     }
+    
+    .company-name {
+        font-size: 3.5rem;
+    }
+    
+    .testimonial-item {
+        padding: 20px;
+    }
+    
+    .testimonial-content {
+        font-size: 1rem;
+    }
+    
+    .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Additional improvements */
+.form-group.focused label {
+    color: var(--accent-color);
+    transform: translateY(-5px);
+    transition: var(--transition);
+}
+
+/* Smooth loading transition for page */
+body {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Improve accessibility */
+input:focus, 
+textarea:focus, 
+button:focus,
+a:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Better mobile menu toggle */
+.mobile-menu-btn i {
+    transition: var(--transition);
+}
+
+/* Fix for testimonial arrows on small screens */
+@media (max-width: 480px) {
+    .testimonial-arrows {
+        padding: 0 5px;
+    }
+    
+    .testimonial-arrow {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Enhance social media icons */
+.social-links a i {
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.social-links a:hover i {
+    color: var(--primary-color);
+}
+
+/* Add smooth transition for testimonial hover */
+.testimonial-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
