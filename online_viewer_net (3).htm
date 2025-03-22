@@ -1,0 +1,3003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFixTech - Professional Tech Repair Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #0a1929;
+            --secondary-color: #0f2942;
+            --accent-color: #00c8ff;
+            --accent-glow: rgba(0, 200, 255, 0.4);
+            --text-color: #e0e0e0;
+            --text-light: #a0a0a0;
+            --card-bg: rgba(15, 41, 66, 0.8);
+            --transition: all 0.3s ease;
+            --heading-font: 'Orbitron', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+            --gradient-1: linear-gradient(135deg, #0a1929 0%, #0f2942 100%);
+            --gradient-2: linear-gradient(135deg, #0f2942 0%, #071d36 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--body-font);
+        }
+        
+        /* Custom Cursor */
+        body {
+            cursor: default;
+        }
+        
+        a, button, .btn, .service-card, .feature-card, .testimonial-dot, .testimonial-arrow {
+            cursor: pointer !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--gradient-1);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a, button, .btn, .service-card, .feature-card, .testimonial-dot, .testimonial-arrow {
+            cursor: pointer !important;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-glow);
+            font-family: var(--heading-font);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: -30px auto 50px;
+            color: var(--text-light);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: var(--transition);
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+        }
+        
+        /* Micro-interaction on button hover */
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: var(--accent-color);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn:hover:after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        .btn:hover {
+            color: var(--primary-color);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--accent-color);
+            z-index: -1;
+            transition: width 0.3s ease;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn-centered {
+            display: block;
+            margin: 0 auto 40px;
+            width: max-content;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            background: rgba(10, 25, 41, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo .microchip-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* NEW: Animated diagnostic icon */
+        .diagnostic-icon {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .diagnostic-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .diagnostic-icon .circuit-path {
+            stroke: var(--accent-color);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: draw-circuit 3s linear infinite;
+        }
+        
+        .diagnostic-icon .pulse-dot {
+            fill: var(--accent-color);
+            animation: pulse-dot 2s infinite;
+        }
+        
+        @keyframes draw-circuit {
+            0% {
+                stroke-dashoffset: 100;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        @keyframes pulse-dot {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .logo span {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            font-family: var(--heading-font);
+            letter-spacing: 1px;
+        }
+
+        .logo span .highlight {
+            color: var(--accent-color);
+        }
+        
+        /* NEW: Typing text animation */
+        .typing-container {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .typing-prefix {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-right: 6px;
+        }
+        
+        .typing-text {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            border-right: 2px solid var(--accent-color);
+            padding-right: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            0%, 100% { width: 0 }
+            50%, 90% { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color) }
+        }
+        
+        /* NEW: Easter egg broken screen */
+        .easter-egg {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .broken-screen {
+            width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--accent-color);
+        }
+        
+        .crack {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: translate(-50%, -50%) rotate(45deg);
+            opacity: 0.7;
+        }
+        
+        .crack::before, .crack::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .crack::before {
+            top: -5px;
+            left: 25%;
+            transform: rotate(-30deg);
+        }
+        
+        .crack::after {
+            bottom: -5px;
+            right: 25%;
+            transform: rotate(30deg);
+        }
+        
+        .repair-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, var(--accent-color), transparent);
+            opacity: 0;
+            transform: translateY(100%);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        
+        .broken-screen.repairing .repair-effect {
+            opacity: 0.6;
+            transform: translateY(-100%);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a1929"/><path d="M0 50 L100 50" stroke="%230f2942" stroke-width="0.5"/><path d="M50 0 L50 100" stroke="%230f2942" stroke-width="0.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="%230f2942" stroke-width="0.5"/></svg>');
+            opacity: 0.3;
+        }
+
+        .circuit-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+            font-family: var(--heading-font);
+        }
+
+        .hero-title .highlight {
+            color: var(--accent-color);
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+        
+        .company-name {
+            display: block;
+            font-size: 6rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-family: var(--heading-font);
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .company-name:before {
+            content: 'iFIXTECH';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(45deg, #00c8ff, #00ffea, #00c8ff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            z-index: 1;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        .company-name:after {
+            content: 'iFIXTECH';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 200, 255, 0.5);
+            z-index: 0;
+        }
+        
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-btn {
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        /* Services Section */
+        .services {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 200, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            background: var(--gradient-2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 200, 255, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .feature-card.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info {
+            padding-right: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-details i {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 200, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 200, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+        }
+        
+        /* Form field with content highlighting */
+        .form-control.has-content {
+            border-color: var(--accent-color);
+            background-color: rgba(0, 200, 255, 0.05);
+            box-shadow: 0 0 10px rgba(0, 200, 255, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        
+        /* Form Success Styles */
+        .form-success {
+            background-color: rgba(15, 41, 66, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 10;
+        }
+        
+        .form-success.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        .form-success h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .form-success p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-2);
+            padding: 70px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .microchip-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+        .footer-logo .highlight {
+            color: var(--accent-color);
+        }
+
+        .footer-about p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .social-links li {
+            margin-right: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* NEW: Navigation Arrows (replacing chat bot) */
+        .page-navigation {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .nav-arrow {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(0, 200, 255, 0.15);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent-color);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            opacity: 0;
+            transform: scale(0.9);
+            overflow: hidden;
+        }
+        
+        .nav-arrow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 200, 255, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .nav-arrow:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 200, 255, 0.3);
+            background-color: rgba(0, 200, 255, 0.25);
+        }
+        
+        .nav-arrow:hover::before {
+            opacity: 1;
+        }
+        
+        .nav-arrow.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Special pulse effect on hover */
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 200, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 200, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 200, 255, 0);
+            }
+        }
+        
+        .nav-arrow:hover {
+            animation: pulse-ring 1.5s infinite;
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            transition: var(--transition);
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover::before {
+            content: '>';
+            position: absolute;
+            left: -12px;
+            top: 0;
+            color: var(--accent-color);
+            opacity: 0.7;
+        }
+        
+        .footer-newsletter {
+            grid-column: 1 / -1;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(0, 200, 255, 0.1);
+        }
+        
+        .footer-newsletter h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .footer-newsletter p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 200, 255, 0.1);
+            border-radius: 30px 0 0 30px;
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+        }
+        
+        .newsletter-btn {
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .footer-payment {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .footer-payment i {
+            font-size: 1.8rem;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+        
+        .footer-payment i:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: var(--primary-color);
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-header {
+            padding: 20px 25px;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+        }
+        
+        .modal-header h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .close-modal {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+        
+        .modal-body {
+            padding: 25px;
+            overflow-y: auto;
+            max-height: calc(90vh - 70px);
+        }
+        
+        .modal-body h4 {
+            color: var(--accent-color);
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        .modal-body h4:first-child {
+            margin-top: 0;
+        }
+        
+        .modal-body p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Accordion Styles */
+        .accordion-item {
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 200, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            padding: 15px 20px;
+            background-color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .accordion-header:hover {
+            background-color: rgba(0, 200, 255, 0.1);
+        }
+        
+        .accordion-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        .accordion-header i {
+            transition: var(--transition);
+            color: var(--accent-color);
+        }
+        
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* Testimonials Carousel */
+        .testimonials {
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-item {
+            min-width: 100%;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 200, 255, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 200, 255, 0.2);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+        
+        .testimonial-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+            padding: 0 20px;
+        }
+        
+        .testimonial-arrow {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--accent-color);
+        }
+        
+        .testimonial-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 200, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 200, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 200, 255, 0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Circuit Animation */
+        .circuit-line {
+            position: absolute;
+            background-color: var(--accent-color);
+            opacity: 0.1;
+        }
+
+        .circuit-dot {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 10px var(--accent-glow);
+            animation: pulse 3s infinite;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .typing-container {
+                display: none;
+            }
+            
+            .easter-egg {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .services-container,
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .company-name {
+                font-size: 4rem;
+            }
+        }
+
+        /* ===== NEW ANIMATION ENHANCEMENTS ===== */
+
+        /* 1. Cursor Trail Effect */
+        .cursor-trail {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .cursor-trail .trail {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s ease;
+        }
+
+        /* 2. Enhanced Parallax Effect for Hero */
+        .hero-parallax {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .layer-1 {
+            background: radial-gradient(circle at 20% 30%, rgba(0, 200, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .layer-2 {
+            background: radial-gradient(circle at 70% 60%, rgba(0, 200, 255, 0.03) 0%, transparent 40%);
+        }
+
+        /* 3. 3D Service Cards */
+        .service-card {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 
+                      0 0 30px rgba(0, 200, 255, 0.2);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 200, 255, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 0;
+            border-radius: 15px;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-card .service-icon, 
+        .service-card .service-title, 
+        .service-card .service-description, 
+        .service-card .btn {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 4. Animated Background Gradients */
+        .animated-gradient {
+            background: linear-gradient(270deg, #0a1929, #0f2942, #071d36, #102a43);
+            background-size: 800% 800%;
+            animation: gradientShift 20s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+
+        /* 5. Advanced Button Animations */
+        .btn {
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            color: var(--primary-color);
+            border-color: transparent;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* 6. Glitch Effect for Company Name */
+        .glitch-text {
+            position: relative;
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+            animation: glitch-anim2 1s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(31px, 9999px, 94px, 0);
+                transform: skew(0.85deg);
+            }
+            5% {
+                clip: rect(70px, 9999px, 71px, 0);
+                transform: skew(0.13deg);
+            }
+            10% {
+                clip: rect(75px, 9999px, 21px, 0);
+                transform: skew(0.9deg);
+            }
+            15% {
+                clip: rect(30px, 9999px, 92px, 0);
+                transform: skew(0.12deg);
+            }
+            20% {
+                clip: rect(67px, 9999px, 75px, 0);
+                transform: skew(0.04deg);
+            }
+            25% {
+                clip: rect(6px, 9999px, 11px, 0);
+                transform: skew(0.85deg);
+            }
+            30% {
+                clip: rect(75px, 9999px, 9px, 0);
+                transform: skew(0.9deg);
+            }
+            35% {
+                clip: rect(8px, 9999px, 42px, 0);
+                transform: skew(0.13deg);
+            }
+            40% {
+                clip: rect(33px, 9999px, 31px, 0);
+                transform: skew(0.05deg);
+            }
+            45% {
+                clip: rect(52px, 9999px, 59px, 0);
+                transform: skew(0.76deg);
+            }
+            50% {
+                clip: rect(28px, 9999px, 32px, 0);
+                transform: skew(0.14deg);
+            }
+            55% {
+                clip: rect(53px, 9999px, 22px, 0);
+                transform: skew(0.07deg);
+            }
+            60% {
+                clip: rect(90px, 9999px, 23px, 0);
+                transform: skew(0.87deg);
+            }
+            65% {
+                clip: rect(26px, 9999px, 72px, 0);
+                transform: skew(0.65deg);
+            }
+            70% {
+                clip: rect(56px, 9999px, 86px, 0);
+                transform: skew(0.61deg);
+            }
+            75% {
+                clip: rect(42px, 9999px, 11px, 0);
+                transform: skew(0.46deg);
+            }
+            80% {
+                clip: rect(25px, 9999px, 55px, 0);
+                transform: skew(0.16deg);
+            }
+            85% {
+                clip: rect(1px, 9999px, 16px, 0);
+                transform: skew(0.35deg);
+            }
+            90% {
+                clip: rect(91px, 9999px, 91px, 0);
+                transform: skew(0.41deg);
+            }
+            95% {
+                clip: rect(79px, 9999px, 40px, 0);
+                transform: skew(0.95deg);
+            }
+            100% {
+                clip: rect(72px, 9999px, 11px, 0);
+                transform: skew(0.02deg);
+            }
+        }
+
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(97px, 9999px, 4px, 0);
+                transform: skew(0.12deg);
+            }
+            5% {
+                clip: rect(7px, 9999px, 10px, 0);
+                transform: skew(0.05deg);
+            }
+            10% {
+                clip: rect(31px, 9999px, 84px, 0);
+                transform: skew(0.85deg);
+            }
+            15% {
+                clip: rect(82px, 9999px, 15px, 0);
+                transform: skew(0.17deg);
+            }
+            20% {
+                clip: rect(80px, 9999px, 55px, 0);
+                transform: skew(0.47deg);
+            }
+            25% {
+                clip: rect(69px, 9999px, 100px, 0);
+                transform: skew(0.17deg);
+            }
+            30% {
+                clip: rect(20px, 9999px, 23px, 0);
+                transform: skew(0.86deg);
+            }
+            35% {
+                clip: rect(96px, 9999px, 16px, 0);
+                transform: skew(0.34deg);
+            }
+            40% {
+                clip: rect(82px, 9999px, 58px, 0);
+                transform: skew(0.6deg);
+            }
+            45% {
+                clip: rect(89px, 9999px, 45px, 0);
+                transform: skew(0.75deg);
+            }
+            50% {
+                clip: rect(33px, 9999px, 12px, 0);
+                transform: skew(0.69deg);
+            }
+            55% {
+                clip: rect(9px, 9999px, 23px, 0);
+                transform: skew(0.65deg);
+            }
+            60% {
+                clip: rect(57px, 9999px, 41px, 0);
+                transform: skew(0.89deg);
+            }
+            65% {
+                clip: rect(82px, 9999px, 59px, 0);
+                transform: skew(0.48deg);
+            }
+            70% {
+                clip: rect(59px, 9999px, 67px, 0);
+                transform: skew(0.27deg);
+            }
+            75% {
+                clip: rect(77px, 9999px, 53px, 0);
+                transform: skew(0.85deg);
+            }
+            80% {
+                clip: rect(64px, 9999px, 57px, 0);
+                transform: skew(0.15deg);
+            }
+            85% {
+                clip: rect(15px, 9999px, 40px, 0);
+                transform: skew(0.59deg);
+            }
+            90% {
+                clip: rect(99px, 9999px, 91px, 0);
+                transform: skew(0.55deg);
+            }
+            95% {
+                clip: rect(86px, 9999px, 44px, 0);
+                transform: skew(0.39deg);
+            }
+            100% {
+                clip: rect(63px, 9999px, 50px, 0);
+                transform: skew(0.61deg);
+            }
+        }
+
+        @keyframes glitch-skew {
+            0% {
+                transform: skew(-0.5deg);
+            }
+            10% {
+                transform: skew(1deg);
+            }
+            20% {
+                transform: skew(-1deg);
+            }
+            30% {
+                transform: skew(0.5deg);
+            }
+            40% {
+                transform: skew(-0.5deg);
+            }
+            50% {
+                transform: skew(0.7deg);
+            }
+            60% {
+                transform: skew(-1deg);
+            }
+            70% {
+                transform: skew(0.2deg);
+            }
+            80% {
+                transform: skew(-0.7deg);
+            }
+            90% {
+                transform: skew(0.8deg);
+            }
+            100% {
+                transform: skew(-0.3deg);
+            }
+        }
+
+        /* 7. Page Loading Animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-color);
+            font-family: var(--heading-font);
+            margin-bottom: 20px;
+        }
+
+        .loader-logo .highlight {
+            color: var(--accent-color);
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-glow);
+            transition: width 0.3s ease;
+        }
+
+        /* 8. Floating Elements Animation */
+        .float-element {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Apply floating animation to specific elements */
+        .service-icon, .feature-icon {
+            display: inline-block;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Make each element float at a different time */
+        .service-card:nth-child(2) .service-icon {
+            animation-delay: 0.5s;
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            animation-delay: 1s;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            animation-delay: 0.3s;
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            animation-delay: 0.6s;
+        }
+
+       .feature-card:nth-child(4) .feature-icon {
+            animation-delay: 0.9s;
+        }
+
+        /* 9. Scroll Reveal Animation */
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 10. Text Typing Animation */
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--accent-color);
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color) }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span><span class="highlight">i</span>FixTech</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor Trail Container -->
+    <div class="cursor-trail" id="cursor-trail"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <!-- Animated diagnostic icon -->
+                <div class="diagnostic-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path class="circuit-path" d="M3,12 L7,12 L9,7 L12,17 L15,10 L17,12 L21,12" />
+                        <circle class="pulse-dot" cx="12" cy="12" r="1.5" />
+                    </svg>
+                </div>
+                <span><span class="highlight">i</span>FixTech</span>
+            </div>
+            
+            <!-- Smaller typing text animation -->
+            <div class="typing-container">
+                <span class="typing-prefix">Experts in</span>
+                <span class="typing-text">smartphone repair</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section animated-gradient" id="home">
+        <div class="hero-parallax">
+            <div class="parallax-layer layer-1"></div>
+            <div class="parallax-layer layer-2"></div>
+        </div>
+        <div class="circuit-animation" id="circuit-animation"></div>
+        <div class="hero-content reveal">
+            <span class="company-name glitch-text" data-text="iFIXTECH">iFIXTECH</span>
+            <h1 class="hero-title">Professional <span class="highlight">Tech Repair</span> Solutions</h1>
+            <p class="hero-subtitle">We fix what others can't. Fast, affordable, and reliable tech repair services.</p>
+            <a href="#services" class="btn hero-btn"><span>Explore Our Services</span></a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <h2 class="section-title reveal">Our Services</h2>
+            <p class="section-subtitle reveal">We offer comprehensive tech repair and refurbishment services to keep your devices running smoothly.</p>
+            
+            <a href="all-services.html" class="btn btn-centered reveal"><span>View All Services</span></a>
+            
+            <div class="services-container">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Tech Repairs</h3>
+                    <p class="service-description">Expert repair services for smartphones, laptops, tablets, and other electronic devices with quick turnaround times.</p>
+                    <a href="repairs.html" class="btn"><span>Learn More</span></a>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Refurbished Devices</h3>
+                    <p class="service-description">Quality refurbished smartphones, laptops, and tablets at affordable prices with warranty and support.</p>
+                    <a href="devices.html" class="btn"><span>Learn More</span></a>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="service-title">Refurbished Accessories</h3>
+                    <p class="service-description">Certified refurbished accessories including chargers, headphones, and other peripherals at discounted prices.</p>
+                    <a href="accessories.html" class="btn"><span>Learn More</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us section" id="why-us">
+        <div class="container">
+            <h2 class="section-title reveal">Why Choose Us</h2>
+            <p class="section-subtitle reveal">We pride ourselves on delivering exceptional service and value to our customers.</p>
+            
+            <div class="features-container">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">Affordable Pricing</h3>
+                    <p class="feature-description">Competitive rates without compromising on quality, with transparent pricing and no hidden fees.</p>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Quick Turnaround</h3>
+                    <p class="feature-description">Most repairs completed within 24-48 hours, getting your devices back to you as quickly as possible.</p>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="feature-title">Certified Technicians</h3>
+                    <p class="feature-description">Our team consists of certified professionals with years of experience in tech repair.</p>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Quality Repairs</h3>
+                    <p class="feature-description">We use only the highest quality parts and thorough testing to ensure lasting repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title reveal">Client Testimonials</h2>
+            <p class="section-subtitle reveal">Here's what our satisfied customers have to say about our services</p>
+            
+            <div class="testimonial-container reveal">
+                <div class="testimonial-arrows">
+                    <div class="testimonial-arrow prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="testimonial-arrow next-testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-track">
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="/api/placeholder/70/70" alt="Avatar">
+                        </div>
+                        <p class="testimonial-content">"iFixTech saved my business when my laptop died right before a major presentation. They fixed it within hours, and their technician even helped me recover some crucial data. Absolute lifesavers!"</p>
+                        <h4 class="testimonial-author">Sarah Johnson</h4>
+                        <p class="testimonial-role">Marketing Director</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="/api/placeholder/70/70" alt="Avatar">
+                        </div>
+                        <p class="testimonial-content">"I've tried several repair services in the past, but iFixTech stands out for their honesty and expertise. They didn't try to upsell me on unnecessary repairs, and my phone works better than ever now."</p>
+                        <h4 class="testimonial-author">Michael Rodriguez</h4>
+                        <p class="testimonial-role">Photographer</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="/api/placeholder/70/70" alt="Avatar">
+                        </div>
+                        <p class="testimonial-content">"After my son spilled water on my laptop, I thought it was done for. The team at iFixTech not only repaired it but also gave me tips on how to prevent future damage. Excellent customer service!"</p>
+                        <h4 class="testimonial-author">Emily Chen</h4>
+                        <p class="testimonial-role">College Professor</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="/api/placeholder/70/70" alt="Avatar">
+                        </div>
+                        <p class="testimonial-content">"iFixTech refurbished my old gaming PC at half the cost of buying a new one. It's running faster than when I first bought it! Their technicians really know what they're doing and took the time to explain everything."</p>
+                        <h4 class="testimonial-author">Jason Taylor</h4>
+                        <p class="testimonial-role">Software Developer</p>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="/api/placeholder/70/70" alt="Avatar">
+                        </div>
+                        <p class="testimonial-content">"When my phone screen shattered, I was quoted high prices everywhere until I found iFixTech. They repaired it same-day at an affordable price, and even threw in a free screen protector. I'll never go anywhere else!"</p>
+                        <h4 class="testimonial-author">Olivia Martinez</h4>
+                        <p class="testimonial-role">Small Business Owner</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
+                    <div class="testimonial-dot" data-index="3"></div>
+                    <div class="testimonial-dot" data-index="4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <p class="section-subtitle reveal">Have questions or need assistance? Reach out to us and we'll get back to you promptly.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info reveal">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out to us through any of the following channels. Our customer service team is available to assist you with any inquiries.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Tech Street, Digital City, TC 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>support@ifixtech.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 7:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form reveal">
+                    <form id="contactForm" action="https://formspree.io/f/xnnnrgrb" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn form-btn"><span>Send Message</span></button>
+                    </form>
+                    <div id="formSuccess" class="form-success" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Form Submitted Successfully!</h3>
+                        <p>Thank you for contacting iFixTech. We'll respond to your message within 24 hours.</p>
+                        <button class="btn" id="resetForm"><span>Send Another Message</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-microchip microchip-icon"></i>
+                        <span><span class="highlight">i</span>FixTech</span>
+                    </div>
+                    <p>Professional tech repair services with a focus on quality, affordability, and customer satisfaction. Serving tech lovers since 2018.</p>
+                    
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Phone Repair</a></li>
+                        <li><a href="#">Laptop Repair</a></li>
+                        <li><a href="#">Tablet Repair</a></li>
+                        <li><a href="#">Refurbished Devices</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#" id="faqLink">FAQ</a></li>
+                        <li><a href="#" id="tosLink">Terms of Service</a></li>
+                        <li><a href="#" id="privacyLink">Privacy Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <p>Get the latest news, promotions and updates directly to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 iFixTech. All Rights Reserved.</p>
+                <div class="footer-payment">
+                    <span>Accepted Payment Methods:</span>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NEW: Navigation Arrows (replacing chat bot) -->
+    <div class="page-navigation">
+        <button class="nav-arrow nav-up" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4L4 12H9V20H15V12H20L12 4Z" fill="currentColor"/>
+            </svg>
+        </button>
+        <button class="nav-arrow nav-down" aria-label="Scroll to bottom">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 20L20 12H15V4H9V12H4L12 20Z" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Popup Modals -->
+    <div class="modal" id="faqModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Frequently Asked Questions</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>How long do repairs typically take?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Most repairs are completed within 24-48 hours. Simple repairs like screen replacements are often done same-day, while more complex issues may take longer. We'll always give you an estimated completion time when you drop off your device.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Do you offer a warranty on repairs?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Yes! All our repairs come with a 90-day warranty that covers both parts and labor. If the same issue recurs within the warranty period, we'll fix it at no additional cost.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>What forms of payment do you accept?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>We accept all major credit cards, debit cards, PayPal, and cash. We also offer financing options for larger repairs through Affirm.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Do I need to make an appointment?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Walk-ins are always welcome, but appointments are recommended for faster service. You can schedule an appointment through our website or by calling us directly.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>What if my device can't be repaired?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>If we determine that your device cannot be repaired, you won't be charged for our diagnostic service. We can also offer advice on replacement options, including our selection of quality refurbished devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="tosModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms of Service</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>1. Service Agreement</h4>
+                <p>By using iFixTech's repair services, you agree to these terms and conditions. We reserve the right to refuse service to anyone for any reason at our discretion.</p>
+                
+                <h4>2. Warranty</h4>
+                <p>All repairs include a 90-day warranty covering parts and labor for the specific repair performed. This warranty does not cover physical damage, water damage, or software issues unrelated to the original repair.</p>
+                
+                <h4>3. Data and Privacy</h4>
+                <p>iFixTech is not responsible for data loss during the repair process. We recommend backing up your device before bringing it in for repair. Your privacy is important to us - we will never access your personal data without permission.</p>
+                
+                <h4>4. Unclaimed Devices</h4>
+                <p>Devices left unclaimed for more than 30 days after completion of repair become the property of iFixTech and may be recycled or resold to recover repair costs.</p>
+                
+                <h4>5. Diagnostic Fee</h4>
+                <p>A diagnostic fee may apply for complex issues requiring extensive testing. This fee will be credited toward the cost of repair if you proceed with our service.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Information We Collect</h4>
+                <p>We collect contact information (name, email, phone number) and device information necessary to perform repairs. Payment information is processed securely through our payment processors.</p>
+                
+                <h4>How We Use Your Information</h4>
+                <p>We use your information to provide repair services, contact you about your device, process payments, and occasionally send promotional offers (which you can opt out of).</p>
+                
+                <h4>Data Security</h4>
+                <p>We implement appropriate security measures to protect your personal information. Your data is never sold to third parties.</p>
+                
+                <h4>Cookies and Tracking</h4>
+                <p>Our website uses cookies to enhance user experience and analyze site traffic. You can adjust your browser settings to refuse cookies, but this may affect site functionality.</p>
+                
+                <h4>Your Rights</h4>
+                <p>You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at privacy@ifixtech.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Page Loader
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.page-loader');
+            const loaderProgress = document.querySelector('.loader-progress');
+            
+            // Simulate loading progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // Hide loader after a short delay
+                    setTimeout(() => {
+                        loader.classList.add('loader-hidden');
+                    }, 500);
+                }
+                loaderProgress.style.width = progress + '%';
+            }, 200);
+        });
+        
+        // Cursor Trail Effect
+        const cursorTrail = document.getElementById('cursor-trail');
+        const trails = [];
+        const trailCount = 10; // Number of trail dots
+        
+        // Create trail elements
+        for (let i = 0; i < trailCount; i++) {
+            const trail = document.createElement('div');
+            trail.classList.add('trail');
+            cursorTrail.appendChild(trail);
+            trails.push({
+                element: trail,
+                x: 0,
+                y: 0,
+                alpha: 0
+            });
+        }
+        
+        // Update trail positions on mouse move
+        document.addEventListener('mousemove', (e) => {
+            // Shift positions
+            for (let i = trails.length - 1; i > 0; i--) {
+                trails[i].x = trails[i-1].x;
+                trails[i].y = trails[i-1].y;
+                trails[i].alpha = (trailCount - i) / trailCount * 0.6; // Fade out as we go back in the trail
+            }
+            
+            // Set current position to mouse
+            trails[0].x = e.clientX;
+            trails[0].y = e.clientY;
+            trails[0].alpha = 0.6;
+            
+            // Update DOM elements
+            trails.forEach((trail, i) => {
+                trail.element.style.transform = `translate(${trail.x}px, ${trail.y}px)`;
+                trail.element.style.opacity = trail.alpha;
+                trail.element.style.width = (6 - (i * 0.4)) + 'px';
+                trail.element.style.height = (6 - (i * 0.4)) + 'px';
+            });
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.querySelector('i').classList.toggle('fa-bars');
+            menuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if(elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Scroll Animation for Service Cards
+        const serviceCards = document.querySelectorAll('.service-card');
+        const featureCards = document.querySelectorAll('.feature-card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 150);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        serviceCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        featureCards.forEach(card => {
+            observer.observe(card);
+        });
+        
+        // NEW: Typing text animation
+        const typingTexts = ['smartphone repair', 'laptop recovery', 'data rescue', 'screen replacement', 'battery service'];
+        let currentTextIndex = 0;
+        
+        function updateTypingText() {
+            const typingElement = document.querySelector('.typing-text');
+            if (typingElement) {
+                typingElement.textContent = '';
+                
+                // Get the next text in the rotation
+                currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+                const newText = typingTexts[currentTextIndex];
+                
+                // Set the new text
+                typingElement.textContent = newText;
+            }
+        }
+        
+        // Change text every 4 seconds
+        setInterval(updateTypingText, 4000);
+        
+ 
+        // Enhanced Circuit Animation
+        const createCircuitAnimation = () => {
+            const circuitAnimation = document.getElementById('circuit-animation');
+            const width = circuitAnimation.offsetWidth;
+            const height = circuitAnimation.offsetHeight;
+            
+            // Create horizontal and vertical lines
+            for (let i = 0; i < 15; i++) {
+                // Horizontal lines
+                const hLine = document.createElement('div');
+                hLine.classList.add('circuit-line');
+                hLine.style.width = Math.random() * 250 + 50 + 'px';
+                hLine.style.height = '1px';
+                hLine.style.top = Math.random() * height + 'px';
+                hLine.style.left = Math.random() * width + 'px';
+                circuitAnimation.appendChild(hLine);
+                
+                // Vertical lines
+                const vLine = document.createElement('div');
+                vLine.classList.add('circuit-line');
+                vLine.style.width = '1px';
+                vLine.style.height = Math.random() * 250 + 50 + 'px';
+                vLine.style.top = Math.random() * height + 'px';
+                vLine.style.left = Math.random() * width + 'px';
+                circuitAnimation.appendChild(vLine);
+                
+                // Add circuit dots
+                const dot = document.createElement('div');
+                dot.classList.add('circuit-dot');
+                dot.style.top = Math.random() * height + 'px';
+                dot.style.left = Math.random() * width + 'px';
+                
+                // Random animation delay
+                dot.style.animationDelay = Math.random() * 5 + 's';
+                dot.style.opacity = 1;
+                
+                circuitAnimation.appendChild(dot);
+            }
+        };
+
+        // Initialize circuit animation
+        window.addEventListener('load', createCircuitAnimation);
+
+        // Form animation
+        const formControls = document.querySelectorAll('.form-control');
+        
+        formControls.forEach(control => {
+            // Check for initial content (in case of pre-filled fields)
+            if (control.value.trim() !== '') {
+                control.classList.add('has-content');
+            }
+            
+            // Focus event
+            control.addEventListener('focus', () => {
+                control.parentElement.classList.add('focused');
+            });
+            
+            // Blur event (when user clicks away)
+            control.addEventListener('blur', () => {
+                if (control.value.trim() === '') {
+                    control.parentElement.classList.remove('focused');
+                    control.classList.remove('has-content');
+                } else {
+                    control.classList.add('has-content');
+                }
+            });
+            
+            // Input event (when user types or changes content)
+            control.addEventListener('input', () => {
+                if (control.value.trim() !== '') {
+                    control.classList.add('has-content');
+                } else {
+                    control.classList.remove('has-content');
+                }
+            });
+        });
+        
+        // Parallax Effect on Mouse Move
+        const parallaxElements = document.querySelectorAll('.parallax-layer');
+        
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            parallaxElements.forEach((layer, index) => {
+                const depth = (index + 1) * 10;
+                const moveX = (mouseX * depth) - (depth / 2);
+                const moveY = (mouseY * depth) - (depth / 2);
+                
+                layer.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+        
+        // Testimonials Carousel
+        const testimonialTrack = document.querySelector('.testimonial-track');
+        const testimonialItems = document.querySelectorAll('.testimonial-item');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const prevBtn = document.querySelector('.prev-testimonial');
+        const nextBtn = document.querySelector('.next-testimonial');
+        
+        let currentIndex = 0;
+        const itemWidth = 100; // 100%
+        
+        function moveToSlide(index) {
+            if (index < 0) index = testimonialItems.length - 1;
+            if (index >= testimonialItems.length) index = 0;
+            
+            currentIndex = index;
+            testimonialTrack.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+            
+            // Update active dot
+            testimonialDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+        
+        // Next and Previous buttons
+        nextBtn.addEventListener('click', () => {
+            moveToSlide(currentIndex + 1);
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            moveToSlide(currentIndex - 1);
+        });
+        
+        // Dot navigation
+        testimonialDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                moveToSlide(i);
+            });
+        });
+        
+        // Auto-advance the carousel
+        setInterval(() => {
+            moveToSlide(currentIndex + 1);
+        }, 5000);
+        
+        // Add glitch effect to company name on hover
+        const companyName = document.querySelector('.company-name');
+        
+        companyName.addEventListener('mouseover', () => {
+            companyName.classList.add('glitch-text');
+        });
+        
+        companyName.addEventListener('mouseout', () => {
+            companyName.classList.remove('glitch-text');
+        });
+        
+        // Add interactive hover effect to service cards
+        serviceCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const cardRect = card.getBoundingClientRect();
+                const cardCenterX = cardRect.left + cardRect.width / 2;
+                const cardCenterY = cardRect.top + cardRect.height / 2;
+                
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                // Calculate how far from center (in percentage)
+                const percentX = (mouseX - cardCenterX) / (cardRect.width / 2);
+                const percentY = (mouseY - cardCenterY) / (cardRect.height / 2);
+                
+                // Limit tilt amount
+                const tiltX = percentY * 5; // Reversed for correct tilt direction
+                const tiltY = percentX * -5;
+                
+                card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                setTimeout(() => {
+                    card.style.transition = '';
+                }, 300);
+            });
+        });
+        
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+        const resetFormBtn = document.getElementById('resetForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                
+                try {
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    
+                    // Submit form data to Formspree
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Show success message
+                        formSuccess.style.display = 'flex';
+                        setTimeout(() => {
+                            formSuccess.classList.add('active');
+                        }, 10);
+                        
+                        // Reset form
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Something went wrong. Please try again later.');
+                }
+            });
+        }
+        
+        // Reset form button
+        if (resetFormBtn) {
+            resetFormBtn.addEventListener('click', function() {
+                formSuccess.classList.remove('active');
+                setTimeout(() => {
+                    formSuccess.style.display = 'none';
+                }, 500);
+            });
+        }
+        
+        // NEW: Navigation Arrows functionality
+        const navUp = document.querySelector('.nav-up');
+        const navDown = document.querySelector('.nav-down');
+        
+        // Update arrow visibility on scroll
+        function updateNavArrows() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show/hide up arrow - only visible when scrolled down
+            if (scrollPosition > windowHeight * 0.25) {
+                navUp.classList.add('visible');
+            } else {
+                navUp.classList.remove('visible');
+            }
+            
+            // Show/hide down arrow - only visible when not at bottom
+            if (scrollPosition < documentHeight - windowHeight - 100) {
+                navDown.classList.add('visible');
+            } else {
+                navDown.classList.remove('visible');
+            }
+        }
+        
+        // Smooth scroll to top
+        navUp.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scroll to bottom
+        navDown.addEventListener('click', function() {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initial check and event listener
+        updateNavArrows();
+        window.addEventListener('scroll', updateNavArrows);
+        
+        // Modal Handling
+        const faqLink = document.getElementById('faqLink');
+        const tosLink = document.getElementById('tosLink');
+        const privacyLink = document.getElementById('privacyLink');
+        const faqModal = document.getElementById('faqModal');
+        const tosModal = document.getElementById('tosModal');
+        const privacyModal = document.getElementById('privacyModal');
+        const closeModalBtns = document.querySelectorAll('.close-modal');
+        
+        // Open modals
+        if (faqLink) {
+            faqLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                faqModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        if (tosLink) {
+            tosLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                tosModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        if (privacyLink) {
+            privacyLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                privacyModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        // Close modals
+        closeModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.modal');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close modal when clicking outside content
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Accordion functionality
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach((header, index) => {
+            header.addEventListener('click', () => {
+                // Toggle active class for clicked item
+                accordionItems[index].classList.toggle('active');
+                
+                // Close other accordion items
+                accordionItems.forEach((item, i) => {
+                    if (i !== index) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Newsletter form handling
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const emailInput = newsletterForm.querySelector('input[type="email"]');
+                const email = emailInput.value.trim();
+                
+                if (email !== '') {
+                    // Here you would normally send this to your newsletter service
+                    // For demo purposes, we'll just show an alert
+                    alert('Thank you for subscribing to our newsletter!');
+                    newsletterForm.reset();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
